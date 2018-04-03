@@ -1,0 +1,70 @@
+%header#main_header.main_header
+  .box_header_inner
+    .header_logo
+      = link_to "/" do
+        =image_tag "https://lh3.googleusercontent.com/8JyUhnDfQISj0H_MMKBtqJrxxnCPsrwJ7RNTGOenYmWE5st2ZLrFYISyoLxQooauaOIxFpBG04fltcWTF9beNAh-OBuZWjignsBwX5p9_wZzutnVLFGGmLoQ9OgBwvYEg43Nr3oj2ky8IHDq4A1AbxRrunBNwzxUO1VgGWIa4DD1w4Bt-TyJZKjU4hKrgKrle3LIWT3JYsMqHV59E-2p26dzqNRPCIYQ3JyrOtLz2LDWtiBi2fd4mRgrja7VyaZ2GMaZpwoeehKMM2PCvqd7J4oU1eHedMuqMvQFMIy-AAcbEk9hOBFeOoEMe_gfe9DtltiW9RWm1NvcbqqtmeM1M0w67nTioPaxXFyRcHZpWVR8i6MgLF5yBGPJEgkzsQDP7hP5jxVkUw8yXfggOvwirguVZy480kAXblKkTMXoUVYfUxa3r_nNNBZlhAAyR7rbjGxnbqZIUOrFBWxLJlRMGTGnHuUPJD0ybIeQWRpGdAnvxEgu3hwEWi1xhNlvJs571SNGEhkiT1R1qZygw69RsQUV0h0cve7ygMiK-J-0JtyRN9aZWKT1O-WJh9sHLiXehyZWyTwF2zWyZKDs3E6irJvIP1ZUL6IrvvVd5R0zzvAlbQh4c8mjWj0-annBq8QZbrnidT_qu7MCGJoWcbuM2WtKz-gqlKEP=w864-h342-no", width: "88"
+    %p.pairs_concept Facebookではじめる恋愛・結婚
+    %ul.box_header_notifCentered
+      %li#notifCentered_item.notifCentered_item.notifCentered_messeage
+        %a.hide#header_logo
+          #header_matching_count
+    %div
+      / 『右上アイコン』からのポップアップ
+      #box_header_message.box_header_message
+        #hasUnreadNotification.box_no_matching.ng-hide
+          %p
+            まだマッチングをしていません。
+        #hasUnreadNotification
+          .box_message_list_title
+            %p.list_title
+              メッセージ
+            %p#matching_count.matching_summary.ng-hide
+              %em<>
+                %span> 1
+                人
+              の女性とマッチングしています。
+            %p#matching_count.matching_summary
+              %em<>
+                %span> 1
+                人
+              の男性とマッチングしています。
+          %ol#box_matching_list.box_matching_list.box_inner_scroll.ps-container.ps-theme-default
+            %li#notify_item.matching_item
+              %a
+                %img.user_photo.image-circle{src: "https://lh3.googleusercontent.com/OFx6xjhl0VlC7VSSt52JE8xP0qpx84h2qWbCJC1c0_rA8PeqNpVIMEsxS7twNnVjAyEqChq9QKhD6tWGFU_70XL94nnilkYRIgk8kQRcA3QetWTOGFxNu6d-EadgyCucOAgscjP3xpUoa6XCTnZZaMm3ncsLa9Mhqlni90pJFOyN-C8CyXzqsxAIVJ-gfN2CTaxaX9o6pEyrAz7XT9xFVGh6Hdzxg42H4Pdnms0ouDGBAj5L6XBTeTgpes9vmm7KtI83xEOvZnI5PTk6CZFcQDjKkjFhtgn0YJsKVlqkbX88VApdeo1Tx-H1T7_nlwARRR5hFq1gNRuJ--0-l4Cl4HPL9B3-7FXexVOG_yUgTgGms3g_Dj51-HAPjdrM_umWq4z9rChoPkewg9Ps0aXtaLlSbMaxO-S__518TDoY82MdF6MNdzbInDNqJ32LeZK1o4DRAEaK8e_NziZTq2mNtFygK3u_1c-auMz_DTTPsksSxu6HxfbcaAI_l215RPZamvhTIpSFSnYsF9X1xYh520cZop5dxw1qhwCCOzhpdHC1XnQHktzhkz1xmA9jnqjfOzOiflLqdkkhXL-O1fkJAaxMEq9M83FXm6CzcbCHC7TuDHSeRoUqypUVfGMvzqGQ9sXJLKo6aSxEwX71fHanoWI0ezRJeQg=w377-h669-no"}/
+                .info_inner
+                  .user_info01
+                    %span{limit_length: "5"}
+                      Yuki
+                    %span
+                      21歳
+                    %span{limit_length: "8"}
+                      北海道
+                  .user_info02
+                    %p.message.text_ellipsis.ng-hide
+                      マッチングが成立しました！
+                    %p.message.text_ellipsis.ng-hide
+                      Facebookが公開されました！
+                    %p.message.text_ellipsis.ng-hide
+                      スタンプを送信しました。
+                    %p.message.text_ellipsis.ng-hide
+                      スタンプが届きました。
+                    %p.message.text_ellipsis.ng-hide
+                      写真を送信しました。
+                    %p.message.text_ellipsis.ng-hide
+                      写真が届きました。
+                    %p.message.text_ellipsis
+                      相手へ送信したメッセ15文字分？
+                    %p.message.text_ellipsis.ng-hide
+                      メッセージが届いています。
+                    %p.message.text_ellipsis.ng-hide
+                      メッセージ交換をしていません。
+                  %p.login_time
+                    3/3 18:24
+            .ps-scrollbar-x-rail{:style => "left: 0px; bottom: 3px;"}
+              .ps-scrollbar-x{:sytle => "left: 0px; width: 0px;", :tabinex => "0"}
+            .ps-scrollbar-y-rail{:style => "top: 0px; right: 3px;"}
+              .ps-scrollbar-y{:sytle => "top: 0px; height: 0px;", :tabinex => "0"}
+          .box_message_all_more
+            %a.link_all_more{:href => "#/message"}
+              すべて見る

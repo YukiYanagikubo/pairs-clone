@@ -1,0 +1,220 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+.common_box_inner_pddtp0 {
+  padding: 0 0 20px;
+  background-color: #fff;
+  .mb10 {
+    input[type=checkbox] {
+      display: none;
+    }
+    input[type=checkbox]:not(.not_use_default):checked+label {
+      color: #00abb3;
+    }
+  }
+}
+.common_table_b {
+  th {
+    font-weight: 400;
+    width: 25%;
+    border-width: 0 1px 1px 0;
+    border-style: solid;
+    border-color: #e1e3e5;
+    white-space: nowrap;
+  }
+  .v_align_top {
+    vertical-align: top;
+  }
+}
+.link_change_mail {
+  text-decoration: underline;
+  color: #53b7bb;
+  img {
+    height: 15px!important;
+    width: 15px!important;
+  }
+}
+.hasCustomSelect {
+  -webkit-appearance: menulist-button;
+  width: 174px;
+  height: 31px;
+  font-size: 12.5px;
+  color: #8d9399;
+  background-color: #fff;
+}
+
+//各種設定ページメイン
+.common_page_header {
+  margin-bottom: 12px;
+  .page_tile {
+    font-size: 16px;
+    vertical-align: middle;
+    color: #8d9399;
+  }
+  .icon_square {
+    padding-left: 10px;
+    border-left: 5px solid #cbced0;
+  }
+
+}
+
+//各種設定ページ追加要素
+#box_offline_female,
+#box_offline_male {
+  display: none;
+}
+#modal_community_about {
+  position: absolute;
+  width: 600px;
+
+  top: 50px;
+  left: 0px;
+  right: 0px;
+
+  margin: auto;
+}
+.box_modal_window {
+  position: absolute;
+  z-index: 2001;
+  letter-spacing: .5px;
+  box-shadow: 0 0 8px rgba(0,0,0,.2);
+  &.modal_fixed {
+
+    position: fixed;
+    top: 100px;
+
+    &.modal_only_premium {
+      z-index: 10000;
+    }
+  }
+  .box_modal_window_inner {
+    position: relative;
+    box-sizing: border-box;
+    width: 600px;
+    padding: 28px;
+    border-radius: 4px;
+    background-color: #fff;
+  }
+  .modal_title {
+    margin-bottom: 15px;
+  }
+  .modal_text_a {
+    font-size: 1.5rem;
+    font-size: 15px;
+    margin-bottom: 15px;
+    text-align: center;
+    em {
+      color: #ed4655;
+    }
+  }
+  .modal_sub_title {
+    font-size: 1.8rem;
+    font-size: 18px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    padding-left: 8px;
+    color: #00abb3;
+    border-left: 4px solid #00abb3;
+  }
+  img &.mb10 {
+    height: 191px;
+    width: 529px;
+  }
+}
+.bg_overlay,
+.modal_overlay {
+  position:fixed;
+  // z-index: 2000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255,255,255,.7);
+}
+.ribbon_title {
+  @include ribbon_title_before();
+  @include ribbon_title_after();
+  font-size: 1.8rem;
+  font-size: 18px;
+  line-height: 1.0;
+  position: relative;
+  margin: 0 0 10px;
+  padding: 15px 0;
+  text-align: center;
+  color: #fff;
+  &.ribbon_blue {
+    background-color: #00c4cc;
+  }
+  &.ribbon_gold {
+    background-color: #dbb41c;
+  }
+}
+
+//各詳細ページ追加要素
+.box_setting_view .box_block_user_list {
+  margin: -20px 0 30px;
+  .user_item {
+    padding: 14px 26px;
+    border-bottom: 1px solid #ceced0;
+    @include clearfix();
+    img {
+      width: 64px;
+      height: 64px;
+    }
+  }
+  .user_photo {
+    margin-right: 10px;
+    vertical-align: middle;
+  }
+  .user_info {
+    font-size: 1.2rem;
+    font-size: 12px;
+    display: inline-block;
+    vertical-align: middle;
+    &.hide_item {
+      margin-top: -30px;
+    }
+    strong {
+      font-size: 1.6rem;
+      font-size: 16px;
+      font-weight: 700;
+    }
+  }
+  .button_cancel {
+    float: right;
+    margin-top: 14px;
+  }
+}
+.box_community_pager {
+  &.box_pager {
+    @include clearfix();
+    .pager_pre {
+      float: left;
+    }
+    .pager_next {
+      float: right;
+    }
+    .pager_nums {
+      text-align: center;
+      .pager_num {
+        display: inline-block;
+      }
+    }
+  }
+}
+.box_modal_window {
+  .modal_button_area button,
+  .modal_button_area a {
+    display: inline-block;
+    margin: 0 10px;
+  }
+  &.modal_fixed {
+    &.modal_animation {
+      &.modal_only_premium {
+        width: 600px;
+      }
+    }
+  }
+}

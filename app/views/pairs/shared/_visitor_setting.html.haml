@@ -1,0 +1,23 @@
+.common_page_box
+  %p.common_title
+    足あと設定
+  .common_box_inner
+    %p.common_inner_title
+      あなたの足あと
+    .visitor_setting_item.form_radio
+      %p.parts
+        %input{class: "radio", type: "radio", name: "hide", id: "a1", value: "1"}
+        %label{for: "a1"}
+          残す
+      %p.parts
+        %input{class: "radio", type: "radio", name: "hide", id: "a2", value: "2"}
+        %label{for: "a2"}
+          残さない
+    %p.common_text.mb40
+      「残す」に設定するとお相手のプロフィールを訪問した際、お相手の「足あと」ページにあなたの訪れた日時とプロフィールの一部が表示されます。
+      %br
+      「残さない」に設定するとお相手のプロフィールを訪問した際、お相手の「足あと」ページにあなたの情報が表示されなくなります。
+    .common_button_area.mb30
+      %p.button_item.w30p
+        %a{href:"../", class: "button_a button_blue_a setting_submit"}
+          上記の内容で更新する

@@ -1,0 +1,70 @@
+.ui-view_class
+  .main.box_community_view.contents_padding
+    .common_page_header
+      = render partial: "common_page_header"
+    .data-community-search-area
+      .box_community_header.common_inline_box
+        = render partial: "box_community_header"
+    .data-community-result-list
+      - if @communities_result.present?
+        .box_community_category
+          .community_category_header
+            %ul.breadcrumb_list
+              %li.toggle.keyword
+                %em
+                  =search_input
+            %p.community_count
+          = paginate(@communities_result, theme: "patern_b")
+          .community_list_box
+            = render partial: "communities_list", locals: { communitiess: @communities_result}
+          = paginate(@communities_result, theme: "patern_b")
+          / 未実装機能の為、一時的に非表示
+          / .box_community_color_note
+          /   %ul.color_notes
+          /     %li.color_note_item.color_joined
+          /       参加しているコミュニティ
+          /     %li.color_note_item.color_created
+          /       作成しているコミュニティ
+      - else
+        .box_community_not_found.common_page_box
+          %p.common_title
+            コミュニティ検索結果
+          .common_box_inner
+            %p.not_found_title
+              「
+              %em
+                =search_input
+              」に該当するコミュニティは見つかりませんでした。
+            %p.text_center.mb30
+              %img{src: "https://lh3.googleusercontent.com/oJSsLQLsWDdeN_awnv4fwTsOJ6Dc7vrwx5dJHYsnwa6qTXQJcsYzO6dwpI7iOqZsVJ33kC2r3MWvnGs1x6zUopAOq0mEpzFblOfKdwGACqUkuLPWWp6iKgJ_FBkD452U6jEk15pMk2t3s7mVna7KUmzV5mRY6F6HlHcQdboSzD4-HO1BO9arO8DBDKBFEPd-hgkusXiAeKS47EKfmoW--IfdO7MI2nn1UR33niPciOmIwPMZqUbgqDb748cWhJhUcxcslA2ABvUfKczZwo_J4dozmWEkegxTF21uKp3oWbvceYPEGsYasGkAwsyaZrOdYG12wlLlf7vbCIgw_QR93Cj6TAkQNf_5vggS4Rvxmu2wjfAPrT9y_MqDrxHdeJhwMMNNew7uW_ghY3Vcsa6lFtFDiWYQnWOOmWhf48nkSwiaKjXxObbKRl7jAXcmqB_V7vpNuun0N2iBfwnqia-hzC_4tLPa4ZD7_JeKTFNy4L18YVF47V-m-u2bqYskmP8-HGQyF9SmG6CItH6lw8hWSI2-qVgowgLAffSkKdEfKZ_T4CeDSGyYGDCW-4HWwXBUEt7HqbjU_6rm0e5WBq3aYkMImEe3s8eti7-8spuCaXRZh8kEc8N2JYbUMNOQFkEs8cfG6Fh5cTzu9dtGNSN1bXU9ZLinxSTy=w529-h191-no"}
+            %p.not_found_text
+              「
+              %em
+                =search_input
+              」に関するコミュニティを作成してみましょう！
+            .common_button_area.mb20
+              %p.button_item.w60p
+                = link_to "新しいコミュニティを作成する", community_create_path, class:"button_e button_blue_a"
+  .box_community_not_found.hide
+  /本来のクラス名は『 .box_community_not_found.common_page_box.hide』
+  .data-community-head-communities
+    .box_other_community_category
+      %ul.category_list
+        %li.category_item.popular_item
+          %a{href: "/community#popular"}
+            %img.category_img.image-round{src: "https://lh3.googleusercontent.com/ruCiHVyELRpiI1ObRiRrUhislsKMHAbAAIXi2qJSuGKyJFecf48EBCBi8Xd5K4LDgy8canfETtygIkcd73s-85_ryWC-3VmbWBalZ-wjQf508CAkRvRs71-P0X59-3u4SjE-5BVdBn422sl__4a8Ihukwfq2TqACx5CVPydiMnZ0uOrQ66m63LKDr_3tXdH06rgjkOcjRTPNuSF3xSOZV8vTqQ2ei_CzZjTvKNgN0hDVZ86tMdgXJF-1h82jszrawUXb1lHh1GWe_TtIxHPMMTLZEPfuyRDE6r5fvg0fyinEkHr82LelZqDD4rxsZOonwnPgxLaGgQBhei2FJfxiC4Hvj9iczeO1FKFBmXq9mmq4K9jWcT2wgOVOUg1pTjAZBVfTDrJDV8EhrnTK3DgsKWsDIE18tn59ub8M6olTNtVJMIIgIL5oS3fgCr7zhgaycmoDcqPxryAlniMj00Uas0p2_gCUCoXL-HJ4hrfDLJ9PTwzOyLnoSkZ_EjokJUFuh7NHVCCDZWxUd8BJsLk5slNMSEmYF5-dAdELcvdttHr-pDO6Q8zawK6GuErG-gX-fQi-F5oKdrtfB3Eqj02fDOiP7abHCvzKc_R2P4fQlybChU714p0aAMuGmUOH8v2flsYCOZ3EdGUuB1SJ_hkOLoQbnAYbP8UL=s46-no"}
+            / %span.category_title 人気コミュニティを見る→
+            %span.category_title 作成されているコミュニティを見る→
+        / ロジックが確立されていない為、コメアウト
+        / %li.category_item.recommend_item
+        /   %a{href: "/community#recommend"}
+        /     %img.category_img.image-round{src: "https://lh3.googleusercontent.com/R7BMGtLQdKJLzsUSWFlVrhAas6xH0yuCaJf_MHi-2KAwpz7YjxBWhP4vNZ2GdESpvEfJhnS5w65G6IFx7ODRK8PDfPyzEc6rqRTtmvtQEyUnSQQlxkTQePXv89r9JDwsq8LA4_XOM6-k_HKWlorWU9YSjdIFlOfQzCAp7yVatN5ny1U8IzLcfkXpa22E-3jLcDS6v46ncttwteQf5y3Pjdatu1zh9r9JpprVOax-x-QeqfrHcFcKe2WM1Vtr0rjj7r93SW3M1riinbmE4m3Jf2j6qw9V9xB8Y1h18FRSY6HJPD8fhaFCToqmw7AB9G1jqwiqkohk6s_fgfHAs3gdA9iV-KR0207lO2o90qMzWqpDnkzJJ8Nydqc4OnrT_jjfbKCuq47_FSSc8fdavQ7mGYOnx79G8rMEF02X4htQmfUkKMYGCw0mQ1d9Fcnt5hGMA1Ro4Xv1wIQlud3_YS3LNMtvuL-zPhE1-7YC-Wr_MDkxMy2CwotVt7Pm_fugpQV22Bh1Lzv-t_a_UNu9roYEU5cN5I2nxY3qy5SpkETzQOYvGvSHsfj46c3yBHaSw3R0QP5Mlc8zhzwhjQ7llloBcKZ6snfNYRFecCUWy_KuC5P5K8wth7nT_JKK6KpZIImMrC4LJLbSSN9zcPl_Z9iCW2AwSe5crtPU=s46-no"}
+        /     %span.category_title おすすめを見る→
+        / %li.category_item.newcomer_item
+        /   %a{href: "/community#newcomer"}
+        /     %img.category_img.image-round{src: "https://lh3.googleusercontent.com/fwTSi41orPcbNu_QqjnyHnpf0yGRNf0iLaj7WfNx-wwHm9ZhKYEkWzxgTvSy34WCJ1DG_G1EBuIHs-Qjzbbu3NRS7LHoiN9APLoBk0PGMhK2U4JxY9IUeh_0pjmStB-1Xl3AvCL1f6WSxvS_hZFh-lY1iXlaekD3WQpOfVDDORWy8M5a2QIvk_sHMb_qknCRZ6mqY8mqRXh1L-NK1XFx4io_uLV6L8IJwBItBcf-q_Puem_dH56_NM-EywiUABMXxUBBu7Tcjze9aR9eqdhgGobb5pfxPujzGdBTZPgExRPUnvUStYITvI6IivA9FKmEInCNTLSJr3nr8JUO1CWX6LMvyOYyes9VcJBWKyNs1tfBTywDSg2tYMkmrlawjXUwtWxTEjwWI-4GpSC91hHHEP6Ok9sIiw_yIDiBQez-BLuCnl_c9YmvjzjYWNGrHtQ2wTEuidQxWayHP7VqK5PsTRihz2nuglujKrj4UiLbw19TWRWrYI_Q_kilYp4cf3LNnxE-mLTySij_rY-bM_yEli_I4ztQj_l69ZpYiggHJtIexoo0xjjY9bB_Fb7s9jeszrDqInSSjQarCS8Q91VGp1n4_DtctVB7qmvPuWXSuKyZ8-_4tvPzZ6Wac2cGtinCZW7XuSw3WOJw2Q3uw7InRFUJlUnmeUZX=s46-no"}
+        /     %span.category_title 新着コミュニティを見る→
+        / %li.category_item.fame_item
+        /   %a{href: "/community#fame"}
+        /     %img.category_img.image-round{src: "https://lh3.googleusercontent.com/LKqbXTTdgCAIPV47gUylCGuk_dN9z5_OsvzoVisDaj_NtJMT1c_PqVrFFIU4HpOn0FpPYAaxCKYUWN__83QTCFFnHDuaBC8BYAgFklB9lGGFRAcISkbGzmYGKsKimP6_26QEDqO1hdo_Xsp4c1e_i9lB9KzVaxH__CZQDjJ6L-HQvYNXcIfCMfyuvXPo6P57chJ7EnjsY2uL7JSLwZfYAan_zIdmt9jyUJg8RYJmqb1RyuV-mApszOKfuSknIIDBZqxoZUk9MLn_d5sTMGfVLunqQhfDwTmYDZP_2MWuS4m97KuQ_XpQLkZSFSb6OEBDF323juy1MEgpBwUfcubhGwi10muKZRIg_H1Ian22lLFRBytfU_0WgRkb67Qu7l3cmCBCdiDMXst7WVKdBZuswg03958wYY_3Xyw1kL9ueJKGoVSi-9Y3ccgaSAJg3wVLnyD8HIC6LZ_2oIGuo3n4-xXiC8lcP0cbAjPolph7Ruhb0mA1MfiKJpVcmJyDe9bc7sKhR09pOVqEMw4g61UqdlZOk_uc855_9ZA1gan0VcmWbsXSns2G0nNiy4X6r8-jThn-71OC35CuQJ-zz3-NcthASVpRCsDQWa0jOsCsYiCRYtwYfF7wHkKzvUzlxEnvdQ_vTtELF0qRxO4KNpXjRqLx2UqNNFlQ=s46-no"}
+        /     %span.category_title 殿堂入りコミュニティを見る→

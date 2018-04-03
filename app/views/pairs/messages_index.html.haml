@@ -1,0 +1,38 @@
+.main_contents
+  .main_contents_style
+    .main.box_message_view
+      %div
+        %div
+          .box_message_inner_left
+            .box_matching_summary
+              %p.matching_summary_text
+                %em
+                  %span 2
+                  人
+                の女性とマッチングしています。
+            %ol.box_matching_list.box_inner_scroll.ps-container.ps-theme-default
+              %li.matching_item.is_current
+                = link_to "" do
+                  = image_tag "https://lh3.googleusercontent.com/aID1PPSk4P-TlWFzYkJSB4_Dwdv3A3c5U0iZrEy6TXnyeJ4akneb7EVnuGrTIL6845cE7eFIiBUF53Yq2c6OIw8P2sv4hbZPC6_vNkZu7djY2O_OvPlmJFNwkn8kVBHzi1TaK5QItRieHFE-zT6cirS-G_sat3g632zGHQ4U20M1TUBv-qnBIFzefZVVgOhEgo_PLQO4_k4FCDukhdHZd5rIuAm65mPWqlWyzsjXXTvbovfT3mF9go9DeueTBj5SQahtC7Hy6o3HEyxm3i-10so_-xvK6N2CZE-v-bP5PPtTTcLQAHq-R5Z8NoeotpIZEOvArb8Xt2PRLPEtefK03iCJZBhJSmLopgtOocgsBJC-vVuz7WTI0qIG1DoLgFjwTvsHC0WfeSkLUeInYAQpFPW7l1WdK4LXJzrNdHqQ61-SFTuMiSLUYCczccuq_J0Br0dV9oihpXCpMHaprDuuf15QpD6JP1TdM8rLGdXgLXQWnhIDWvk0l_G7fhitky3CxadDsg30Ta7ApZoXVb5SSWP1VAUnmdT-bbAdPQbFsoWquM3Wem3J73843hyM5BK2qhH7NG3EgdBzvUu5DwvJWBOyROGSJpmrSqHYwpqGDlni4eGfwt_vPGz63o_K7bM2GbsqWL34JwsIslhtdVFDWcfLaG5elN7b=w204-h247-no", class: "user_photo image-circle"
+                  .info_inner
+                    .user_info01
+                      %span{limit_length: "5"} 生田絵梨花
+                      %span 21歳
+                      %span{limit_length: "8"} 東京
+                    .user_info02
+                      %p.message こんにちは！
+                    .login_time 3/18 13:24
+              %li.matching_item.is_current
+                = link_to "" do
+                  = image_tag "https://lh3.googleusercontent.com/QDOxZKqLTz8Dm3LDiMzgIB2QQUsaL9R6sMuXkDE7byacFnbXwzwkQ4gby_kPlbLBUs3JBnt9vAeDjC2q1l3ozUOa7B6HVmvPiunloNyzlwUNb7wsT69kIaIMxyUXm4hzsOGYbS5QslFGCcGzxXUktKG1kZnXeQhtDK2iKsgvJQdyGUPuHgrxTUkW1-7XeE8hUYwMebEO88uZONY8z4IsWmGZdQEKxqO8BclVkWGd4FzsVZiXVKFEwm6MtmSptU1nmFObV2Y_CSBUD1m-glIRVjmkzCxzutLPqGJKcoSNKCDA98PcxEI73CzKTHvkXYpMP8gnvEMk_kOUBdeNda7lvfJJJlMNTs99lxyaafntFLxjD6MPXueCMXVj0OgeaAd0zUGx6r7UZf-JK4dXbqZJgJ9UbEwwPYr1bVR92cot9OnOPrxl_xmezEJwK-90muQH_VZS-SGN2QEzNryAfW70PqrZcxD0wa0H4CWh68NnzXJ_NsEh2EGlHFJzLq6UCi8wGzPTd6b51QtAQTFcKG8_VJPdlAOB2il0scnVf6CVQKdHtv6nuiukydoUUcO4qOyidFXjm3saxxW3NRb9LAFpVUL33-oiHcvMf4qh5H3JPfFD1zqmCBsd4ZbQgkBx8xYotgZpJrU-7qq47GS_GXJIbFc34QABgPKX=w204-h247-no", class: "user_photo image-circle"
+                  .info_inner
+                    .user_info01
+                      %span{limit_length: "5"} 星野みなみ
+                      %span 21歳
+                      %span{limit_length: "8"} 東京
+                    .user_info02
+                      %p.message おはよう
+                    .login_time 3/18 13:24
+            .box_button_withdrawal
+              =link_to "退会者を表示しない","", class: "button_c button_white_a"
+          = render partial: "pairs/shared/box_message_inner_right"

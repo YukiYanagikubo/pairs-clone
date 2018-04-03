@@ -1,0 +1,167 @@
+.ui-view_class
+  .main.box_community_view.contents_padding
+    .common_page_header
+      = render partial: "common_page_header"
+    .data-community-search-area
+      .box_community_header.common_inline_box
+        = render partial: "box_community_header"
+    .community_input_box
+      .data-community-create-form
+        .common_page_box.community_form_box
+          %p.common_title
+            新しいコミュニティを作成する
+          .comon_box_inner
+            %p.common_inner_title
+              コミュニティを作成するメリット
+            %p.text_center.mb20
+              %img{src: "https://lh3.googleusercontent.com/saXRVMBTkmrVK9zm7Ubb54VOgo87Us_gN8fjjYIFiTm4PL9vcdaFLEYQf8ewc8EvBUQ36VAiC0TX4ckm9MnnuBJFVHoyrEmVoVdoTELhQmgRHd462gPIQqFMh4zVE-6XWRRHh43hASQ4V9zf3rd1HiQ1NBbvv1YdoeGHKr_WXyX0H7FhLfj2Y5SGUDQj7vf_UAYkX3xT9hHp7OZpJ_R4boMK4ki23fkBjoQEsUxAEwAL8QtpqFt65xjy8yWY8GYHdVEmXWtOtCB-0X7rEzmfd5aZbGle6g8iEx_-05IBcA45tb65gpnQVmRnswGIn6NJruYAnfvvKfLecoILmNRdL4KhfBio-uQc8t1s75nVo0bqRNx44mqJ6lbc-ed9m0PRfm7j9EFLfTriU4XYkFRxxg6E9_rK-S4MQA367sMDsmos5XCUAS9wrNMBAZdEUezSV3cTsOlZhc5omincFSonYcxPIF72V7FrFvPeGCXIsn6NRpTZmyiWTJ3yhZqvli5yL9D9j0kA18FJj2yP775cx55IT_C2ehsWdNQ3ETH2OUo5shgGLibB4tEJfqTR1EO8QHbpY426Hi0NXXGIG586oNH2GR_sSs8j8-KO0u27Ew9b9P5UR1PUXpAPK0023vpSbgqwJakTqvnTNH48u2SUqKlP4AxEGlXR=w640-h90-no"}
+            %p.common_text
+              %em
+                ※作成する前に、似たコミュニティがないかご確認ください。
+              %br
+              %em
+                ※コミュニティは、一度作成すると変更することができません。
+            = form_for @community, html: {class: "community_form"}, url: {action: "confirm"} do |f|
+              .common_table_b.common_form
+                %table
+                  %tbody
+                    %tr
+                      %th.community_name
+                        %p
+                          コミュニティ名
+                          %em.required
+                            必須
+                        %p.fnt_base03.fnt12
+                          全角20文字まで
+                      %td.community_name
+                        = f.text_field :community_name, class: "input_name input_search_word", placeholder: "コミュニティ名を入力する", maxlength: "20"
+                        / 下記２箇所の『%br』は暫定対処
+                        / %br
+                        / %em.input_error.error_empty_name.required.hide
+                        /   ※コミュニティ名を入力して下さい。
+                        / %br
+                        / %em.input_error.error_over_name.required.hide
+                        /   ※コミュニティ名は全角20文字までです。
+                    %tr
+                      %th.community_category
+                        カテゴリ
+                        %em.required
+                          必須
+                      %td.community_category
+                        = f.select :category, Community.categories.keys.map {|k| [Community.categories_i18n[k], k]}, class: "input_category_id", prompt: "カテゴリを選択する"
+                        / %span.customSelect.customSelectChanged.input_category_id
+                        /   %span.customSelectInner
+                        /     カテゴリを選択する
+                        %p.fnt_base03.fnt12.mt10 カテゴリは、そのコミュニティの内容をよく表したものを選択してください。
+                        / %em.input_error.error_empty_category.required.hide
+                        /   ※カテゴリを選択して下さい。
+                    %tr
+                      %th.community_photo
+                        コミュニティの
+                        %br
+                        写真
+                        %em.required
+                          必須
+                      %td.community_photo
+                        = f.file_field :image, class: "input_photo", id: "community_photo_url"
+                        / %p.input_error.error_empty_photo.hide
+                        /   %em.required
+                        /     ※写真を選択して下さい。
+                        / %p.input_error.error_empty_not_photo.hide
+                        /   %em.required
+                        /     ※JPG/PNG/GIF形式の写真を選択してください。
+                        / %p.input_error.error_empty_over_photo.hide
+                        /   %em.required
+                        /     ※5MB以内の写真を選択して下さい。
+              .common_button_area
+                - @community.errors.full_messages.each do |community|
+                  %p.input_error
+                    %em.required
+                      ※#{community}
+
+                %p.button_item.w50p.pt15
+                  = f.submit "このコミュニティを作成する", class: "button_a button_blue_a input_community"
+      .common_page_box.community_rules_box
+        %p.common_title
+          【※必ずお読みください】コミュニティ作成のルール
+        .common_box_inner
+          %p.common_text.mb40
+            お客様に安心して使っていただけるよう、コミュニティの作成にはルールがあります。コミュニティを作成する前に、ルールをお読みください。
+          %p.common_inner_title
+            場所に関するコミュニティのルール：日時や頻度を一緒に含めることはできません
+          %p.common_text
+            具体的な地名、お店の名前など、場所についてのコミュニティを作る場合、コミュニティ名には、日時や頻度を表す言葉は含めることができません。
+          %p.common_text
+            日時・頻度には、以下のようなものがあります。
+            %br
+            例：「3月9日」「日曜日」「平日」「お休み」「いつも」「よく」「朝」など
+          %p.common_text
+            ただし、「カフェ」や「公園」など具体的ではない場所の場合は、この制限はありません。
+          %p.common_text
+            %span.fnt_blue02 OK例 (日時／頻度を含まないのでOK)
+            %br
+            %span<>
+              「
+              %em<> スターバックスコーヒー
+              でまったり♪」 「
+              %em<> 皇居
+              でマラソンしてます♪」
+          %p.common_text
+            %span.fnt_blue02 OK例 (具体的でない場所なのでOK)
+            %br
+            %span<>
+              「
+              %em<> お休み
+              は
+              %em<> カフェ
+              でまったり♪」 「
+              %em<> 日曜
+              は
+              %em<> 公園
+              でマラソンしてます♪」
+          %p.common_text.mb40
+            %span.fnt_blue02 NG例
+            %br
+            %span<>
+              「
+              %em<> お休み
+              は
+              %em<> スターバックスコーヒー
+              でまったり♪」 「
+              %em<> 日曜
+              は
+              %em<> 皇居
+              でマラソンしてます♪」
+          %p.common_inner_title
+            会社／学校などの団体に関するコミュニティのルール：できるだけ大きなまとまりで
+          %p.common_text
+            会社・学校などの団体に関するコミュニティの場合は、できるだけ大きなまとまりでコミュニティを作成してください。
+          %p.common_text
+            例えば、会社であれば、部署・営業所名のコミュニティは作れません。必ず会社名にしてください。
+          .common_table_a
+            %table
+              %tbody
+                %tr
+                  %th 大きなまとまりの例(OK例)
+                  %th 大きなまとまりではない例(NG例)
+                %tr
+                  %td 会社
+                  %td 部署、営業所、役職、入社年次、支店名、店名など*
+                %tr
+                  %td 学校
+                  %td 専攻、授業、コース、サークル、研究室、ゼミ、卒業年次など
+          %p.common_note.mb40
+            * コミュニティの対象が、主に従業員ではなく、お客さんを対象としているものに関しては、OKとなる場合があります。
+          %p.common_inner_title
+            その他のご注意
+          %p.common_text
+            そのほか、以下のような内容を含むコミュニティは作成できません。
+          %ul.common_list
+            %li 公序良俗に反するもの
+            %li 性行為を連想させるもの
+            %li 第三者の権利を侵害するもの
+            %li 利用規約に反するもの
+            %li 出会い系サイト規制法の施行規則第5条第4項で定める「特定情報」にあたるもの
+            %li その他Pairsカスタマーサポートが不適切と判断したもの
+          %p.common_text
+            なお他のユーザーなどから通報があった場合、Pairsカスタマーサポートがコミュニティの内容に問題があると判断した場合、事前のご連絡なく、削除・変更等を行う場合があります。

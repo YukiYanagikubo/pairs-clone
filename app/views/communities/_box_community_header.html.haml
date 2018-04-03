@@ -1,0 +1,15 @@
+- if @path.is('#index')
+  = form_tag(search_communities_path, method: "get", class: "form_search_word") do
+    .search_input
+      = text_field_tag :community_name, params[:community_name], placeholder: "コミュニティを検索", class: "input_search_word pr50"
+      = submit_tag "検索", class: "button_search button_f button_blue_a"
+
+
+- else
+  = form_tag(search_communities_path, method: "get", class: "form_search_category") do
+    .category_select
+      = select_tag :category, options_for_select(Community.categories.keys.map {|k| [Community.categories_i18n[k], k]}), prompt: "カテゴリから探す", id: "selected_value"
+  = form_tag(search_communities_path, method: "get", class: "form_search_word") do
+    .search_input
+      = text_field_tag :community_name, params[:community_name], placeholder: "コミュニティを検索", class: "input_search_word pr50"
+      = submit_tag "検索", class: "button_search button_f button_blue_a"

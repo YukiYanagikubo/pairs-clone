@@ -1,0 +1,59 @@
+.box_message_inner_right
+  %div
+    %div
+      .box_message_exchange_title
+        .user_name
+          = link_to "生田絵梨花 21歳 東京", ""
+        %div
+          =link_to "みてね！","", class: "button_please_check button_c button_like_d button_orange_a"
+      #message_scroll.box_message_exchange.box_inner_scroll.scroll_to_bottom.ps-container.ps-theme-default
+        .messages_dates
+          %p.hr_date
+            = @message.created_at
+          .you_message
+            .box_message_info
+              %p.message_text
+                = @message.content
+              %p.message_already_read 既読
+              %p.message_send_time 23:12
+        / .messages_dates
+        /   %p.hr_date 3/5(月)
+        /   .their_message
+        /     =link_to "" do
+        /       =image_tag "https://lh3.googleusercontent.com/aID1PPSk4P-TlWFzYkJSB4_Dwdv3A3c5U0iZrEy6TXnyeJ4akneb7EVnuGrTIL6845cE7eFIiBUF53Yq2c6OIw8P2sv4hbZPC6_vNkZu7djY2O_OvPlmJFNwkn8kVBHzi1TaK5QItRieHFE-zT6cirS-G_sat3g632zGHQ4U20M1TUBv-qnBIFzefZVVgOhEgo_PLQO4_k4FCDukhdHZd5rIuAm65mPWqlWyzsjXXTvbovfT3mF9go9DeueTBj5SQahtC7Hy6o3HEyxm3i-10so_-xvK6N2CZE-v-bP5PPtTTcLQAHq-R5Z8NoeotpIZEOvArb8Xt2PRLPEtefK03iCJZBhJSmLopgtOocgsBJC-vVuz7WTI0qIG1DoLgFjwTvsHC0WfeSkLUeInYAQpFPW7l1WdK4LXJzrNdHqQ61-SFTuMiSLUYCczccuq_J0Br0dV9oihpXCpMHaprDuuf15QpD6JP1TdM8rLGdXgLXQWnhIDWvk0l_G7fhitky3CxadDsg30Ta7ApZoXVb5SSWP1VAUnmdT-bbAdPQbFsoWquM3Wem3J73843hyM5BK2qhH7NG3EgdBzvUu5DwvJWBOyROGSJpmrSqHYwpqGDlni4eGfwt_vPGz63o_K7bM2GbsqWL34JwsIslhtdVFDWcfLaG5elN7b=w204-h247-no", class: "their_photo image-circle"
+        /     .box_message_info
+        /       %p.message_user_name 生田絵梨花
+        /       %p.message_text こんにちは！
+        /       %p.message_send_time 23:13
+        / %p.to_profile
+        /   = link_to "生田絵梨花さんのプロフィールを確認する", ""
+      = form_for [@group, @message], html: {class: 'box_message_action'} do |f|
+        =f.text_field :content,class: 'textarea',placeholder: 'メッセージを入力する'
+        =f.submit "Send"
+
+        .box_message_action_inner
+          %ul.messege_option_list
+            %li.messege_option_item
+              %button.button_message_submit.button_b.button_blue_a{type: "submit"} 送信
+            %li.messege_option_item
+              %button.button_open_sticker_view.button_b.button_white_a{type: "submit"}
+            %li.messege_option_item
+              %button.button_photo_upload.button_b.button_white_a{type: "submit"}
+        .box_other_action
+          .other_action_block
+            = link_to "", class: "button_b button_white_a" do
+              %span 表示設定
+      .box_banner_a.mb15 ここに広告
+      .box_message_note
+        %p.message_note_title メッセージ送信時のご注意
+        .message_note_detail
+          %p.note_text メッセージを送る際は、以下のような点に気をつけてください。他のユーザーからの違反報告があった場合は、警告表示や強制退会となる場合もありますので、ご注意ください。
+          %ul.note_list.mb10
+            %li.note_item
+              %em メッセージには誠実に対応してください。
+              送信前に相手を不快にさせるような内容ではないか確認しましょう。実際に会うことになった際は、約束の場所・日時を守りましょう。
+            %li.note_item
+              %em ネットワークビジネス・不動産投資への勧誘、その他Pairsの趣旨から離れたメッセージの送信は、利用規約で禁止されています。
+            %li.note_item
+              %em Pairs内外に関わらず、上記のようなメッセージを受け取られましたら直ちに通報機能をご利用ください。
+          %p.note_text ※健全なサービスを運営する目的で運営者がメッセージの内容を確認・削除する場合があります。これに同意した上で送信してください

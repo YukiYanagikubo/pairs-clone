@@ -1,0 +1,133 @@
+.main.box_violation_view.contents_padding
+  .common_page_box
+    %p.common_title
+      違反報告フォーム
+    .common_box_inner
+      %p.common_text.mt10.mb20
+        ユーザーの皆さまにPairsを快適にご利用いただくため、
+        %a.link{href: "https://pairs.lv/#/static/termsofservice", target: "_blank"}
+          利用規約
+          %img{src: "https://lh3.googleusercontent.com/ShHUxBToZXl5H7jJqOPlmslDhSX1pj-BZXe9uqRrUu9S5fa6q9C6qsipCPEE13hDSanZnYfBN-HDe39J7zvZ4rVITPEUTfVZ4-ff4SeLjxeKEtMS8w-CKUwycKMLsa9uYxDBbfN0kfOesM-YUft99QmqKTH-eSAYLz0ARxwN8Z0XqrpABFIKiVSm0W-nEowfJj9eV7_S49PjKhUVVdmh4bKJF7dx3QrB0Rv_shQAEwPThtz8J8C_TptScKZSCntbIH1F9pWvtocknJ-dz8Ri_rkp8aX3-9aNT7_Vu-1gKM-_YfhsQb0Pmw4rmi11pCjzJfN_3XcOZnP1Pwfq2N5G9Z5bAXPbdO2Z8c7ntEIF6GN362yz80mGnE6Ts0mpzBt_mhMi_7H0uJajTaYJee5jDWS-_0o0dR--DmhLUh2fPyNHh3QzCEybeLCoZWb7gHh97AmRHlTWh1PIALGRaUKthW8AYW87cnp9tda82VfLGKpC3SA_7U3waG6gahSH6WeJuzyoL5RyVR6dg2qAHJLbqR6go7CbhKst9JboXojY0TuUqC223ui7ZBcaQGh69obwYX5kuMRZ1WmIxoeriBt8JFrfOv3AWXTF4T11616GL506WDTlxNNxMU75_9e0kl06AM7nw7EYBCGvSQvRaJyKqEE3jjDu14JM=w12-h9-no"}
+        に反していると思われる
+        %br/
+        ユーザーを発見した場合は、できるだけ具体的に以下のフォームにご記入ください。
+      %p.common_text.mb5.fnt12.ng-hide
+        %em ※「違反箇所」を選択してください。
+      %p.common_text.mb5.fnt12.ng-hide
+        %em ※「具体的な理由」を入力してください。
+      %p.common_text.mb5.fnt12.ng-hide
+        %em ※「具体的な理由」は200文字以内で入力してください。
+      .common_box_inner
+        %form#js_violation_form.hg-pristine.ng-valid
+          .common_table_b.common_form
+            %input#user_id{autocomplite: "off", name: "partID", type: "hidden", value: "<?($user->id) ?>"}/
+            %table.mb30
+              %tbody
+                %tr
+                  %th
+                    %p 報告する人
+                  %td
+                    %img{src: "https://lh3.googleusercontent.com/OFx6xjhl0VlC7VSSt52JE8xP0qpx84h2qWbCJC1c0_rA8PeqNpVIMEsxS7twNnVjAyEqChq9QKhD6tWGFU_70XL94nnilkYRIgk8kQRcA3QetWTOGFxNu6d-EadgyCucOAgscjP3xpUoa6XCTnZZaMm3ncsLa9Mhqlni90pJFOyN-C8CyXzqsxAIVJ-gfN2CTaxaX9o6pEyrAz7XT9xFVGh6Hdzxg42H4Pdnms0ouDGBAj5L6XBTeTgpes9vmm7KtI83xEOvZnI5PTk6CZFcQDjKkjFhtgn0YJsKVlqkbX88VApdeo1Tx-H1T7_nlwARRR5hFq1gNRuJ--0-l4Cl4HPL9B3-7FXexVOG_yUgTgGms3g_Dj51-HAPjdrM_umWq4z9rChoPkewg9Ps0aXtaLlSbMaxO-S__518TDoY82MdF6MNdzbInDNqJ32LeZK1o4DRAEaK8e_NziZTq2mNtFygK3u_1c-auMz_DTTPsksSxu6HxfbcaAI_l215RPZamvhTIpSFSnYsF9X1xYh520cZop5dxw1qhwCCOzhpdHC1XnQHktzhkz1xmA9jnqjfOzOiflLqdkkhXL-O1fkJAaxMEq9M83FXm6CzcbCHC7TuDHSeRoUqypUVfGMvzqGQ9sXJLKo6aSxEwX71fHanoWI0ezRJeQg=w377-h669-no"}/
+                    %span.ml10 Yukiさん
+                %tr
+                  %th
+                    %p 違反箇所
+                    %em.required 必須
+                  %td.form_radio.common_inline_box
+                    %p.parts.mt5.w50p.box_left
+                      %input#0.ng-pristine.ng-untouched.ng-valid.ng-empty{name: "258", type: "radio", value: "既婚者"}/
+                      %label{for: "0"}
+                        既婚者
+                    %p.parts.mt5.w50p.box_right
+                      %input#1.ng-pristine.ng-untouched.ng-valid.ng-empty{name: "259", type: "radio", value: "恋人がいる"}/
+                      %label{for: "1"}
+                        恋人がいる
+                    %p.parts.mt5.w50p.box_left
+                      %input#2.ng-pristine.ng-untouched.ng-valid.ng-empty{name: "260", type: "radio", value: "他サイトやビジネスへの勧誘"}/
+                      %label{for: "2"}
+                        他サイトやビジネスへの勧誘
+                    %p.parts.mt5.w50p.box_right
+                      %input#3.ng-pristine.ng-untouched.ng-valid.ng-empty{name: "261", type: "radio", value: "詐欺行為"}/
+                      %label{for: "3"}
+                        詐欺行為
+                    %p.parts.mt5.w50p.box_left
+                      %input#4.ng-pristine.ng-untouched.ng-valid.ng-empty{name: "262", type: "radio", value: "商売利用目的"}/
+                      %label{for: "4"}
+                        商売利用目的
+                    %p.parts.mt5.w50p.box_right
+                      %input#5.ng-pristine.ng-untouched.ng-valid.ng-empty{name: "263", type: "radio", value: "金銭目的"}/
+                      %label{for: "5"}
+                        金銭目的
+                    %p.parts.mt5.w50p.box_left
+                      %input#6.ng-pristine.ng-untouched.ng-valid.ng-empty{name: "264", type: "radio", value: "体の関係目的"}/
+                      %label{for: "6"}
+                        体の関係目的
+                    %p.parts.mt5.w50p.box_right
+                      %input#7.ng-pristine.ng-untouched.ng-valid.ng-empty{name: "265", type: "radio", value: "結婚歴、子供の有無の詐欺"}/
+                      %label{for: "7"}
+                        結婚歴、子供の有無の詐欺
+                    %p.parts.mt5.w50p.box_left
+                      %input#8.ng-pristine.ng-untouched.ng-valid.ng-empty{name: "266", type: "radio", value: "プロフィール画像の詐欺"}/
+                      %label{for: "8"}
+                        プロフィール画像の詐欺
+                    %p.parts.mt5.w50p.box_right
+                      %input#9.ng-pristine.ng-untouched.ng-valid.ng-empty{name: "267", type: "radio", value: "他プロフィール項目の詐欺"}/
+                      %label{for: "9"}
+                        他プロフィール項目の詐欺
+                    %p.parts.mt5.w50p.box_left
+                      %input#10.ng-pristine.ng-untouched.ng-valid.ng-empty{name: "268", type: "radio", value: "偽のアカウント"}/
+                      %label{for: "10"}
+                        偽のアカウント
+                    %p.parts.mt5.w50p.box_right
+                      %input#11.ng-pristine.ng-untouched.ng-valid.ng-empty{name: "269", type: "radio", value: "不適切な登録内容"}/
+                      %label{for: "11"}
+                        不適切な登録内容
+                    %p.parts.mt5.w50p.box_left
+                      %input#12.ng-pristine.ng-untouched.ng-valid.ng-empty{name: "270", type: "radio", value: "無断のドタキャン"}/
+                      %label{for: "12"}
+                        無断のドタキャン
+                    %p.parts.mt5.w50p.box_right
+                      %input#13.ng-pristine.ng-untouched.ng-valid.ng-empty{name: "271", type: "radio", value: "メッセージ内容が攻撃的"}/
+                      %label{for: "13"}
+                        メッセージ内容が攻撃的
+                    %p.parts.mt5.w50p.box_left
+                      %input#14.ng-pristine.ng-untouched.ng-valid.ng-empty{name: "272", type: "radio", value: "ストーカー行為"}/
+                      %label{for: "14"}
+                        ストーカー行為
+                    %p.parts.mt5.w50p.box_right
+                      %input#15.ng-pristine.ng-untouched.ng-valid.ng-empty{name: "273", type: "radio", value: "卑猥な言動"}/
+                      %label{for: "15"}
+                        卑猥な言動
+                    %p.parts.mt5.w50p.box_left
+                      %input#16.ng-pristine.ng-untouched.ng-valid.ng-empty{name: "274", type: "radio", value: "個人情報交換後に連絡が途絶えた"}/
+                      %label{for: "16"}
+                        個人情報交換後に
+                        %br>
+                        連絡が途絶えた
+                    %p.parts.mt5.w50p.box_right
+                      %input#17.ng-pristine.ng-untouched.ng-valid.ng-empty{name: "275", type: "radio", value: "その他"}/
+                      %label{for: "17"}
+                        その他
+                %tr
+                  %th
+                    %p 具体的な理由
+                    %em.required 必須
+                  %td
+                    %textarea.mb10.ng-pristine.ng-untouched.ng-valid.ng-empty{cols: "35", rows: "8", name: "body", id: "reason"}
+                    %p.common_note
+                      「メッセージで嫌がらせを受けた」「相手が既婚者だった」「他サイトのサクラ行為を行っていた」「ネットワークビジネスの勧誘をうけた」など、できるだけ具体的にお知らせください。
+            %p.common_inner_title
+              ご注意
+            %ul.common_list.mb40
+              %li 違反報告の際は、あなたの個人情報を入力しないでください。
+              %li
+                Pairs運営事務局にて内容を確認し、利用規約に違反している可能性があると思われる場合は、
+                %br/
+                警告マークの表示や、強制退会などしかるべき処置をとらせていただきます。
+              %li いただいた違反報告の内容に対して、個別にご回答はできませんのでご了承ください。
+              %li 違反報告をされても、お相手にはどなたにどのような内容でされたか等、一切連絡はいきません。
+            .common_button_area.mb40
+              %p.button_item.w50p
+                %button#report_violation.button_a.button_blue_a
+                  上記の内容で報告する
+  #autoload

@@ -1,0 +1,59 @@
+.profile__contents
+  .search_form
+    .search_title
+      %h1 プロフィール編集
+      = form_for @user, url: user_detail_path do |f|
+        %table
+          %tbody
+            %tr
+              %th
+                = f.label :height_id, "身長"
+              %td
+                = f.collection_select :height_id, Height.all, :id, :height, prompt: "選択してください"
+            %tr
+              %th
+                = f.label :income_id, "年収"
+              %td
+                = f.collection_select :income_id, Income.all, :id, :income, prompt: "選択してください"
+            %tr
+              %th
+                = f.label :residence_id, "居住地"
+              %td
+                = f.collection_select :residence_id, Residence.all, :id, :prefecture, prompt: "選択してください"
+            %tr
+              %th
+                = f.label :occupancy_id, "職業"
+              %td
+                = f.collection_select :occupancy_id, Occupancy.all, :id, :occupancy, prompt: "選択してください"
+            %tr
+              %th
+                = f.label :school_id, "学歴"
+              %td
+                = f.collection_select :school_id, School.all, :id, :school, prompt: "選択してください"
+            %tr
+              %th
+                = f.label :body_id, "体型"
+              %td
+                = f.collection_select :body_id, Body.all, :id, :body, prompt: "選択してください"
+            %tr
+              %th
+                = f.label :holiday_id, "休日"
+              %td
+                = f.collection_select :holiday_id, Holiday.all, :id, :holiday, prompt: "選択してください"
+            %tr
+              %th
+                = f.label :smoke_id, "タバコ"
+              %td
+                = f.collection_select :smoke_id, Smoke.all, :id, :frequency, prompt: "選択してください"
+            %tr
+              %th
+                = f.label :alcohol_id, "お酒"
+              %td
+                = f.collection_select :alcohol_id, Alcohol.all, :id, :frequency, prompt: "選択してください"
+            %tr
+              %th
+                = f.label :living_with_id, "同居人"
+              %td
+                = f.collection_select :living_with_id, LivingWith.all, :id, :living_with, prompt: "選択してください"
+        .search_footer
+          = f.submit "Send"

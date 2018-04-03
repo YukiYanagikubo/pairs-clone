@@ -1,0 +1,39 @@
+.ui-view_class
+  .main.box_community_view.contents_padding
+    .common_page_header
+      = render partial: "common_page_header"
+    .data-community-search-area
+      .box_community_header.common_inline_box
+        = render partial: "box_community_header"
+    .community_input_box
+      .data-community-confirm-form
+        .common_page_box.community_confirm_box
+          %p.common_title
+            確認画面
+          .common_box_inner
+            %p.common_inner_title
+              以下の内容でよろしいですか？
+              = form_for @community, html: { class: "common_table_b common_form"} do |f|
+                %table
+                  %tbody
+                    %tr
+                      %th コミュニティ名
+                      %td
+                        #{@community.community_name}
+                        = f.hidden_field :community_name # <=データ保持 %>
+                    %tr
+                      %th カテゴリ
+                      %td
+                        = t("enums.community.category.#{@community.category}")
+                        = f.hidden_field :category # <=データ保持 %>
+                    %tr
+                      %th コミュニティの写真
+                      %td
+                        = image_tag @community.image.url
+                        = hidden_field_tag :"cache[image]",@community.image.cache_name # <=データ保持 %>
+                .common_button_area.layout_horizontal
+                  %ul
+                    %li.button_item
+                      = f.submit "キャンセル", name: 'back', class: "button_a button_white_a back_button"  # <=戻る為のname %>
+                    %li.button_item.w30p
+                      = f.submit "コミュニテイを作成する", class: "button_a button_blue_a confirm"

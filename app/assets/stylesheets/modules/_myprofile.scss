@@ -1,0 +1,668 @@
+.box_mypage_header {
+  margin-bottom: 20px;
+  @include clearfix();
+  .button_profile_conf {
+    float: left;
+  }
+  .button_notification {
+    position: relative;
+    float: right;
+    padding: 10px 10px 10px 35px;
+    @include button_notification_nonactive();
+    &.is_new {
+      color: #f48d97;
+      &:before {
+        background-position: -32px -610px;
+      }
+    }
+    .badge_count {
+      font-size: 1.1rem;
+      font-size: 11px;
+      line-height: 1.0;
+      position: absolute;
+      top: -10px;
+      right: 14px;
+      display: inline-block;
+      padding: 3px 5px;
+      color: #fff;
+      border-radius: 10px;
+      background-color: #f48d97;
+    }
+  }
+}
+
+//『三角アイコンのベース』
+.box_mypage_detail .box_photo_request:before,
+.box_mypage_detail .box_photo_request:after {
+  position: absolute;
+  top: 100%;
+  left: 90%;
+  width: 0;
+  height: 0;
+  content: "";
+  pointer-events: none;
+  border: solid transparent;
+}
+
+.box_mypage_detail {
+  margin-bottom: 15px;
+  padding: 15px;
+  background-color: #f3f3f3;
+  .box_mypage_detail_inner01 {
+    margin-bottom: 10px;
+    @include clearfix();
+    .box_photo_request {
+      &:before {
+        margin-left: -11px;
+        border-width: 11px;
+        border-color: rgba(245,230,173,0);
+        border-top-color: #f5e6ad;
+      }
+      &:after {
+        margin-left: -10px;
+        border-width: 10px;
+        border-color: rgba(255,255,232,0);
+        border-top-color: #ffffe8;
+      }
+      position: relative;
+      margin-bottom: 15px;
+      border: 1px solid #f5e6ad;
+      background: #ffffe8;
+      .photo_request_text {
+        font-size: 1.4rem;
+        font-size: 14px;
+        padding: 10px;
+        text-align: center;
+        letter-spacing: 1px;
+        color: #788086;
+        em {
+          color: #ed4655;
+        }
+      }
+    }
+    .mypage_detail_inner_left {
+      float: left;
+      width: 230px;
+      .user_status {
+        margin-bottom: 10px;
+        background-color: #fff;
+        .user_status_title {
+          line-height: 1.0;
+          padding: 8px 12px;
+          border-bottom: 1px solid #e1e3e5;
+          @include clearfix();
+          p {
+            font-size: 1.4rem;
+            font-size: 14px;
+            float: left;
+            margin-top: 8px;
+          }
+          .button_status_conf {
+            float: right;
+          }
+        }
+        .user_status_label {
+          font-size: 1.6rem;
+          font-size: 16px;
+          font-weight: 700;
+          padding: 10px;
+          text-align: center;
+          &.is_free_member {
+            color: #788086;
+          }
+        }
+      }
+      .user_tweet {
+        margin-bottom: 10px;
+        padding: 0 0 20px;
+        background-color: #fff;
+        .user_tweet_title {
+          line-height: 1.0;
+          margin-bottom: 12px;
+          padding: 10px 12px 8px;
+          border-bottom: 1px solid #e1e3e5;
+          @include clearfix();
+          p {
+            font-size: 1.4rem;
+            font-size: 14px;
+            float: left;
+            margin-top: 5px;
+            @include edit_pen_small();
+            .link_user_tweet {
+              font-size: 1.2rem;
+              font-size: 12px;
+              display: inline-block;
+              text-decoration: underline;
+              color: #00abb3;
+            }
+          }
+          span {
+            .button_edit {
+              float: right;
+            }
+          }
+        }
+        .user_tweet_inner {
+          position: relative;
+          min-height: 84px;
+          padding: 0 12px;
+          .user_tweet_textarea {
+            font-size: 1.4rem;
+            font-size: 14px;
+            .user_tweet_text {
+              padding: 10px 5px 15px;
+            }
+          }
+          .user_tweet_note {
+            font-size: 1.2rem;
+            font-size: 12px;
+            position: absolute;
+            bottom: 0;
+            width: 205px;
+            text-align: center;
+            color: #00b8c0;
+          }
+        }
+      }
+      .visiter_summary {
+        padding-bottom: 10px;
+        background-color: #fff;
+        .visiter_summary_title {
+          font-size: 1.4rem;
+          font-size: 14px;
+          line-height: 1.0;
+          margin-bottom: 6px;
+          padding: 12px;
+          border-bottom: 1px solid #e1e3e5;
+        }
+        .visiter_summary_count {
+          line-height: 1.0;
+          padding: 12px;
+          color: #8d9399;
+          border-bottom: 1px solid #e1e3e5;
+          @include clearfix();
+          .text {
+            font-size: 1.3rem;
+            font-size: 13px;
+            float: left;
+          }
+          .count {
+            font-size: 1.6rem;
+            font-size: 16px;
+            float: right;
+            em {
+              color: #00abb3;
+            }
+          }
+        }
+        .user_list {
+          height: 190px;
+          margin: 0 10px 5px;
+          .user_item {
+            border-bottom: 1px dashed #e1e3e5;
+            a {
+              display: block;
+              padding: 6px;
+              img {
+                margin-right: 10px;
+                height: 35px;
+                width: 35px;
+              }
+              p {
+                display: inline-block;
+                vertical-align: middle;
+              }
+              .user_info {
+                font-size: 1.4rem;
+                font-size: 14px;
+                width: 90px;
+              }
+              .user_time {
+                font-size: 1.1rem;
+                font-size: 11px;
+                color: #8d9399;
+              }
+            }
+          }
+        }
+        .box_link_more {
+          padding-right: 10px;
+          @include clearfix();
+          a {
+            float: right;
+          }
+        }
+      }
+    }
+    .mypage_detail_inner_right {
+      float: right;
+      width: 450px;
+      .box_my_display_photo {
+        padding: 10px;
+        background-color: #fff;
+        .my_display_photo_title {
+          font-size: 1.4rem;
+          font-size: 14px;
+          margin: 4px 0 6px;
+          @include edit_pen_large();
+          .button_edit {
+            position: relative;
+            top: -5px;
+            float: right;
+            @include clearfix();
+            cursor: pointer;
+          }
+        }
+        .my_summary_info {
+          margin-bottom: 10px;
+          .my_display_photo_list {
+            text-align: center;
+            .my_display_photo_item {
+              &.is_current {
+                display: inline;
+              }
+              img {
+                max-width: 100%;
+                height: 390px;
+
+              }
+            }
+            .my_display_photo_item {
+              &.is_current {
+                display: inline;
+              }
+              img {
+                max-width: 100%;
+              }
+            }
+          }
+        }
+        .box_my_photo {
+          @include clearfix();
+          margin-bottom: 10px;
+          .box_my_photo_inner {
+            overflow: hidden;
+            width: 430px;
+            .my_photo_list {
+              width: 442px;
+              margin-right: -12px;
+              .photo_item {
+                position: relative;
+                float: left;
+                width: 98px;
+                margin-right: 12px;
+                cursor: pointer;
+                border-radius: 4px;
+                &.is_current {
+                  &:before {
+                    position: absolute;
+                    z-index: 100;
+                    top: 0;
+                    left: 0;
+                    display: block;
+                    width: 94px;
+                    height: 94px;
+                    content: "";
+                    border: 2px solid #f48d97;
+                    background: rgba(255,255,255,.5);
+                  }
+                }
+                .image-round {
+                  border-radius: 4px;
+                  img {
+                    height: 98px;
+                    width: 98px;
+                  }
+                }
+                .link_photo_edit {
+                  font-size: 1rem;
+                  font-size: 10px;
+                  position: absolute;
+                  z-index: 200;
+                  bottom: 0;
+                  left: 0;
+                  box-sizing: border-box;
+                  width: 100%;
+                  padding: 5px;
+                  text-align: center;
+                  color: #fff;
+                  background-color: rgba(0,0,0,.4);
+                }
+                }
+              }
+            }
+          }
+        .box_my_photo_pager {
+          @include clearfix();
+          .pager_pre {
+            float: left;
+            padding: 6px 10px;
+            &:before {
+              @include box_my_photo_pager_pre;
+            }
+          }
+          .pager_next {
+            float: right;
+            padding: 6px 10px;
+            &:after {
+              @include box_my_photo_pager_next;
+            }
+          }
+          .pager_nums {
+            font-size: 1.6rem;
+            font-size: 16px;
+            text-align: center;
+            .pager_num {
+              display: inline-block;
+              padding: 2px 6px;
+              &.is_current {
+                cursor: default;
+                pointer-events: none;
+                color: #00b8c0;
+              }
+            }
+          }
+        }
+      }
+      #modal_edit_photo{
+        position: absolute;
+        width: 600px;
+        top: 50px;
+        left: 0px;
+        right: 0px;
+        margin: auto;
+        display: block;
+        .box_modal_window_inner{
+          position: relative;
+          box-sizing: border-box;
+          width: 600px;
+          padding: 28px;
+          border-radius: 4px;
+          background-color: #fff;
+        }
+      }
+      .hide{
+        display: none;
+      }
+      .box_modal_window{
+        position: absolute;
+        z-index: 2001;
+        letter-spacing: .5px;
+        box-shadow: 0 0 8px rgba(0,0,0,.2);
+        .modal_close{
+          position: absolute;
+          top: -26px;
+          right: -26px;
+          img{
+            height: 53px;
+            width: 53px;
+            vertical-align: bottom;
+          }
+        }
+        .modal_sub_title_b{
+          font-size: 15px;
+          font-weight: 700;
+          line-height: 1.2;
+          margin-bottom: 20px;
+          padding-left: 8px;
+          color: #788086;
+          border-left: 4px solid #788086;
+        }
+        .box_edit_main_photo_status{
+          margin: 0 0 14px;
+          text-align: center;
+          .user_main_photo{
+            position: relative;
+            display: inline-block;
+            margin-bottom: 10px;
+            vertical-align: middle;
+            img{
+              box-sizing: border-box;
+              border: 6px solid #fff;
+              box-shadow: 0 0 2px #ccc;
+              height: 130px;
+              width: 130px;
+              vertical-align: bottom;
+            }
+          }
+        }
+        .text_center{
+          text-align: center;
+        }
+        .mb50{
+          margin-bottom: 50px!important;
+        }
+        .modal_button_area{
+          a{
+            display: inline-block;
+            margin: 0 10px;
+          }
+          .button_blue_a{
+            color: #fff;
+            background-color: #00b8c0;
+            box-shadow: 0 3px 0 #00abb3;
+          }
+          .button_a{
+            font-size: 14px;
+            line-height: 1.0;
+            padding: 12px;
+            text-align: center;
+            border-radius: 30px;
+          }
+          .w30p{
+            width: 30%!important;
+          }
+        }
+        .photo_edit_list_a{
+          text-align: center;
+          .photo_edit_item{
+            width: 20%;
+            margin: 0 2% 25px;
+            text-align: center;
+            vertical-align: top;
+            img{
+              box-sizing: border-box;
+              border: 6px solid #fff;
+              box-shadow: 0 0 2px #ccc;
+              vertical-align: bottom;
+              height: 110px;
+              width: 110px;
+            }
+          }
+        }
+        .box_edit_sub_photo_status{
+          position: relative;
+          display: inline-block;
+          width: 98px;
+          margin: 0 0 40px 18px;
+          .label_photo_delete{
+            font-size: 12px;
+            line-height: 2.4;
+            position: absolute;
+            z-index: 200;
+            top: -10px;
+            right: -10px;
+            width: 28px;
+            height: 28px;
+            text-align: center;
+            color: #fff;
+            border-radius: 14px;
+            background-color: #ed4655;
+            box-shadow: 0 0 4px #ccc;
+          }
+        }
+        .text_left{
+          text-align: left;
+        }
+        .mb30{
+          margin-bottom: 30px!important;
+        }
+        .text_center{
+          text-align: center;
+        }
+      }
+    }
+  }
+  .box_mypage_detail_inner02 {
+    @include clearfix();
+    .mypage_detail_inner_left {
+      float: left;
+      width: 288px;
+      .box_profile_detail {
+        margin-bottom: 15px;
+        padding-bottom: 15px;
+        background-color: #fff;
+        .detail_sub_note {
+          font-size: 1.2rem;
+          font-size: 12px;
+          padding: 15px 0 0 15px;
+          color: #00b8c0;
+        }
+        .borderb1 {
+          border-bottom: 1px solid #e1e3e5;
+        }
+        .detail_sub_title {
+          font-size: 1.4rem;
+          font-size: 14px;
+          padding: 15px;
+          color: #bec3c9;
+        }
+        .detail_item_list {
+          font-size: 1.3rem;
+          font-size: 13px;
+          padding: 0 15px;
+          @include clearfix();
+          .detail_item_title {
+            float: left;
+            clear: both;
+            width: 121px;
+            margin: 0 6px 8px 0;
+            color: #788086;
+          }
+          .detail_item_value {
+            position: relative;
+            min-height: 18px;
+            margin: 0 0 8px 120px;
+            margin-top: 10px;
+            cursor: pointer;
+            text-decoration: underline;
+            color: #00abb3;
+            &.is_no_select {
+              color: #ed4655;
+            }
+          }
+          .detail_item_age {
+            position: relative;
+            margin: 0 0 8px 120px;
+            margin-top: 10px;
+          }
+        }
+      }
+      a {
+        text-decoration: none;
+      }
+    }
+    .mypage_detail_inner_right {
+      float: right;
+      width: 392px;
+      .box_join_community {
+        @include box_join_community;
+        .join_community_title_b {
+          @include clearfix();
+          @include join_community_title_b;
+          .title_a {
+            margin-top: 8px;
+          }
+          .button_new_entry {
+            float: right;
+            vertical-align: middle;
+            @include clearfix();
+          }
+        }
+        .join_community_list {
+          @include clearfix();
+          border-bottom: 1px solid #e1e3e5;
+          .join_community_item {
+            @include join_community_item;
+          }
+          .about_community {
+            font-size: 1.4rem;
+            font-size: 14px;
+            line-height: 150%;
+            height: 110px;
+            padding-top: 40px;
+            text-align: center;
+            color: #8d9399;
+            a {
+              display: inline-block;
+              margin-top: 10px;
+              color: #00abb3;
+            }
+          }
+        }
+        .box_community_pager {
+          @include box_community_pager;
+          .pager_pre {
+            @include button_white_a_disabled;
+          }
+        }
+      }
+      .box_mypage_introduction {
+        padding: 20px 15px;
+        background-color: #fff;
+        .introduction_title {
+          font-size: 1.4rem;
+          font-size: 14px;
+          margin-bottom: 10px;
+          @include edit_pen_large();
+          @include clearfix();
+          .button_edit {
+            float: right;
+          }
+          span {
+            .ng-hide {
+            }
+            .about_judge {
+              font-size: 1.2rem;
+              font-size: 12px;
+              line-height: 1.0;
+              display: inline-block;
+              float: right;
+              margin-top: -2px;
+              padding: 5px;
+              color: #fff;
+              border-radius: 4px;
+              background-color: #f06976;
+            }
+          }
+        }
+        .introduction_note {
+          font-size: 1.3rem;
+          font-size: 13px;
+          margin-bottom: 10px;
+          padding: 6px 8px;
+          text-align: center;
+          color: #8d9399;
+          background-color: #fff8f8;
+          em {
+            font-size: 1.4rem;
+            font-size: 14px;
+            color: #ed4655;
+          }
+        }
+        .introduction_text {
+          font-size: 1.3rem;
+          font-size: 13px;
+          line-height: 1.8;
+          margin: 20px 0;
+          word-wrap: break-word;    /*単語の途中で改行するかどうかを考慮するプロパティ*/
+          overflow-wrap: break-word;/*上記に関連*/
+        }
+        &.empty {
+          text-align: center;
+          color: #8d9399;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,566 @@
+//Pairsポイント
+.icon_point {
+  @include icon_point();
+  &:before {
+    background-position: -28px -42px;
+    vertical-align: text-bottom;
+  }
+  &.valign_middle {
+    line-height: 24px;
+    height: 24px;
+  }
+}
+#purchase_point {
+  .purchage_list {
+    .icon_big_point {
+      @include icon_point();
+      &:before {
+        width: 40px;
+        height: 38px;
+        vertical-align: bottom;
+        background-position: -132px -644px;
+      }
+    }
+    .js_exchange_pairs_point {
+      height: 26px;
+      width: 180px;
+      background-image: url(https://lh3.googleusercontent.com/lEHWBEWSznHXu4F1lXpXMDYLRYTw_o_hs88WZRGj0hyv2F0_rpvjcbNa4dv4y6SFEgcOTAxKI6xaPcOAdUW2suUspQh7Qhx15h1cRsZWRCtXxJnSMb-Lxfj_r_gy7xrKcH36mTlhNGI5UMoaHK7Y3lzHnobpK_rYJ9LGKKWtjf4WZmgLqw-RgrGwC7aw8FANtJK2WCtojCGp10bhxwVzhbE6V_ihOoE1OZHcCss4QnpgnazSdu1WZyAM5Y9BscmRD6hiTKAQ2CMiDWTbQDrQRE9xosa-BkTKnozJ7cqAbVOBqPqQ2Lgk23EvQVaTlGNMgWOyNzdmwnT8dwH9T6D122YOOkQNZVOOD7G5XsyEt1jB7Mb4SK1OBrprXy7oKNuN6zJzJtxDMMip-KO4keFhz1VmZ4mQ13jG05oLU_uqCouvZv5q2iksbj-pJ6MNWC_Jw0vTaZ21mNj6VKd96nzxrAGMXT6KimADl4IlDCcHRQEBC9A2FiavB7g_NTO3sJxk5Kq1bfoCuA9MTpoMrX58P3jCT4Heer_6xkru_5DGlfuSDJXpODeZYk7cnflUp4XWSMBKu782VCNM-00yOaYKTKQqO0qG2K_clbuqW8TVvCFG9fZXTaR2MHAPnur-4xYkoU0M1x7MD-LF5N9ux-aZ5lWzrajeK5vx=w194-h150-no);
+      background-repeat: no-repeat;
+      background-position: center top;
+      &:hover {
+        background-position: center center;
+      }
+      &:active {
+        background-position: center bottom;
+      }
+    }
+  }
+  .notice {
+    margin: 10px 0px;
+    a {
+      float: right;
+      color: #00abb3;
+      text-decoration: underline;
+    }
+    .fnt16 {
+      @include clearfix();
+    }
+  }
+}
+
+.caution {
+  background-color: #f3f3f3;
+  margin: 10px;
+  padding: 10px;
+  p {
+    font-weight: 700;
+    margin-bottom: 5px;
+    margin-left: 24px;
+  }
+}
+.icon_like {
+  @include icon_like();
+  &:before {
+    background-position: 1px -45px;
+  }
+}
+.point_log_link {
+  font-size: 16px;
+  text-align: center;
+  text-decoration: underline;
+  color: #00abb3;
+  margin: 15px 0 25px;
+}
+
+
+//Pairsポイントall
+
+
+//ポイント履歴
+.box_news_header,
+.box_news_footer {
+  margin-bottom: 15px;
+  background-color: #f3f3f3;
+  padding: 7px 12px 9px;
+  .news_pager {
+    @include clearfix();
+    float: right;
+    vertical-align: top;
+    .pager_pre {
+      float: left;
+      border-radius: 30px 0px 0px 30px;
+      a {
+        display: block;
+        padding: 8px 12px 8px 16px;
+      }
+    }
+    .news_pager_item {
+      font-size: 12px;
+      line-height: 1;
+      display: inline-block;
+    }
+    .pager_next {
+      float: left;
+      border-radius: 0px 30px 30px 0px;
+      a {
+        display: block;
+        padding: 8px 16px 8px 12px;
+      }
+    }
+  }
+  .news_number {
+    font-size: 14px;
+    padding-top: 8px;
+    text-align: center;
+    vertical-align: middle;
+  }
+}
+.button_white_a {
+  &.disabled {
+    // position: relative;
+    top: 2px;
+    cursor: default;
+    background-color: #f3f3f3;
+    box-shadow: none;
+  }
+}
+
+
+//会員ステータス
+.like_icon {
+  position: relative;
+  @include icon_like();
+  &:before {
+    position: relative;
+    top: 3px;
+    display: inline-block;
+    width: 16px;
+    height: 17px;
+    margin: -5px 2px 0px 0px;
+    vertical-align: top;
+    background-position: 0px -45px;
+  }
+}
+.box_member_status_view {
+  .common_text {
+    &.mb0 {
+      margin-bottom: 0px;
+    }
+  }
+  .like_restore_text_box {
+    font-size: 12px;
+    margin: 0px 15px;
+    padding: 10px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: rgb(251, 212, 216);
+    border-image: initial;
+    border-radius: 4px;
+    background: rgb(255, 248, 248);
+    .box_header {
+      font-size: 14px;
+      color: rgb(240, 105, 118);
+      margin: 0px 0px 10px;
+    }
+    table {
+      .status_name {
+        font-size: 10px;
+        color: rgb(255, 255, 255);
+        margin: 2px 0px;
+        padding: 2px 4px;
+        border-radius: 3px;
+        background: rgb(240, 105, 118);
+      }
+      .status_top {
+        padding-bottom: 10px;
+      }
+      .premium_status_name {
+        font-size: 10px;
+        color: rgb(255, 255, 255);
+        margin: 2px 0px;
+        padding: 2px 4px;
+        border-radius: 3px;
+        background: rgb(219, 180, 28);
+      }
+    }
+  }
+}
+
+
+//レディースオプション
+.button_ladys_option {
+  @include button_ladys_option;
+}
+//プレミアムオプション
+.button_premium {
+  @include button_premium;
+}
+.button_paid {
+  @include button_paid;
+  cursor: pointer;
+  &:hover {
+    background-position: 0 -75px;
+  }
+  &:active {
+    background-position: 0 -150px;
+  }
+}
+.box_pay_plan {
+  position: relative;
+  margin-bottom: 20px;
+  .pay_plan_item {
+    position: absolute;
+    z-index: 10;
+  }
+  .premium_plan_item01 {
+    top: 235px;
+    left: 14px;
+  }
+  .badge {
+    position: absolute;
+    right: 0;
+    bottom: 25px;
+    height: 52px;
+    width: 52px;
+  }
+  .premium_plan_item02 {
+    top: 235px;
+    left: 256px;
+  }
+  .premium_plan_item03 {
+    top: 235px;
+    left: 495px;
+  }
+  .premium_plan_item04 {
+    right: 10px;
+    bottom: 33px;
+  }
+}
+.move_box {
+  .mb20 {
+    margin-bottom: 20px;
+  }
+}
+.button_premium_mini {
+  @include button_premium_mini;
+  &:hover {
+    background-position: 0 -60px;
+  }
+  &:active {
+    background-position: 0 -120px;
+  }
+}
+.button_premium_mini_blue {
+  @include button_premium_mini_blue;
+  &:hover {
+    background-position: 0 -42px;
+  }
+  &:active {
+    background-position: 0 -84px;
+  }
+}
+//有料会員とは？
+.button_paid_register {
+  width: 412px;
+  background-image: url(https://lh3.googleusercontent.com/Cw5karIgjkUC_ojqHLAW316AzdjtCKCYn_aE6GGlw34k6nBYR9pBr3L50NuIX8ON2kk9EDTrvJze0QeULbnesGqBWh3ftCiPiiT-PTHsUHWalmLcHwqc3XIjxefPgt_lxguzd8737v32-__kI5DA2xc6lhVxR5M_6oU8d5rn_mqNlpd1Ur8W5iDU_BhgtLMCElJr11cC4bvGMhqqjIW-pfn2_s_EuKYH822fyd5nOhnv22wCHQnG8PG_GDPIhkFHq2Cyr7RXChDfUeokHIvwOQahSsrnfkD9jukd04cOR26u_WgDYVfSh4BYA_q2byX3B6e5WQgfPfC0rAws2ibVS9EtgcrV3RAJPrhv0KLQS71J4GBAVI9xSm5vVTxVHRvRSQT2IUAHHU3pYLLBlS86M-bpbso8uDxYWDC71JpX09GAYUxIukZ1AFcS6s4qpyK3gIIxcg4PzBcIFRYJSy3w9h7drunuCX7XK_XpNQbZ-h79gH2QVJ6fq1VyDC0uiDj3HkNT2yN2sXAfd1GU9hIA_CKVrAgY-bHiuHg6P0c_4wyv6NtpOzZvrxuGlH8VL7GIWyscNCAOT05eKczyjTP-pApcCKvfc2ljIqOqVp8Bd3gCnTOZiTFBw_hin4XFVqxfCzq3bSB-pI5F2Rfo6HuUXy_K_KRh3A9q=w412-h225-no);
+}
+.button_paid {
+  @include button_paid;
+  &:hover {
+    background-position: 0 -75px;
+  }
+  &:active {
+    background-position: 0 -150px;
+  }
+}
+.button_paid_mini {
+  @include button_paid_mini;
+  position: relative;
+  &:hover {
+    background-position: 0 -60px;
+  }
+  &:active {
+    background-position: 0 -120px;
+  }
+}
+.button_paid_mini_blue {
+  @include button_paid_mini_blue;
+  &:hover {
+    background-position: 0 -42px;
+  }
+  &:active {
+    background-position: 0 -84px;
+  }
+}
+#select_plan {
+  .pay_play_list {
+    position: absolute;
+    top: 355px;
+    left: 30px;
+  }
+}
+#pay_plan_list {
+  .button_paid_mini{
+    position: absolute;
+    top: 614px;
+    left: -239px;
+  }
+  .pay_plan_item01 {
+    top: -273px;
+    left: 256px;
+  }
+  .pay_plan_item02 {
+    top: -273px;
+    left: 495px;
+  }
+  .pay_plan_item03 {
+    top: -273px;
+    left: 735px;
+  }
+  .pay_plan_item04 {
+    right: 5px;
+    bottom: 17px;
+  }
+}
+.common_inner_title {
+  font-size: 15px;
+  line-height: 1.2;
+  margin: 0 15px 20px;
+  padding-left: 8px;
+  color: #00abb3;
+  border-left: 4px solid #00abb3;
+}
+.common_sub_note {
+  font-size: 14px;
+  margin: 0 15px 20px;
+  padding: 15px;
+  color: #788086;
+  background-color: #f3f3f3;
+}
+//プライベートモードとは？
+.button_private_mode {
+  @include button_private_mode;
+}
+.private_mode_paid_header_male_view {
+  width: 721px;
+  height: 412px;
+  background-image: url(https://lh3.googleusercontent.com/C8a86oe0nn81xBMqVphNk8GpIvvE9g3wWXxYW31uD-LglOua6eQaTLk1Zf7vbY0df5sAWv3Bq1E_Jfg0Ma1e5VOIhcdmqAMGZDYtrFMSdVcbWlk2saVhN3_Y75SMPKuPL-wwZA6WvAcgn0zToKgh7CVprjmE75kgilJ4QjsVD2a1_oWXqVtptNo8QcM4aYO26j1NaAnG0JtlZh2qDjRiWBv3x-kXEoceYm4RJ3bmCQMm4rEKfrEDvOHjA2-Rueoup31FwVnFBsAnWG6kHzUsEfd1DJyltDhMq_IZ4vXsLbDns65X8TD_qXtTJP5F3YgOQKezhSXp80Kid1cp5RUNCI0IA3TI3vW7TVyr9rnYUBAcsxyfcgy8YZfpiCFGIhOfYzDH0GUpI1Q0MOSpsu_r1aPu7E-0DWLCsRl_gJ_3gZrXsKhv4rnMhqRZP5axI3Q-vD0IO09KstyYgZnatFSU597p8yg-kQRY1y97mg-7p6Xo-E8lUglXPgw-cbRJEV7xxfH2DF2jpySQ1WSk4MCegrSi6tkXNwHfJLaoJF3zLYu_noErlvelaPw62RItKJeydqVUoz-TTc-LwYoRM1yLIxxOlXHA-cyVnvLgbgy7Z2W6LTrF77hPFR7FJLZBkj5pb3PNn3UnH9exb_WbXmfYxS71loFy5n_8=w567-h324-no);
+  background-size: contain;
+  .private_mode_plan {
+    position: relative;
+    top: 261px;
+    left: 36px;
+  }
+}
+.box_pay_plan {
+  .top343 {
+    top: 343px;
+  }
+  .private_mode_item01 {
+    top:360px;
+    left: 18px;
+  }
+  .private_mode_item02 {
+    top:360px;
+    left: 262px;
+  }
+  .private_mode_item03 {
+    top:360px;
+    left: 505px;
+  }
+  .private_mode_item04 {
+    right: 17px;
+    bottom: 18px;
+  }
+  .button_private_mode_mini {
+    @include button_private_mode_mini;
+  }
+}
+
+//年齢確認
+.box_ageproof_view {
+  line-height: 1.5;
+  .head_image {
+    width: 720px;
+  }
+  .explain {
+    margin-top: 72px;
+    margin-bottom: 30px;
+    .row {
+      .numbering {
+        font-size: 28px;
+        font-weight: 700;
+        height: 50px;
+        text-align: center;
+        color: #54595d;
+        .number {
+          position: relative;
+          display: inline-block;
+          &:after {
+            position: absolute;
+            right: 0;
+            bottom: -28px;
+            left: 40%;
+            width: 20px;
+            height: 4px;
+            content: "";
+            border-bottom: 4px solid #71c3c8;
+          }
+        }
+      }
+      .title {
+        font-size: 24px;
+        font-weight: 700;
+        margin-top: 48px;
+        margin-bottom: 48px;
+        text-align: center;
+        color: #54595d;
+      }
+      .certificate-image {
+        margin-bottom: 32px;
+        text-align: center;
+        img {
+          width: 487px;
+        }
+      }
+      .description {
+        font-family: Hiragino Sans;
+        font-weight: 200;
+        margin-left: 48px;
+      }
+      a {
+        color: #53b7bb;
+      }
+    }
+    .border {
+      width: 620px;
+      height: 1px;
+      margin-top: 56px;
+      margin-bottom: 46px;
+      background-color: #ebeced;
+    }
+    .inner_row {
+      margin-bottom: 56px;
+      .text {
+        font-family: Hiragino Sans;
+        float: left;
+        width: 340px;
+        margin-left: 48px;
+        .bg_ng_icon {
+          &:before {
+            position: absolute;
+            top: 3px;
+            left: 0;
+            display: inline-block;
+            width: 21px;
+            height: 21px;
+            content: "";
+            background-image: url(https://lh3.googleusercontent.com/lXvf9v6D9ZFVx-Dfe7LRS-_1mblPLYI3Fz5hUobVCTJCkoCWJ9OSpnQS1Dbxpf6hvoQjDdOeUO9a-teZk52QcVRySWKon8IsI-9rKT4Ihi-ZIUW4eHuIpKArPnyHKVeYgNj8rCZAoRHlm7t1l8B8xADa3K4EhGjfxGwkTIFqvi6lhYfmUbb8LN7fFJuuIX_UAnNASAFj2rdE2dnzCDV6DYb65z4wcEzxlOcxeDkIF9VgxDosjgHgWZ0m6uHx0yx26DTtmHh2vsUNFZTcTSHcCPcjx5Mm6igXH4zMSCsSK5smpo7laAw1LzEnD3_8QwY_m2uPkSh3s6R1TNyI3axUpbc1zvL-C99lINEu6LZAXxBiWhFK0yFxt1NEze2rtQVpOQMK5DH6Uofd1ZSHYYE9XtjzBQlZQdmwLP4aXtU2AS67QTfFUBMk6_Vl-QE5KjFS3aG6cgv1aydWtnLi6SXxBnZZ5ZXlGE7_NtZRsR0jzZgpt5uv3IC5NMHsGFShzVu6oqDlwYGHfzTojhPSLNRBkLN14JNJtvveeGS2t0cgGMXfz-_pK9Hq2HlCZUwl5_Pyg6qa3xTwHSr37Vn2-uouD5TOX5pAhGzZ55i5nzp1nSaseqORv2XW5RB4rZImJPUen_lq70moYSYFVup9HflbMPJcXqov1xKB=s50-no);
+            background-size: contain;
+          }
+        }
+      }
+      p {
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 31px;
+        color: #53b7bb;
+        &.ng {
+          position: relative;
+          margin-bottom: 14px;
+          padding-left: 32px;
+        }
+      }
+      div {
+        font-size: 13px;
+        font-weight: 200;
+        line-height: 1.7;
+      }
+      .group_image {
+        width: 286px;
+      }
+      .clear {
+        clear: both;
+      }
+      &.row2 {
+        margin-bottom: 72px;
+      }
+      .subject {
+        margin-left: 48px;
+        .bg_lock_icon {
+          &:before {
+            display: inline-block;
+            width: 17px;
+            height: 22px;
+            margin-top: -5px;
+            margin-right: 10px;
+            content: "";
+            vertical-align: middle;
+            background-image: url(https://lh3.googleusercontent.com/ShK5d_AZOoCeZ4B02YTsfCe0H7dW42hakJ9-ytoAmCQ2BoidOPRwp9_FZR4K-5NUYkV6nk_JPKyi1E6QZvbhoBjhQOcOy5h7TJqoGVx80FNPdxSKNHdDkGU1ZRTRNPFvRLkfvxDC-PDpyTnc7cp0S5jbsMeQYyyCgnnHI5J03_MPNEOdWBPWb1q0Ts4g2rUsD0q2A9oaAD6HcITHpAdIF2sjrLJ14OXg6tJW-9DN9J0CCMLoX3vSOaRJ-YyzPjmftEzWAuhMJtaTaN1oSpG0lrKyt3rTqi1JLdm7W2iQTKEtFQOUNeG8Q1-v2XwoBzRbzikamkzev_KgRORPYmsfnYwjMeWc4kexSMTRgiuL0W8r5DKsCB6Fg3ok8LGQd_XoeY2L3hcemIsxIMz6iiKlsJz5CyWqkq-eYGMrX1aFhsLgwcyunMuAYBpQfbiwIM1IA0cJW64VN_l7sT3HZHuHqRwHehnaaSLvHb4v1KDx5tS4pe_EB4VkLuVVDcPvSHKwKGBgx9IKbZUj3ajybtI4uvRF9Gp0eCUsCc7NcEp4lz_v2HXfCPh-C7v2b-DsU1KM3BBzRjKGQpRY-_WGDDiPMJZtHYupglgEwZqTA_B5tUsOjhJY9gTusu8qMXc3bMJpxQ50iZE1bwt0tMUU9QgrznB3HJwQv9-_=w40-h50-no);
+            background-size: contain;
+          }
+        }
+      }
+      .truste_image_wrap {
+        position: relative;
+        float: left;
+        width: 254px;
+        height: 78px;
+        margin-left: 30px;
+        background-color: #c7e7e9;
+        .truste_image {
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          width: 134px;
+          height: 45px;
+          margin: auto;
+        }
+      }
+    }
+  }
+  .select_file {
+    position: relative;
+    width: 620px;
+    height: 90px;
+    margin-bottom: 48px;
+    margin-left: 48px;
+    text-align: center;
+    border: 1px solid #71c3c8;
+    border-style: dashed;
+    .button {
+      font-size: 12px;
+      line-height: 32px;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 173px;
+      width: 157px;
+      height: 32px;
+      margin: auto;
+      color: white;
+      border-radius: 90px;
+      background-color: #53b7bb;
+    }
+    input[type=file] {
+      display: none;
+    }
+  }
+  .file_name {
+    position: absolute;
+    top: 38px;
+    left: 340px;
+    margin-right: 10px;
+  }
+  .submit {
+    font-size: 15px;
+    width: 305px;
+    height: 57px;
+    text-align: center;
+    color: white;
+    border-radius: 90px;
+    background-color: #53b7bb;
+  }
+}

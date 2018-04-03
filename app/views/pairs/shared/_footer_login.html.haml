@@ -1,0 +1,36 @@
+%nav.footer_navi
+  %ul
+    %li.footer_navi_item
+      = link_to "Pairsとは", "#", target: "_blank"
+    %li.footer_navi_item
+      = link_to "幸せレポート", "#"
+    %li.footer_navi_item
+      = link_to "安心の常時監視体制", "#"
+    %li.footer_navi_item
+      = link_to "安心のセキュリティー", "#"
+    %li.footer_navi_item
+      = link_to "ヘルプ", "#", target: "_blank"
+    %li.footer_navi_item
+      = link_to "お問い合わせ", "#"
+  %ul
+    %li.footer_navi_item
+      = link_to "会社概要", "#", target: "_blank"
+    %li.footer_navi_item
+      = link_to "利用規約", "#"
+    %li.footer_navi_item
+      = link_to "プライバシーポリシー", "#"
+    %li.footer_navi_item
+      = link_to "特定商取引法に基づく表示", "#"
+.footer_label
+  .footer_label_horizontal_box
+    = link_to do
+      .link_to_truste.mr60
+        = image_tag "https://static-pairs.akamaized.net/public/img/sp/img_jp/statics/truste/truste_ja.png"
+    %table.footer_label_ssl{title: "このマークは、SSLで通信を保護している証です。"}
+      %tbody
+        %tr
+          %td
+            = link_to do
+              = image_tag "//smarticon.geotrust.com/smarticon?ref=pairs.lv", alt: "クリックして企業プロファイルを表示", name: "doidxvgm", oncontextmenu: "return false;"
+            = link_to "SSLとは", "", target: "_blank", class:"ssl_link"
+%small.footer_copyright (c) eureka, Inc.

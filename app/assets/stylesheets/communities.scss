@@ -1,0 +1,979 @@
+//大枠内
+input[type=text] {
+  font-size: 13px;
+  box-sizing: border-box;
+  padding: 7px;
+  white-space: nowrap;
+  color: #788086;
+  border: 1px solid #cbced0;
+  border-radius: 4px;
+  background-color: #fff;
+}
+.box_community_view {
+  .box_community_header {
+    @include clearfix();
+    margin-bottom: 10px;
+    .category_select {
+      float: left;
+      margin-right: 10px;
+      select {
+        -webkit-appearance: menulist-button;
+        font-size: 12px;
+        box-sizing: border-box;
+        height: 29px;
+        width: 200px;
+        padding: 6px 40px 6px 14px;
+        border-collapse: separate;
+        white-space: nowrap;
+        color: #788086;
+        border: 1px solid #cbced0;
+        border-radius: 30px;
+        background-color: #fff;
+        // position: absolute;
+        // opacity: 0;
+      }
+    }
+    .category_select {
+      float: left;
+      margin-right: 10px;
+      //デバックプロパティ3つ
+      height: 29px;
+      width: 200px;
+      line-height: 1.0;
+      .customSelect {
+        width: 200px;
+        .customSelectInner {
+          width: 62px;
+        }
+      }
+    }
+  }
+  .search_input {
+    float: right;
+    input[type=text] {
+      &.pr50 {
+        padding-right: 50px;
+      }
+    }
+  }
+  .input_search_word {
+    line-height: 1.2;
+  }
+  .button_search {
+    margin-left: 5px;
+  }
+  // To do プロパティ
+  .common_inline_box {}
+  //検索ボタン
+  .box_community_header {
+    margin-bottom: 10px;
+  }
+  .box_community_pager {
+    &.box_pager {
+      .pager_next {
+        float: none;
+      }
+      .pager_pre {
+        float: none;
+      }
+    }
+  }
+}
+
+
+//コンテツ内、タイトルバー
+.common_page_header {
+  margin-bottom: 12px;
+  .icon_square {
+    padding-left: 10px;
+    border-left: 5px solid #cbced0;
+  }
+  .page_tile {
+    font-size: 16px;
+    vertical-align: middle;
+    color: #8d9399;
+  }
+}
+
+
+//メイン内部
+.box_wrapper_inner {
+  @include clearfix();
+  .box_community_side {
+    float: left;
+    width: 172px;
+    .box_community_category {
+      position: relative;
+      padding: 15px 13px;
+      background-color: #f7f7f7;
+      .community_category_list_title {
+        font-size: 14px;
+        margin-bottom: 10px;
+        color: #00abb3;
+      }
+      .community_category_list {
+        @include clearfix();
+        .category_item {
+          form {
+            line-height: 1.0;
+            margin-bottom: 14px;
+            @include category_item();
+            input[type=submit] {
+              -webkit-appearance: none;
+              border-style: none;
+              width: 100px;
+              cursor: pointer;
+              height: 17px;
+              font-size: 13px;
+              background-color: #f7f7f7;
+              text-align: left;
+              vertical-align: bottom;
+              &:hover {
+                color: #00abb3;
+              }
+            }
+            &.category_item_music {
+              &:before {
+                background-position: 0 -483px;
+              }
+            }
+            &.category_item_movie {
+              &:before {
+                background-position: 0 -515px;
+              }
+            }
+            &.category_item_entertainment {
+              &:before {
+                background-position: 0 -547px;
+              }
+            }
+            &.category_item_game {
+              &:before {
+                background-position: 0 -579px;
+              }
+            }
+            &.category_item_book {
+              &:before {
+                background-position: -32px -483px;
+              }
+            }
+            &.category_item_art {
+              &:before {
+                background-position: -32px -515px;
+              }
+            }
+            &.category_item_sport {
+              &:before {
+                background-position: -206px -548px;
+              }
+            }
+            &.category_item_moter {
+              &:before {
+                background-position: -32px -579px;
+              }
+            }
+            &.category_item_trip {
+              &:before {
+                background-position: -32px -547px;
+              }
+            }
+            &.category_item_diy {
+              &:before {
+                background-position: -67px -483px;
+              }
+            }
+            &.category_item_animal {
+              &:before {
+                background-position: -67px -515px;
+              }
+            }
+            &.category_item_pc {
+              &:before {
+                background-position: -67px -548px;
+              }
+            }
+            &.category_item_fashion {
+              &:before {
+                background-position: -67px -580px;
+              }
+            }
+            &.category_item_cook {
+              &:before {
+                background-position: -105px -483px;
+              }
+            }
+            &.category_item_fortune {
+              &:before {
+                background-position: -105px -515px;
+              }
+            }
+            &.category_item_hobby {
+              &:before {
+                background-position: -105px -548px;
+              }
+            }
+            &.category_item_marry {
+              &:before {
+                background-position: -105px -580px;
+              }
+            }
+            &.category_item_spiritual {
+              &:before {
+                background-position: -138px -483px;
+              }
+            }
+            &.category_item_life {
+              &:before {
+                background-position: -138px -515px;
+              }
+            }
+            &.category_item_health {
+              &:before {
+                background-position: -138px -547px;
+              }
+            }
+            &.category_item_housekeep {
+              &:before {
+                background-position: -138px -580px;
+              }
+            }
+            &.category_item_social {
+              &:before {
+                background-position: -172px -483px;
+              }
+            }
+            &.category_item_school {
+              &:before {
+                background-position: -172px -515px;
+              }
+            }
+            &.category_item_organization {
+              &:before {
+                background-position: -172px -547px;
+              }
+            }
+            &.category_item_occupation {
+              &:before {
+                background-position: -172px -580px;
+              }
+            }
+            &.category_item_qualification {
+              &:before {
+                background-position: -206px -483px;
+              }
+            }
+            &.category_item_business {
+              &:before {
+                background-position: -206px -515px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .box_community_main {
+    float: right;
+    width: 530px;
+    .box_my_community {
+      margin-bottom: 28px;
+      padding: 15px;
+      background-color: #f7f7f7;
+      .my_community_title {
+        margin-bottom: 15px;
+      }
+      // To do プロパティ
+      .community_list_box {}
+      .bg_white {
+        background-color: #fff;
+      }
+      .my_community_list {
+        @include clearfix();
+        border-bottom: 1px solid #e1e3e5;
+      }
+      .my_community_item {
+        &:nth-child(5) {
+          border-right: none;
+        }
+        font-size: 13px;
+        float: left;
+        box-sizing: border-box;
+        width: 20%;
+        height: 133px;
+        text-align: center;
+        border-right: 1px solid #e1e3e5;
+        background: #fff;
+        a {
+          display: block;
+          padding: 12px 10px;
+          &:hover {
+            opacity: .8;
+          }
+        }
+        .community_item_img {
+          margin-bottom: 5px;
+          width: 70px;
+          height: 70px;
+        }
+        .community_item_title {
+          overflow: hidden;
+          width: 79px;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+        }
+        .community_item_count {
+          color: #00b8c0;
+        }
+      }
+    }
+    .box_everyone_community {
+      margin-bottom: 30px;
+      border-width: 2px 0 0;
+      border-style: solid;
+      //デバックプロパティ2つ
+      width: 530px;
+      height: 388px;
+      .everyone_community_title {
+        font-size: 16px;
+        margin-bottom: 10px;
+      }
+      .community_list {
+        @include clearfix();
+      }
+      .community_item {
+        // &:nth-child(5) { ：見本に戻す際に使用
+        &:nth-child(5n) {
+          margin-right: 0;
+        }
+        font-size: 13px;
+        position: relative;
+        top: 1px;
+        float: left;
+        box-sizing: border-box;
+        width: 84px;
+        height: 160px;
+        margin-right: 27px;
+        text-align: center;
+        a {
+          display: block;
+          padding: 5px 0px;
+        }
+        .community_item_img {
+          margin-bottom: 5px;
+          width: 70px;
+          height: 70px;
+        }
+        .community_item_title {
+          height: 36px;
+          letter-spacing: -1px;
+        }
+        .community_item_count {
+          color: #8d9399;
+        }
+      }
+      .link_more_community {
+        text-align: right;
+        a {
+          font-size: 13px;
+          display: inline-block;
+          padding: 2px 8px;
+          border: 1px solid #e1e3e5;
+          border-radius: 30px;
+          background-color: #fff;
+        }
+      }
+      &.popular_community {
+        border-color: #ffbe40;
+        .community_item {
+          a {
+            &:hover {
+              opacity: .8;
+            }
+          }
+        }
+        .everyone_community_title {
+          &:before {
+            @include community_title_icon();
+            background-position: -46px -435px;
+          }
+        }
+        .link_more_community {
+          a {
+            cursor: pointer;
+            text-decoration: underline;
+            color: #ffbe40;
+            background-color: #f3f3f3;
+            &:hover {
+              text-decoration: none;
+            }
+          }
+        }
+      }
+      &.recommend_community {
+        border-color: #00b8c0;
+        .everyone_community_title {
+          &:before {
+            @include community_title_icon();
+            background-position: -83px -435px;
+          }
+        }
+        .link_more_community {
+          a {
+            text-decoration: underline;
+            color: #ffbe40;
+            background-color: #f3f3f3;
+          }
+        }
+      }
+      &.newcomer_community {
+        border-color: #f06976;
+        .everyone_community_title {
+          &:before {
+            @include community_title_icon();
+            background-position: -126px -435px;
+          }
+        }
+        .link_more_community {
+          a {
+            text-decoration: underline;
+            color: #ffbe40;
+            background-color: #f3f3f3;
+          }
+        }
+      }
+      &.fame_community {
+        border-color: #82cc87;
+        .everyone_community_title {
+          &:before {
+            @include community_title_icon();
+            background-position: -169px -435px;
+          }
+        }
+        .link_more_community {
+          a {
+            text-decoration: underline;
+            color: #ffbe40;
+            background-color: #f3f3f3;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+//作成ポップアップ
+#modal_community_about {
+  position: absolute;
+  width: 600px;
+  top: 50px;
+  left: 0px;
+  right: 0px;
+  margin: auto;
+}
+.box_modal_window {
+  display: none;
+  position: absolute;
+  z-index: 2001;
+  letter-spacing: .5px;
+  box-shadow: 0 0 8px rgba(0,0,0,.2);
+  &.modal_fixed {
+    position: fixed;
+    top: 100px;
+  }
+  .box_modal_window_inner {
+    position: relative;
+    box-sizing: border-box;
+    width: 600px;
+    padding: 28px;
+    border-radius: 4px;
+    background-color: #fff;
+  }
+  .modal_title {
+    margin-bottom: 15px;
+  }
+  .modal_text_a {
+    font-size: 15px;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+  .modal_sub_title {
+    font-size: 18px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    padding-left: 8px;
+    color: #00abb3;
+    border-left: 4px solid #00abb3;
+  }
+  img &.mb10 {
+    height: 191px;
+    width: 529px;
+  }
+}
+.bg_overlay,
+.modal_overlay {
+  position:fixed;
+  // z-index: 2000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  // background-color: rgba(255,255,255,.7);
+}
+
+
+// 新規作成画面
+.common_button_area {
+  .button_item {
+    input {
+      width: 100%;
+    }
+  }
+}
+.common_page_box {
+  margin-bottom: 25px;
+  padding: 15px;
+  background-color: #f3f3f3;
+}
+.comon_box_inner {
+  padding: 20px 0;
+  background-color: #fff;
+}
+
+.input_name
+.input_search_word {
+  line-height: 1.2;
+}
+.common_form input[type=text] {
+  width: 100%;
+}
+.input_error {
+  padding-top: 5px;
+  em {
+    &.required {
+      color: #ed4655;
+    }
+  }
+}
+.common_table_a,
+.common_table_c {
+  margin: 0 15px 20px;
+  table {
+    font-size: 14px;
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #cbced0;
+    th{
+      font-weight: 400;
+      color: #00abb3;
+      background-color: #e1f9fa;
+    }
+    th,
+    td {
+      padding: 12px 17px;
+      text-align: left;
+      vertical-align: middle;
+      border: 1px solid #cbced0;
+    }
+  }
+}
+
+
+//確認画面
+.common_table_b {
+  &.common_form {
+    margin-bottom: 0px;
+    table {
+      margin-bottom: 20px;
+      tr td img {
+        height: 100px;
+        width: 100px;
+        vertical-align: baseline;
+      }
+    }
+  }
+}
+
+
+//作成完了ページ
+
+
+//関連ページ使用パーツ
+.ribbon_title {
+  font-size: 18px;
+  line-height: 1.0;
+  position: relative;
+  margin: 0 0 10px;
+  padding: 15px 0;
+  text-align: center;
+  color: #fff;
+  &.ribbon_blue {
+    @include ribbon_title_before();
+    @include ribbon_title_after();
+    background-color: #00c4cc;
+  }
+}
+
+.bg-white {
+  background-color: #fff;
+}
+.box_community_pager {
+  padding: 6px 10px 10px;
+  text-align: center;
+}
+// To do プロパティ
+.box_pager {}
+.common_form select {
+  -webkit-appearance: menulist-button;
+  width: 174px;
+  // position: absolute;
+  // opacity: 0;
+  height: 31px;
+  font-size: 12.5px;
+  color: #8d9399;
+  background-color: #fff;
+}
+.customSelect {
+  font-size: 1.2px;
+  box-sizing: border-box;
+  height: 29px;
+  padding: 6px 40px 6px 14px;
+  border-collapse: separate;
+  white-space: nowrap;
+  color: #788086;
+  border: 1px solid #cbced0;
+  border-radius: 30px;
+  background-color: #fff;
+  background-image: url(https://lh3.googleusercontent.com/wqkSmqPA1TshsystiBabhfmQ7Tnj7DNcNCuQhqE_zvvVdeR0G3J1xvfhUyDs6IwQebYz-bPLFrzJ8cY6fctjWpAwkeboV6V6Q3MXEsAE02AZLWIS97XKc-rs90iNcYZw_aWQ0qInhsvSGQgagk0_UJyQTKlqiaurpuUz0PPfSnTjEXabDLTfnL7C1AEuC83WzAGQzoKdx3oTkR1ckfU_PTuuWMjW1t8VpNWRBJb28tLyYe2NLIwu-6f7JFB4_EGqZ0ECZ4MYZkXH7-MyNwwbUyKutK-wQuqA3zhnPF7HiX1lPspdq8cgfg_bmthbPH3OhOlZbreDboRFabKkhd3hsR6sd9YWYnAkLxQf2MvSglT7RA-4-6Cz-xx1jxR4gdx2YtEKmupC5VvTkAspeaa5CYpSSZ9lO3J2c_GxIuLEQuD-T6Z8EY5QLZsLjBAJFK8vJfUCUmkgUb6laGhk-Ihi2r3vCe0fnZ-5_iE3wXAlnd55KOOwmddS11oIQa1AdObWPR5QUFU77NiV6hcprHbQyBbghAvwI10qygUxnR4r0QLzDyWVL_Qb-ohsT3ax97ZIKJT5Wcvk-EP9kA0i-g1g-Pd3I6SYFBn7LtdGCs1n3S3zB6jRn2ve7sWvXGuKxEylq1esEeIaGzpVsLwwDx8vdBSRRGj_oYNA=w26-h51-no),none;
+  background-repeat: no-repeat;
+  background-position: right center;
+  box-shadow: 0 2px 0 #c9c9c9;
+  width: auto!important;
+}
+.customSelectInner {
+  width: 62px;
+  display: inline-block;
+  width: auto!important;
+}
+
+//詳細ページ
+.box_community_detail_header {
+  margin-bottom: 20px;
+  padding: 15px;
+  background-color: #f7f7f7;
+  .breadcrumb_list {
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
+  .community_info {
+    @include clearfix();
+    padding: 15px;
+    background-color: #fff;
+    .box_community_image {
+      position: relative;
+      .community_image {
+        float: left;
+        margin-right: 15px;
+        img {
+          height: 132px;
+          width: 132px;
+        }
+      }
+    }
+    .community_info_inner {
+      @include clearfix();
+      float: left;
+      width: 510px;
+    }
+    .community_title {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    .community_member_count {
+      font-size: 14px;
+      margin-bottom: 10px;
+      em {
+        padding-left: 10px;
+        color: #00abb3;
+      }
+    }
+    .community_entry {
+      @include clearfix();
+      padding: 15px;
+      border-radius: 4px;
+      background-color: #f7f7f7;
+      .entry_text {
+        float: left;
+        color: #788086;
+        strong {
+          font-size: 13px;
+          font-weight: 700;
+          display: block;
+        }
+      }
+      .button_entry {
+        float: right;
+        margin-top: 5px;
+      }
+    }
+  }
+}
+
+
+// 参加メンバー領域
+.box_community_member_header {
+  @include clearfix();
+  line-height: 1.0;
+  margin-bottom: 15px;
+  padding: 15px;
+  background-color: #f7f7f7;
+  .member_header_title {
+    font-size: 13px;
+    float: left;
+    .member_count {
+      color: #00abb3;
+    }
+    .member_note {
+      padding-left: 5px;
+      color: #788086;
+    }
+  }
+  .pager_info {
+    font-size: 13px;
+    float: right;
+  }
+}
+// ページネート
+.box_community_pager.box_pager{}
+// メンバー表示域
+.box_list_view_user {
+    width: 720px;
+//  異性メンバーがいる場合
+  .list_view_users {
+    overflow: hidden;
+    width: 732px;
+    margin-right: -13px;
+    margin-bottom: 15px;
+    .list_view_user_item {
+      position: relative;
+      float: left;
+      width: 168px;
+      min-height: 320px;
+      margin: 0 13px 13px 0;
+    }
+  }
+}
+
+
+.no_member_list {
+  margin-top: 30px;
+}
+.text_no_partner_in_community {
+  font-size: 16px;
+  text-align: center;
+}
+
+
+// 参加・退会ポップアップ
+.box_modal_window {
+  &.modal_community {
+    .modal_title {
+      font-size: 16px;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+    .button_a {
+      width: 70px;
+      cursor: pointer;
+    }
+  }
+  .modal_button_area a {
+    display: inline-block;
+    margin: 0 10px;
+  }
+}
+#modal_comunity_join,
+#modal_comunity_leave {
+  top: 50px;
+}
+
+
+//検索ページ
+.bg_white {
+  background-color: #fff;
+}
+.box_community_pager {
+  padding: 6px 10px 10px;
+  text-align: center;
+  height: 34px;
+}
+// 検索結果0以外
+.box_community_category {
+  position: relative;
+  padding: 15px 13px;
+  background-color: #f7f7f7;
+  .community_list {
+    .community_item {
+      a {
+        &:hover {
+          opacity: .8;
+        }
+      }
+    }
+  }
+  .community_category_header {
+    @include clearfix();
+    margin-bottom: 12px;
+    .breadcrumb_list {
+      font-size: 15px;
+      float: left;
+    }
+    .community_count {
+      font-size: 13px;
+      float: right;
+      margin-top: 3px;
+    }
+  }
+  // To Doプロパティ
+  .box_community_pager.box_pager {}
+  .community_list_box {}
+  .community_list {
+    @include clearfix();
+    border-top: 1px solid #e1e3e5;
+    border-bottom: 1px solid #e1e3e5;
+    background-color: #fff;
+    .community_item {
+      &:nth-child(6n) {
+        border-right: none;
+      }
+      font-size: 13px;
+      position: relative;
+      top: 1px;
+      float: left;
+      box-sizing: border-box;
+      width: 16.6%;
+      height: 170px;
+      text-align: center;
+      border-right: 1px solid #e1e3e5;
+      border-bottom: 1px solid #e1e3e5;
+      a {
+        display: block;
+        padding: 15px 10px;
+      }
+      .community_item_title {
+        width: 94px;
+        height: 37px;
+        overflow: hidden;
+      }
+    }
+    .community_item_img {
+      margin-bottom: 5px;
+      width: 84px;
+      height: 84px;
+    }
+    .community_item_count {
+      color: #00b8c0;
+    }
+  }
+  .box_community_color_note {
+    font-size: 11px;
+    position: absolute;
+    right: 6px;
+    // bottom: 3px; 希望の場所にならない為、コメアウト
+    bottom: 3px;
+    margin: 0 8px 16px;
+    padding: 5px;
+    text-align: center;
+    .color_note_item {
+      margin: 0 5px;
+      @include community_color_note();
+      &.color_joined {
+        &:before {
+         background-color: #ffffe8;
+        }
+      }
+      &.color_created {
+        &:before {
+          background-color: #e1f9fa;
+        }
+      }
+    }
+  }
+}
+// 検索結果0
+.box_community_not_found {
+  .not_found_title {
+    @include not_found_title();
+    font-size: 16px;
+    line-height: 1.0;
+    margin: 30px 15px;
+    text-align: center;
+    em {
+      color: #ed4655;
+    }
+    .text_center {
+      img {
+        height: 119px;
+        width: 636px;
+      }
+    }
+  }
+  .not_found_text {
+    font-size: 16px;
+    line-height: 1.0;
+    margin: 30px 15px;
+    text-align: center;
+    em {
+      color: #ed4655;
+    }
+  }
+}
+.box_other_community_category {
+  margin-top: 20px;
+  .category_item {
+    font-size: 13px;
+    float: left;
+    box-sizing: border-box;
+    width: 25%;
+    padding: 5px 11px;
+    border-right: 1px dashed #e1e3e5;
+    &:last-child {
+      border-right: none;
+    }
+    a {
+      display: block;
+    }
+    .category_img {
+      margin-right: 5px;
+      vertical-align: middle;
+      width: 46px;
+      height: 46px;
+    }
+    .category_title {
+      line-height: 1.2;
+      display: inline-block;
+      width: 100px;
+      vertical-align: middle;
+      text-decoration: underline;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+  .popular_item {
+    color: #ffbe40;
+  }
+  .recommend_item {
+    color: #00b8c0;
+  }
+  .newcomer_item {
+    color: #f06976;
+  }
+  .fame_item {
+    color: #82cc87;
+  }
+}
+.category_list {
+  @include clearfix();
+}

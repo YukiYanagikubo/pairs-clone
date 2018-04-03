@@ -1,0 +1,195 @@
+.from_partner
+  .main.box_like_view.contents_padding
+    .header-banner
+      .banner_contents
+        .banner_common
+          .carousel
+            .carousel_item
+              = link_to "","",class: "banner_link"
+
+
+    .from-partner
+      .common_page_header
+        %span.page_tile.icon_square お相手からのいいね！
+        .box_button_withdrawal
+          %span
+
+      .partners
+        .lookPartners
+          #box_like_recommend.box_like_recommend.mb15
+            .box_recommend_user
+              =image_tag "https://static-pairs.akamaized.net/public/img/pc/img_jp/like/like_from_callout.png"
+              %ul#recommend_box.recommend_user_list
+                %li.recommend_user_item
+                  =link_to do
+                    =image_tag "https://lh3.googleusercontent.com/bKDlj30E4NitaDXdEkcnNJ7uibfnQorzLHMQM4JEJ5ILNVUTVCA1CFgJg9msTlpUylaCI8niuS2aKo7L-mcFbg90yNt8gsV8QdfGf_3NFmxzKYyngNMm3dqPkSR-wvx5QshFEcWAJFhTwtkmqNT2hwGkZ9CgdiLgtMZ9jcfS-Hll-WTlFFWy_GhbYczuz6OKPVttf_H0l5HZhQgryZnBuo5LIbd1e89kQqSWpXf5o1ZSfuUEe7YuTYnpH9Q2s_qiHxW3Uk5mnuyR1D-YBCWpsP4BMDsIFoQXSfJt7vQYITzk-2v3RowrM4SNkCBLyHn_KQSYSR7eT0vHk3gRZ1ke3i8rHl19TiMjQS6OcgpVfeSuHpYOMNOs5yTJZIMP3Vpec_HXt0jhM3-dhhEZjjWLQWdd_hhyRxmlIGXYg1cWUvrU0x0FFDVlpsBrECkqLBycY0KeftAvVUaYqJFFWL30gLFvSl38yE-bJtBDxiETXatt_tUAGCCtQRf8LqDngmT0JLyhezb9JzU0nQHWUUqcS564eGlHbteewBC-jF4GlWw2q6blPpF2ZpVFcLbx1HNlzN4ueVcJKaCQaNhVY_Ry-D7SNSfzbaJHOEfMJnwJ2ltn2N6czaoQhI4fM3THXEGoe34efrJypSUoQCXfOJfpQmRufd4wJYv1=s636-no",height: "64",width: "64", class: "user_photo image-circle"
+                    %p.user_info
+                      ななみん
+                      %span.ng-hide
+                        23歳
+
+            .like_thx_descriptoon
+              =image_tag "https://static-pairs.akamaized.net/public/img/pc/img_jp/like/pc_iine_from_partner.png", height: "118",width: "261"
+
+        .banner-show
+          .banner_with_close.ng-hide
+            =image_tag ""
+            =link_to
+
+        .userSetting
+          .pager-nums-top
+            %p.display_option_number.mb0 24人中 1〜10人表示
+            .box_display_option
+              .box_result_pager.mb0
+                =link_to "前へ","",class: "pager_pre button_c button_white_a ng-hide"
+                =link_to "","",class: "disabled prev ng-hide"
+                %ol.pager_nums
+                  %li.pager_num.is_current
+                    =link_to "1",""
+                  %li.pager_num
+                    =link_to "2",""
+
+                =link_to "次へ","",class: "pager_next button_c button_white_a"
+                =link_to "","",class: "disabled next ng-hide"
+              %span
+                =link_to "退会者を非表示","",class: "button_withdrawal bottom button_f button_white_a"
+
+        .partners.length_0
+          .box_not_found_like_discription
+            .user_relation
+              =image_tag "https://static-pairs.akamaized.net/public/img/pc/img_jp/common/img_abstract_user.png",class: "image-circle"
+
+              =image_tag "https://static-pairs.akamaized.net/public/img/pc/img_jp/like/icon_like_not_found.png",class: "icon_relation"
+
+              =image_tag "https://static-pairs.akamaized.net/public/img/all/img_jp/avatar/my_placeholder_woman.png?v=1&impolicy=pairs82x82&imwidth=82&width=78&height=78",height: "78", width: "78",class: "user_photo image-circle"
+            %p.discription_title.mb0 ここには、あなたが「いいね！」を送ったお相手が表示されます。
+          .box_not_found_callout_send
+            .callout_inner
+              %p.callout_text01 気になったお相手に
+              %P.callout_text02
+                %em.f_fsize15 「いいね！」
+                を送ってみましょう。
+              %p.more.w40p
+                =link_to "気になるお相手をさがす","",class: "button_d button_blue_a"
+
+          %ol.box_like_list
+            .like_item
+              .unread_over_ray.ng-hide
+                =image_tag "",class: "overlay_image"
+
+              .item_inner01
+                .box_user_photo
+                  %ul.user_photo_list
+                    %li.photo_item
+                      =image_tag "https://lh3.googleusercontent.com/bKDlj30E4NitaDXdEkcnNJ7uibfnQorzLHMQM4JEJ5ILNVUTVCA1CFgJg9msTlpUylaCI8niuS2aKo7L-mcFbg90yNt8gsV8QdfGf_3NFmxzKYyngNMm3dqPkSR-wvx5QshFEcWAJFhTwtkmqNT2hwGkZ9CgdiLgtMZ9jcfS-Hll-WTlFFWy_GhbYczuz6OKPVttf_H0l5HZhQgryZnBuo5LIbd1e89kQqSWpXf5o1ZSfuUEe7YuTYnpH9Q2s_qiHxW3Uk5mnuyR1D-YBCWpsP4BMDsIFoQXSfJt7vQYITzk-2v3RowrM4SNkCBLyHn_KQSYSR7eT0vHk3gRZ1ke3i8rHl19TiMjQS6OcgpVfeSuHpYOMNOs5yTJZIMP3Vpec_HXt0jhM3-dhhEZjjWLQWdd_hhyRxmlIGXYg1cWUvrU0x0FFDVlpsBrECkqLBycY0KeftAvVUaYqJFFWL30gLFvSl38yE-bJtBDxiETXatt_tUAGCCtQRf8LqDngmT0JLyhezb9JzU0nQHWUUqcS564eGlHbteewBC-jF4GlWw2q6blPpF2ZpVFcLbx1HNlzN4ueVcJKaCQaNhVY_Ry-D7SNSfzbaJHOEfMJnwJ2ltn2N6czaoQhI4fM3THXEGoe34efrJypSUoQCXfOJfpQmRufd4wJYv1=s636-no",width:"200",height:"200",class: "user_photo"
+                  .box_user_photo_pager
+                    =link_to "","",class: "pager_pre button_c button_white_a"
+                    =link_to "","",class: "pager_next button_c button_white_a"
+                    .pager_num 1/5
+
+                .box_user_summary
+                  .user_summary_inner01
+                    %p.user_action_time 03/09 14:03
+                    %p.user_info
+                      =link_to "" do
+                        %span 18歳
+                        %span AKS
+                    %p.user_tweet
+                      %span.user_login.is_online
+                    %p.user_chemistry.user_chemistry_a.is_chemistry_heart75_a 相性71%
+                    %p.user_like_count.user_like_count_a
+                      %span.ng-hide
+                      %span.ng-hide
+                      %span
+                  .user_summary_inner02
+                    %ul.summary_info_list
+                      %li.summary_info_item
+                        %p.item_title 身長：
+                        %p.item_value 163 cm
+                      %li.summary_info_item
+                        %p.item_title 職種：
+                        %p.item_value アイドル
+                      %li.summary_info_item
+                        %p.item_title 同居人：
+                        %p.item_value 一人暮らし
+                      %li.summary_info_item
+                        %p.item_title 年収：
+                        %p.item_value 3000万円以上
+                      %li.summary_info_item
+                        %p.item_title 兄弟姉妹：
+                        %p.item_value
+                      %li.summary_info_item
+                        %p.item_title 血液型：
+                        %p.item_value B型
+                      %li.summary_info_item
+                        %p.item_title
+                        %p.item_value
+                  .box_summary_community
+                    %p.summary_community_title
+                      参加コミュニティ
+                    %ul.summary_community_list
+                      %li.summary_community_item
+                        =link_to "年上彼氏×年下彼女","",class: "community_view"
+              .item_with_message.ng-hide
+                .ng-hide
+                  %p.with_message_title
+                    あなたに届いたメッセージ
+                  %p.with_message_text
+                    ななみんビーム
+                .ng-hide
+                  %p.with_message_title.from_me
+                    お相手へ送ったメッセージ
+                  %p.with_message_text
+
+              .box_answer_your_question.ng-hide
+                %p.answer_your_question_title.ng-hide
+                  あなたの質問への回答
+                %p.answer_your_question_title.ng-hide
+                  ななみんさんの質問への回答
+                %p.answer_your_question_title.ng-hide
+                  あなたの回答
+
+              .item_inner02
+                %p.like_thanks_note.ng-hide
+                  「いいね！」
+                  は減らない！
+                %p.like_mitene_note.ng-hide
+                  おすすめ枠に
+                  載る！
+                .wrap_action_button
+                  %span.ng-hide
+                    =link_to "",class: "button_like button_like_default button_pink_c button_like_view button_like_c button_e" do
+                      %span.like いいね！
+                  / %span.ng-hide
+                  /   =link_to "",class: "button_like button_mitene_d button_like_mitene button_orange_a button_like_view button_like_c button_e" do
+                  /     %span.like みてね！
+                  / %span.ng-hide
+                  /   =link_to "",class: "button_like button_like_default button_pink_c button_like_view button_like_c button_e" do
+                  /     %span.like いいね！ありがとう
+                  / %span.ng-hide
+                  /   =link_to "",class: "button_like button_like_done button_pink_a button_like_view button_like_c button_e" do
+                  /     %span.like いいね！済み
+                  / %span.ng-hide
+                  /   =link_to "",class: "button_like button_like_default button_pink_c button_like_view button_like_c button_e" do
+                  /     %span.like 再いいね！
+                  / %span.ng-hide
+                  /   =link_to "",class: "button_like button_like_mitene_displayed button_like_view button_like_c button_e" do
+                  /     %span.like おすすめ枠に掲載中
+                  / %span.ng-hide
+                  /   =link_to "",class: "button_like button_like_matched button_pink_c button_like_view button_like_c button_e" do
+                  /     %span.like メッセージを送る
+                  / %span.ng-hide
+                  /   =link_to "",class: "button_like button_like_review button_pink_a button_like_view button_like_c button_e" do
+                  /     %span.like 審査中
+                  / %span.ng-hide
+                  /   =link_to "",class: "button_like button_like_closed button_gray_a button_like_view button_like_c button_e" do
+                  /     %span.like 退会済み
+                  / %span.ng-hide
+                  /   =link_to "",class: "button_like button_like_default button_pink_c button_like_view button_like_c button_e" do
+                  /     %span.like 無料でいいね!
+                  / %span.ng-hide
+                  /   =link_to "",class: "button_like button_like_closed button_gray_a button_like_view button_like_c button_e" do
+                  /     %span.like 非表示中
+                  / %span.ng-hide
+                  /   =link_to "",class: "button_like button_like_closed button_gray_a button_like_view button_like_c button_e" do
+                  /     %span.like ブロック中

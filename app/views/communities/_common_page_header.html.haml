@@ -1,0 +1,9 @@
+- if @path.is('#index')
+  %span.page_tile.icon_square.mt10.mbo.ml0.mr10
+    コミュニティをさがす
+  = link_to "コミュニティとは？","", class: "link_help"
+
+- else
+  =link_to "コミュニティTOP", communities_path, class:"page_back button_f button_white_a", id:"top_community_btn"
+  %span.page_tile
+    コミュニティをさがす

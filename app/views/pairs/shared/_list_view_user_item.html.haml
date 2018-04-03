@@ -1,0 +1,36 @@
+%li.list_view_user_item
+  %div
+    %div
+      %div
+        = link_to "", class: "showPersonalViewModal","data-id": "#{user.id}" do
+          - if user.UserImages.find_by(status: 1).present?
+            = image_tag "#{user.UserImages.find_by(status: 1).content}", class: "list_view_user_photo image-circle"
+          - else
+            = image_tag "https://lh3.googleusercontent.com/jmxL41Xoh0hwYidEE0Mt_mO6hKBrPYVwQpNOFSDHHaFYY30WxFuqehwH6e1AGG8LNA1cnmO-Xu1r7IAKxEkxMwzAg6yiJSfWHpV16volf3DK78EXqEEs_Nc2zQJBEU0b86PRkcq_7DW8mLbaKNgj1QGVsME8Pqu-qOlpWJ3o0TZIlshWLaA2HypQgZRP1ETY8XGUr01jB7iMoasAP1xUzJyxUFl5i-miinWCzu5MgkmZuUS6KCyfy_Fdozn5xvI3J_sGRA9yJ_yg3NcM-b4mf6LOuZ_89eW7RbxVOalsUQ5Z6iMMZWagh3uNh3pW0CrldkOKUB1_3AbBVxTJZOcGolBcGit1TWxmDa6XUgzjSSipZURmQ7XkdjkYOIW9NSOJuQNkDMPskpOfnC-jELZWwfqrc1BxZB4qSXQyVQV-qeZ2L8_D6Pq0VvRCf77QkiX7S2f74bQ-BHEjCaaNX_3xhx0nk1Ihjfr09JuuxILeXsgSa--RQTupf0CHicd8SkiHQbsvw8IwvC9CEySbZLBjmsCUqXMc3jOGxbpKNy6x-ygrQ46ELi-3ml6dNCfNOVBmJdOTsZzPKpZB5W_M6AF2PyamLxfCfG2wj4KHEO1rDSHGkDZrc16-lzvzK4YNmSOwK5Ynp-BIC0JoTZ--TvZsSiFbqd_VBfA=s98-no", class: "list_view_user_photo image-circle"
+  .PrivateMode
+    .box_user_info01
+      %p.user_summary
+        %span.is_3days
+        %span.user_area{limit_length: "5"}
+          = user.residence.prefecture
+        %span.user_age
+          = user.age.age
+    .box_user_info03
+      %p.user_chemistry.user_chemistry_a.is_chemistry_heart75_a
+        60%
+      %p.user_like_count.user_like_count_a
+        %span
+          %em 100
+      .user_tweet
+        .user_tweet_body
+          = user.nickname
+    .box_button_like
+      %div
+        %span
+          = form_for(current_user.following_relationships.build(following_id: user.id),html:{class: "button_like button_like_default button_pink_c button_like_view button_d"}) do |f|
+            = f.hidden_field :following_id
+            = f.submit "いいね！", class: "submitColor"
+.showProfile{"data-id": "#{user.id}"}
+  %a.modal_close
+    %img{src: "https://lh3.googleusercontent.com/3ULN1jNBwRKL0vMWlpa7xXKDhKzbbkofEMFaU7AgGSDrmINTZ5hJgMUOCi43TnGM20_IVSa3Kkt4MDo6ZJkPxx_EoUGBr_BBO-v4G9EL5oIsUYVwDrLRwVQrm7THLhANPn1eutAH1UCWQCCkLtgPcvYQvRgN2CpJVhRa9pFTMjxee0oQFboX2pHoxQ9m9iK1mSxyONKQN558XN9O82poY3eZzH49cGWnNXM5ApzQ43Vn1mrLS3Hg1syJMmu7jS8pMVCPSJEd5npc_nQedhmtZSpICW7taQSBMXyptNl6eA9HB_wRwaR5jR6Y5y1q0BYU1lk1iKSnecj5mNWoJ0ckdHOx-DqN8XvUm7R5_cwRToYMnFQLEh27VfRa6K5IKbwj2uBKjTwOLux7KP8e2Ihn_vxVNB8oxht-WWZ8xbDk1NhLPLisFoGcTHU-AF4U7fdIvG_gbRczuhJ7ADvK0Ey5UoVRwrYrie7LiOMyKm217lblY_ElWyM9wx_-napFk4P0F-SkxJRAbA0c5mI65Qe1UJ4FWjGyPgJd1enGwwtPmykzyxuntfAwPSkrojsUaDUfxE7FQnyPabaf2EME0ooqZMFJxIoVh8g5HHBHPPFVsmPjEnpfPpg-k_a6rGC-M2zOxDpgV1uDZHAbe6Vd5leTwrO9aWfzvbrl=s53-no"}/
+  = render partial: "pairs/shared/search_one", locals: { user: user }

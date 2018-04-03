@@ -1,0 +1,44 @@
+%tr
+  / %th{class: "date", rowspan: "5"}
+  /   2月31日
+  %td{class: "time", rowspan: "1"}
+    = format_posted_timeYMD(foot.updated_at)
+    = format_posted_timeHM(foot.updated_at)
+  %td.user_summary
+    %a{href: ""}
+      - if foot.UserImages.find_by(status: 1).present?
+        = image_tag "#{foot.UserImages.find_by(status: 1).content}", class: "user_image image-circle"
+      - else
+        = image_tag "https://lh3.googleusercontent.com/jmxL41Xoh0hwYidEE0Mt_mO6hKBrPYVwQpNOFSDHHaFYY30WxFuqehwH6e1AGG8LNA1cnmO-Xu1r7IAKxEkxMwzAg6yiJSfWHpV16volf3DK78EXqEEs_Nc2zQJBEU0b86PRkcq_7DW8mLbaKNgj1QGVsME8Pqu-qOlpWJ3o0TZIlshWLaA2HypQgZRP1ETY8XGUr01jB7iMoasAP1xUzJyxUFl5i-miinWCzu5MgkmZuUS6KCyfy_Fdozn5xvI3J_sGRA9yJ_yg3NcM-b4mf6LOuZ_89eW7RbxVOalsUQ5Z6iMMZWagh3uNh3pW0CrldkOKUB1_3AbBVxTJZOcGolBcGit1TWxmDa6XUgzjSSipZURmQ7XkdjkYOIW9NSOJuQNkDMPskpOfnC-jELZWwfqrc1BxZB4qSXQyVQV-qeZ2L8_D6Pq0VvRCf77QkiX7S2f74bQ-BHEjCaaNX_3xhx0nk1Ihjfr09JuuxILeXsgSa--RQTupf0CHicd8SkiHQbsvw8IwvC9CEySbZLBjmsCUqXMc3jOGxbpKNy6x-ygrQ46ELi-3ml6dNCfNOVBmJdOTsZzPKpZB5W_M6AF2PyamLxfCfG2wj4KHEO1rDSHGkDZrc16-lzvzK4YNmSOwK5Ynp-BIC0JoTZ--TvZsSiFbqd_VBfA=s98-no", class: "user_image image-circle"
+      / %img{class: "user_image image-circle", src: "https://lh3.googleusercontent.com/OFx6xjhl0VlC7VSSt52JE8xP0qpx84h2qWbCJC1c0_rA8PeqNpVIMEsxS7twNnVjAyEqChq9QKhD6tWGFU_70XL94nnilkYRIgk8kQRcA3QetWTOGFxNu6d-EadgyCucOAgscjP3xpUoa6XCTnZZaMm3ncsLa9Mhqlni90pJFOyN-C8CyXzqsxAIVJ-gfN2CTaxaX9o6pEyrAz7XT9xFVGh6Hdzxg42H4Pdnms0ouDGBAj5L6XBTeTgpes9vmm7KtI83xEOvZnI5PTk6CZFcQDjKkjFhtgn0YJsKVlqkbX88VApdeo1Tx-H1T7_nlwARRR5hFq1gNRuJ--0-l4Cl4HPL9B3-7FXexVOG_yUgTgGms3g_Dj51-HAPjdrM_umWq4z9rChoPkewg9Ps0aXtaLlSbMaxO-S__518TDoY82MdF6MNdzbInDNqJ32LeZK1o4DRAEaK8e_NziZTq2mNtFygK3u_1c-auMz_DTTPsksSxu6HxfbcaAI_l215RPZamvhTIpSFSnYsF9X1xYh520cZop5dxw1qhwCCOzhpdHC1XnQHktzhkz1xmA9jnqjfOzOiflLqdkkhXL-O1fkJAaxMEq9M83FXm6CzcbCHC7TuDHSeRoUqypUVfGMvzqGQ9sXJLKo6aSxEwX71fHanoWI0ezRJeQg=w377-h669-no"}
+    .summary_inner
+      %p.user_info
+      %a
+        .visitor.isEnablePrivateMode
+          %strong
+            %span.user_age
+              41歳
+            %span.user_area
+              東京
+          %span.user_profile_item
+            牛の研究者
+          %span.user_profile_item
+            0万円
+          %span.user_profile_item
+            171cm
+      %ul.user_community_list.sample
+        %li.community_item<>
+          %a{class: "community_link", href: "http://aiko.com"}
+            aiko
+        %li.community_item<>
+          %a{class: "community_link", href: "http://www.miwa-web.com/"}
+            miwa
+        %li.community_item<>
+          %a{class: "community_link", href: "http://www.flowerflower-net.jp/"}
+            FlowerFlower
+    .visitor_like_box
+      .data_like_buttons.like
+        %span
+          %a{class: "button_like button_like_default button_pink_c button_like_view button_d"}
+            %span.like
+              いいね！

@@ -1,0 +1,72 @@
+  .main_header {
+    position: relative;
+    z-index: 10;
+    border-bottom: 1px solid #cbced0;
+    background: #fff;
+    box-shadow: 0 1px 2px rgba(94, 94, 94, 0.1);
+    .box_header_inner {
+      line-height: 1.0;
+      position: relative;
+      width: 928px;
+      margin: 0 auto;
+      padding: 14px 0;
+      @include clearfix();
+      .header_logo {
+        float: left;
+        margin-top: -4px;
+        margin-right: 12px;
+        a {
+          transition: background-color .25s linear;
+          text-decoration: none;
+          color: inherit;
+          outline: none;
+          font-size: 100%;
+          img {
+            vertical-align: bottom;
+          }
+        }
+      }
+      .pairs_concept {
+        font-size: 12px;
+        // font-size: 1.2rem;
+        float: left;
+        margin-top: 10px;
+        letter-spacing: 1px;
+        color: #a1a7ac;
+      }
+
+
+
+      .box_header_notifCentered {
+        float: right;
+        @include clearfix();
+        .notifCentered_item {
+          position: relative;
+          float: left;
+          width: 60px;
+          list-style: none;
+          text-align: center;
+          @include clearfix();
+          .hide {
+            text-align: center;
+          }
+          a:before {
+            display: inline-block;
+            width: 26px;
+            height: 26px;
+            content: '';
+            background-image: url(https://lh3.googleusercontent.com/suxQaTPqi22oBJfY_9Qf1Lk5Vq5h_srlbm8fuc2jXod9Iiszbx2QJdqsgzKer7eWNtiaoCXUZ5rRwpHaoY7WSZ9_Mlndwecj-lL6HdxgKVgsbubp3Y2bgx6iyCxzAItOBk6JIoVtaNespTs2pcZbd8Ya-w4oDsogyXTJgHMDxcioK5OI0H0BExv9vsOmyLXmiSh0ytubjquLf4mXa15FPYOEtCWimJCWqVyhE05k6hzEOW5IRy3xGFo_Z4ApqrJvf4Y-TQEHbuHxqtZ7y_Aw9bBHVOSJFxq93WjwF2lj7n1bKY8hNz6LQIFVLNMwmILfSMHi6dmfctlCqj-SsTXEn0zm6m3NtGUuxnQUp62FadrLUGByxjXae4qOQfI0UVEapDnKl0ax6DVQOj6A6-JbyJgxEgqooaVoqaAaCYF7nCe4I8Lr4y2Fd7CPCmbW2wpy9y0yUhZWbz84Yj8a-WYbMuEVvWSe-vOnYRNfe0maZQNsQplshEEpaSXx3NWnTR0jkyMrNEReCVwB8GMAXAR8iJzsAsjkgX-OKsQH_DrowCzVCcEwkjmiPSH8QzSKnzOj9g0VQU7WMOD1QYe99zfDEu-sOAFqsWTI-eo2D3hvIDylel1Io3-FbkDe3HyHFq1fE6zWCLgyhPQMjwGbjEwS5fB4veyk_tcT=w259-h1188-no),none;
+            background-repeat: no-repeat;
+          }
+        }
+        .notifCentered_messeage {
+          a:before {
+            background-position: -190px -101px;
+          }
+          &.is_active a:before {
+            background-position: -120px -101px;
+          }
+        }
+      }
+    }
+  }

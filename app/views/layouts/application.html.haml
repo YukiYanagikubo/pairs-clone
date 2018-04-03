@@ -1,0 +1,22 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title PairsTeamA
+    = csrf_meta_tags
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    = favicon_link_tag '/favicon.ico'
+  %body
+    .bg_overlay
+    -unless devise_controller?
+      = render partial: "pairs/shared/header"
+      .body
+        .wrapper
+          = render partial: "pairs/shared/sidecontents"
+          .main_contents
+            = yield
+            #main_footer.main_footer
+              = render partial: "pairs/shared/footer"
+    -else
+      = yield

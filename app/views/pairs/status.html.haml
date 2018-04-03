@@ -1,0 +1,81 @@
+.ui-view.class_style
+  .data-membership-status
+    .main.box_member_status_view.contents_padding
+      .common_page_header
+        %span.page_tile.icon_square
+          会員ステータス
+
+      .common_page_box
+        %p.common_title
+          会員ステータス
+        .common_box_inner
+          .common_table_a.mb20
+            %table
+              %tbody
+                %tr
+                  %th.wide40 あなたの会員ステータス
+                  %td.wide60
+                    %p.mr5
+                      無料会員
+                %tr
+                  %th.wide40 プレミアムオプション
+                  %td.wide60
+                    %p.mr5
+                      なし
+                %tr
+                  %th.wide40 プライベートモード
+                  %td.wide60
+                    %p.mr5
+                      なし
+          %p.common_text.mb0
+            有料会員に登録すると、メッセージ交換やお相手のいいね！数が見られるようになります。
+          .common_button_area.mb10
+            %p.button_item.w40p
+              =link_to "有料会員について", "/membership/aboutpaid", class:"mt10 button_a button_blue_a"
+              / =link_to "有料会員について", "/membership/about_paid", class:"mt10 button_a button_blue_a"
+          %p.common_text.mb0
+            さらに！マッチング率が2.4倍にUPするプレミアムオプションをご用意しています。
+          .common_button_area.mb10
+            %p.button_item.w40p
+              =link_to "プレミアムオプションについて", "/membership/aboutpremium", class:"mt10 button_a button_blue_a"
+          %p.common_text.mb0
+            もっと安心してお相手探しをしたいあなたへ
+          .common_button_area.mb10
+            %p.button_item.w40p
+              =link_to "プライベートモードについて", "/membership/aboutprivate", class:"mt10 button_a button_blue_a"
+              / =link_to "プライベートモードについて", "/membership/about_private", class:"mt10 button_a button_blue_a"
+      .common_page_box
+        %p.common_title
+          次回のいいね！付与
+        .common_box_inner
+          .common_table_a.mb20
+            %table
+              %tbody
+                %tr
+                  %th.wide40 いいね！付与日
+                  %td.wide60 2118/13/31
+                %tr
+                  %th.wide40 いいね！付与数
+                  %td.wide60
+                    .like_icon
+                      30回
+          .like_restore_text_box
+            %p.box_header
+              いいね！の付与日について
+            %table
+              %tbody
+                %tr
+                  %th
+                    %span.status_name 無料会員
+                %tr
+                  %td.status_top Pairs登録日から31日ごとに30回付与します。
+                %tr
+                  %th
+                    %span.status_name 有料会員
+                %tr
+                  %td.status_top 有料会員登録日から31日ごとに30回付与します。
+                %tr
+                  %th
+                    %span.premium_status_name プレミアムオプション
+                %tr
+                  %td.status_top プレミアムオプションお申し込み日から31日ごとに20回付与します。

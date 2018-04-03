@@ -1,0 +1,16 @@
+.ui-view_class
+  .main.box_community_view.contents_padding
+    .common_page_header
+      = render partial: "common_page_header"
+    .data-community-search-area
+      .box_community_header.common_inline_box
+        = render partial: "box_community_header"
+    .common_page_box.community_success_box
+      %p.common_title
+        コミュニティに入会しました。
+      .common_box_inner
+        %p.common_text.mb40
+          コミュニティトップから確認することができます。
+        .common_button_area
+          %p.button_item.w50p
+            = link_to "コミュニティトップに戻る", communities_path, class:"button_a button_gray_a"

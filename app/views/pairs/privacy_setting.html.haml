@@ -1,0 +1,159 @@
+.ui-view_class_style
+  .main.box_setting_view.contents_padding
+    .common_page_header
+      %span.page_tile.icon_square 各種設定
+    /『通知設定』欄
+    .data-notify
+      .common_page_box#box_notify
+        %p.common_title
+          通知設定
+        .common_box_inner_pddtp0
+          .common_table_b.common_form
+            %table
+              %tbody
+                %tr
+                  %th.v_align_top
+                    Pairsからのお知らせを受け取る
+                  %td
+                    .mb10
+                      %input{type:"checkbox", checked:"checked", id:"like_mail"}
+                      %label.form_label{for: "like_mail"}
+                        いいね！をもらった時
+                    .mb10
+                      %input{type:"checkbox", id:"matching_mail"}
+                      %label.form_label{for: "matching_mail"}
+                        マッチングした時
+                    .mb10
+                      %input{type:"checkbox", checked:"checked", id:"message_mail"}
+                      %label.form_label{for: "message_mail"}
+                        メッセージを受信した時
+                    .mb10
+                      %input{type:"checkbox", checked:"checked", id:"facebook_mail"}
+                      %label.form_label{for: "facebook_mail"}
+                        お相手がFacebookを公開した時
+                    .mb10
+                      %input{type:"checkbox", checked:"checked", id:"other_mail"}
+                      %label.form_label{for: "other_mail"}
+                        その他のお知らせ
+                    %p.fnt_base03.fnt12.mb10
+                      ※Pairsからの重要なお知らせについては通知設定に関わらず通知されますのでご了承ください。
+                    .common_page_box
+                      %p.fnt_base03.fnt12.mt3
+                        お知らせ配信先メールアドレス：
+                      %p.fnt_bold.mb10.fnt14
+                        #{@user.email}
+                    %p.mb5
+                      =link_to "/404" ,class: "link_change_mail", target: "_blank" do
+                        メールが届かない場合
+                        %img{src: "https://lh3.googleusercontent.com/ZcI0SsdLi10CbqxQdTlNbE0QxzPk9jSVHHfk1-nl7EHNZrD_pMOZdfZchyOrKQ9qZgF0nTzC5hYaPmGIMDdVXKGpsNEbfZfDVrITa65mAxWcsDUH1dTAkYv_IAx_klKrk_Qdk8YMgAYYIPk6-1Mu4rmtNUVN5E-n3hlay5T6r0X_ZfGrCXvS52O_dCYBQgl5KaYyGnWFtCopMLf-PXlu1m4M4unEVx4LCG9QNcaVO8XTzTv4Mz0fgXfVzejuzm9OE32gowdixaYlyOMZhJkooDhR_C4_IzYvWzQsC3Gp6-5FWzT9FjMJfrM0Vj8riwpYdvFptddSVu1VcRTrx9UC6oDQY1BjhBA9dDycSw85q9dEgUZir-hMQrlztpq2_8M7QOqr9D3xGW3LF_i8hORZqlySH9wLpoGS1gyVQd5F5UghziSdrKVj2C9CRvuHfU5eCR6QxksNYFYOdBGOjDWpJ5BaLHn4wqWu4jCsCImlNkVeqAWFXJ1g6_TW2Y9Mp9WvJ4NX2KrdqYgSU_GFv8bNhTvUPthpfkupyNCm8qO9p5bzesqRWDP2Bu_OFufVjZHPy5n8pCb4RYQmUh5qS9UNp2C8pvbIqqPc-VZKxKgUCgIrWmug8TS6bok7JUpyLo4gcd5_EbKiL628fUpZq4ZPjK21aTQStHEK=s15-no"}
+                    %p.mb5
+                      =link_to "/404", class: "link_change_mail", target: "_blank" do
+                        配信先メールアドレスの変更方法はこちら
+                        %img{src: "https://lh3.googleusercontent.com/ZcI0SsdLi10CbqxQdTlNbE0QxzPk9jSVHHfk1-nl7EHNZrD_pMOZdfZchyOrKQ9qZgF0nTzC5hYaPmGIMDdVXKGpsNEbfZfDVrITa65mAxWcsDUH1dTAkYv_IAx_klKrk_Qdk8YMgAYYIPk6-1Mu4rmtNUVN5E-n3hlay5T6r0X_ZfGrCXvS52O_dCYBQgl5KaYyGnWFtCopMLf-PXlu1m4M4unEVx4LCG9QNcaVO8XTzTv4Mz0fgXfVzejuzm9OE32gowdixaYlyOMZhJkooDhR_C4_IzYvWzQsC3Gp6-5FWzT9FjMJfrM0Vj8riwpYdvFptddSVu1VcRTrx9UC6oDQY1BjhBA9dDycSw85q9dEgUZir-hMQrlztpq2_8M7QOqr9D3xGW3LF_i8hORZqlySH9wLpoGS1gyVQd5F5UghziSdrKVj2C9CRvuHfU5eCR6QxksNYFYOdBGOjDWpJ5BaLHn4wqWu4jCsCImlNkVeqAWFXJ1g6_TW2Y9Mp9WvJ4NX2KrdqYgSU_GFv8bNhTvUPthpfkupyNCm8qO9p5bzesqRWDP2Bu_OFufVjZHPy5n8pCb4RYQmUh5qS9UNp2C8pvbIqqPc-VZKxKgUCgIrWmug8TS6bok7JUpyLo4gcd5_EbKiL628fUpZq4ZPjK21aTQStHEK=s15-no"}
+                %tr
+                  %th.v_align_top
+                    1日に受診するいいね！数上限
+                  %td
+                    .mb10
+                      たくさんのいいね！を受け取り過ぎてお困りの場合は、1日に受信できるいいね！数の上限をご設定ください。
+                    %select.hasCustomSelect
+                      %option{selected: "selected", value: "1"} 制限しない
+                      %option{value: "2"} 10人程度
+                      %option{value: "3"} 20人程度
+                      %option{value: "4"} 30人程度
+                    %p.class.fnt_base03.fnt12.mt10
+                      ※プレミアムオプションに加入している男性会員からのいいね！は上限とは関係なく受信します
+                      %br
+                      ※レディースオプションに加入している女性会員からのいいね！は上限とは関係なく受信します
+          .common_button_area
+            .button_item.w30p
+              %button{type:"submit", class:"button_a button_blue_a", id:"submitNotifySetting"}
+                上記の内容で更新する
+    /『Facebookの友達更新』欄
+    .data-fb-friend
+      .common_page_box#box_fb_friend
+        %p.common_title Facebookの友達更新
+        .common_box_inner
+          %p.common_text.mb20
+            Pairsでは、ご登録時のあなたのFacebookの友達情報を取得しているため、友達にはあなたのプロフィールは表示されないシステムになっています。
+            %br
+            Pairsご登録から、Facebookの友達が増えている場合は、以下の更新ボタンを押せば、新しいFacebookの友達にも、あなたのプロフィールが表示されなくなります。友達情報の更新は１日１回までとなっております。
+          %p.text_center.mb20
+            %img{src: "https://lh3.googleusercontent.com/euJIT4dFBrydQ_PZ1umPjbJw3ekObx5gtukDY9ZIzgc2gDTAjAL55UtaRGtW5b5G6vsoBJs9mF5IvbDDWF0LSFRUWBlKLi5SZBSDu9zadGN36Csoq-lX1Ftn_c9QYQKNKRG_TgmLqPapsJjTdx2xxlDgI7qe4ijTSgIeej091z8xcDZeBKW4EypjRlChVl7umxcutbRppwfj6r0UDfbGmVDo8uu0T4bVQQJidn21kQlsU4gs7rze1fZ0YvmSIJuZJUEElbN_hreuMeMm6bfLcXP0NeTjSAsB2DdNQLkvGbHAudelhg-Tzy3BQHfXWrCllZx5FGsWOUGHA9BZ2c9et5LKFIKtswq8k9YsYNG5wcaGViMPyeTmmn9TcMDbw8mDMGYxnLKr5MBC9H5j_EsvcDhAtbX7xRXBMLv9tbaDNZMU5TADPRbQpoWaWsY2jU1DwmMwVJ7_YsOcc8iXiiCrA7y5QCIxwZk6j3G-JGIr1Yis5qLSh44bcw85iCQ4E9_uHW-DpORPTtsFWb8SyxiOCufkq5tg75vOWYgCVV2u4dNaELXPRPanq3o-KpvGaj4IEsT_eq9TRHe-kWrMECy263-PKl8LnUrfxLV45nPFGmEo7_uQlVOfMZ9Z0aQ8fPt7f51qhcrP_p4PM_n3NY9Iwj1LaVchBIXp=w501-h214-no"}
+          .common_button_area.mb20
+            %p.button_item.w40p
+              %a{class:"button_a button_blue_a", id:"updateFacebookFriends"}
+                Facebookの友達情報を更新する
+          .common_button_area.mb20
+            %p.button_item.w40p
+              %a{class:"button_a button_blue_a", id:"updateFacebookMailaddress"}
+                メールアドレスをFacebookから取得
+          %p.common_text.mb10.text_center
+            最終更新日時: 2018/02/31 28:12:34
+    /『非表示・ブロックユーザー』欄
+    .data-hide-block-user
+      .common_page_box#box_hide_block
+        %p.common_title 非表示・ブロックユーザー
+        .common_box_inner
+          %p.common_text.mb20
+            あなたが、Pairs内で「非表示」または「ブロック」したユーザーの一覧を確認することができます。
+            %br
+            また一覧から、非表示の解除ができます。
+            %br
+            ※ブロックの解除はできません。
+          .common_button_area.mb10
+            %p.button_item
+              %a{href:"/dislikeuserlist/hide", class:"button_a button_white_a"} 非表示ユーザーリストへ
+            %p.button_item
+              %a{href:"/dislikeuserlist/block", class:"button_a button_white_a"} ブロックユーザーリストへ
+    /『オフラインモード設定』欄（独自仕様）
+    .data-hide-block-user
+      .common_page_box#box_offline
+        %p.common_title オフラインモード設定
+        .common_box_inner
+          .common_button_area.mb10
+            %p.button_item
+              %a{href:"/privacysetting#box_offline_male", class:"button_a button_white_a", id:"male_gnavi_item"} オフラインモード設定（男性）
+            %p.button_item
+              %a{href:"/privacysetting#box_offline_female", class:"button_a button_white_a", id:"female_gnavi_item"} オフラインモード設定（女性）
+    /『オフラインモード設定』（男性用）欄
+    .data-offline-mode
+      /↑中身空（ポップアップで下記を表示）
+    /男性用
+    .data-promotion-premium-modal
+      / .bg_overlay.modal_animation
+      .box_modal_window.modal_fixed.modal_animation.modal_only_premium#box_offline_male
+        .box_modal_window_inner
+          %a.modal_close
+            %img{src: "https://lh3.googleusercontent.com/JZ5QgP9n4HLC-gnXIcJAsLL2zh7NV0OxNWjjOWOoxbD5gU8a1VBfjDBNzifCYTU9cwBfJByoPM6QPg0BMLsgcA2biofLRmrpfI3trDe8vXreEbsQQ4q9HR_n7iPL3E16d3a4k0W4saje0qJMC6j2vyVepU1EWQj2BEiQcB8iXviUAhzI3Rw4cPIAzZUKv4FJf8d2gBODxBt7nUyWkdR6DlUuAo5X8WxW-7c7PRb9Z0_VzojmdeKrOGmtTYE4LGflbY4dkwRUt7owI0oYY-NWZGRiyMBANMfnfKJZrM7NrA8R3gvX6gNxQ9lb-2H4kdZBxnNJJiIZCbA3U6FkJ7L7qCoRPcSY7A31anQLjuZp2F6zQEbKRZevBtrU6KfCGEMf-k6a7dNbTfx1LiwUa1WbXcWmrqXt1upE1hSlolc4bc5xDXHh22L9OydnIHQ7M8LB-Pqk-9nDdHAM4MpYk16mGNSgFaV7wPAdPAHqTcF3szUqQ-r-wAqSmcb_8RmKplujpNHYcRI1-42F9gCF4ibvYV3ir1fGRZIRkYQsqtbbXReqsQi_mfqmJ5djsW1f60oR9kuTiMMjvMChx8b0a1O19Iin7jEfomS9fvQUKdQuscsYlMTcNddsNpFkrO1GiBLkR_hqVzUHmtQPZC2_Omnx8veBWnRVDywk=s53-no"}/
+          %p.modal_title.ribbon_title.ribbon_gold
+            プレミアムオプション専用です
+          %p.modal_text_a.mb20.ng-hide
+            『ng-hide』は合計７パターンあり。
+          %p.modal_text_a.mb20
+            検索を利用するためには、
+            %br
+            %em プレミアムオプションの申し込み
+            が必要です。
+          %p.modal_text_center.mb20
+            %img{src:"https://lh3.googleusercontent.com/S7iMon3amWuRcZkYnEVAjLtmzDIVKn5cYSYSDWvVH_jhkGu3g6cyMvhIz1AgU8DMB5b2S7B09Ce61fLXekTMvtuDaaJhq0loj0KMc5Z70AzBXG4dw3Tfj-bKZ1-jnTh0ewOk3VH7-JwxaMxsNM-rU4_jMdvOnXd4Wyo_fZK_GpJXFdy0pdjHk00rnzABQlYUn000QhUtr83h0Pvm49989bep-k6b6spWFzPWTTVfIRZLpALiLgL4X3GxbcaHcnjhqgoaq0Ij-xQn7P6lUp8QF-fZ3jbucTJSLIIhwhtMASZk3dXTxVC8iRKEml7r3qrsbmGacW4McWrtgOLbVe07P3n9vIiSasIVCpFDh4wuZPtt-qYnMq2AFoYMmbjY8mCgb7vxDAMqA0QFeb351-SqZDltHQZ9uVHSG6WRU96P0kke5kbtPpft3o1JZ-vpGEjFo2Ih9vBjB8JyOdv7PxrzQtICrY1FYX7rdz_fuvHLgtnQ9fzoWOzGt7S1nDZwc3vJhpeLq9HqaoABi2nYgELwGshMLdUti8iPxifxR-UK-4RqCy8cbSCELXGlYap2oAzU5epHplpj348cShQ0csoWEQcBt88cqzbgFYZaHvLstzhuzAeGC92OrsH1_OFLocdT3TCVTdP2Qw88_7nYIw7eq4ayCpjI2KGL=w530-h158-no"}
+          .modal_button_area.text_center
+            = link_to "申し込んでこの機能を使う", "/membership/aboutpremium", class: "button_a button_blue_a mb20"
+    /女性用
+    .data-promotion-ladys-modal
+      / .bg_overlay.modal_animation
+      .box_modal_window.modal_fixed.modal_animation.modal_only_premium#box_offline_female
+        .box_modal_window_inner
+          %a.modal_close
+            %img{src: "https://lh3.googleusercontent.com/JZ5QgP9n4HLC-gnXIcJAsLL2zh7NV0OxNWjjOWOoxbD5gU8a1VBfjDBNzifCYTU9cwBfJByoPM6QPg0BMLsgcA2biofLRmrpfI3trDe8vXreEbsQQ4q9HR_n7iPL3E16d3a4k0W4saje0qJMC6j2vyVepU1EWQj2BEiQcB8iXviUAhzI3Rw4cPIAzZUKv4FJf8d2gBODxBt7nUyWkdR6DlUuAo5X8WxW-7c7PRb9Z0_VzojmdeKrOGmtTYE4LGflbY4dkwRUt7owI0oYY-NWZGRiyMBANMfnfKJZrM7NrA8R3gvX6gNxQ9lb-2H4kdZBxnNJJiIZCbA3U6FkJ7L7qCoRPcSY7A31anQLjuZp2F6zQEbKRZevBtrU6KfCGEMf-k6a7dNbTfx1LiwUa1WbXcWmrqXt1upE1hSlolc4bc5xDXHh22L9OydnIHQ7M8LB-Pqk-9nDdHAM4MpYk16mGNSgFaV7wPAdPAHqTcF3szUqQ-r-wAqSmcb_8RmKplujpNHYcRI1-42F9gCF4ibvYV3ir1fGRZIRkYQsqtbbXReqsQi_mfqmJ5djsW1f60oR9kuTiMMjvMChx8b0a1O19Iin7jEfomS9fvQUKdQuscsYlMTcNddsNpFkrO1GiBLkR_hqVzUHmtQPZC2_Omnx8veBWnRVDywk=s53-no"}/
+          %p.modal_title.ribbon_title.ribbon_blue
+            レディースオプション専用です
+          %p.modal_text_a.mb20
+            検索を利用するためには、
+            %br
+            %em レディースオプションの申し込み
+            が必要です。
+          %p.modal_text_center.mb20
+            %img{src:"https://lh3.googleusercontent.com/MVvR2YVUGKUaR_LAPnnLUkoU02SJGNwLSLghZjAICiSkPXiBPRArqVmfXV8og1tJhUkOsn5PTml7peHa_bjLtBjZwfWF8ea8lo5UPtSs4Enx06mWy7Dg2n_NKkIMR3qGkOd1aVk_bq8Oa8pRAo0fUCuTUpxDAUoJew7y4-Imaf-UX5bn5uJtVZtf2cAP45oSqtMDPG9j13CjDcxuCRNVmmaJD37Ya43EP59mVby-n-XEI6DtgTFUof70Wds-fWT8feazzr0POCFTWoXrbB7Zt3Cl2GSkCc1PQv7VLsRGw4CMvkDHWLPeS-Z3b8ce9u-VnYaNBpud-ucXv7fUKBvzruR4-Uvhdiywk0_tDMCh-wTghnVq23flE7qKTHCJuz0eLWylxkA1J5oAoPtGDuFE-2DgSkHTNA3OJF3qcD42e_tMhAx6QboK0lusaIezo9e3GDitTtVDjUPVFi4WHRow14NoWLPSzvMWf8Ekr0XzAQx2VlYXQ_p0ZSYJs8qa-Ku_CS2idY3OlkiyeGm7FAssBqE3pkURX0ZREUyqAxHzzroGetPIiUS3UGsr8xojJi9YhZxXHtpSmB9tZ3R5UnI4XBZBVmZCt8I42IXoC4DSTNskhFPfEOY6xglGJ_YNajr7sS3pLYJmlEj05TUTvUezneTuZretShfB=w530-h158-no"}
+          .modal_button_area.text_center
+            = link_to "申し込んでこの機能を使う", "/membership/aboutladys", class: "button_a button_blue_a mb20"

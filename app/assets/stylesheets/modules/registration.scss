@@ -1,0 +1,336 @@
+.contetnts {
+    width: 100%;
+    height: 100%;
+}
+.main_content {
+    clear: both;
+    font-size: 15px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 720px;
+    height: 00px;
+    margin: 75px auto auto;
+    background: white;
+    color: gray;
+    .logo {
+        background-image: url(https://lh3.googleusercontent.com/z2GWNM-MdNUiS8vhDcDwj0KbGySqPYLjqfaA8dYqsFH81IB1A8WureFenZgiQ-5SeCpXHvCjG6AHTJ1wWWAC9np1U0uKc3tPBTerTTIjC0aqG64z708J4czo96KTzmjkojw8HKmEwbzmoZBRR-J5oUVcL05_Ux95Dtch10-C5rGK7eKCcvzrycaRcMst1PMZujdHkveGKJYjZ_5VoQVnrEVno8IMwGwYNNTU0f33H2b3hRxK66tYb4aGHk5lpz4TLIcSm50LbC-qw5cHeXrbte0MEEXZu7HUfvOWptwDhOIK9T4D3_Z6zkLnmY5o2eyk0qeCU_qU-qXn4ryK222bZgH1fq5LVGP7e4GbbEhq3NMXW3pFK5rBMoO1z7y3WyYR2uqJym2rqehr9gkqjNmcVO1Y8GuWIeLHSgcXjrFH7Hso1JngLPogpCh1LhQ-fMHBf7y0WG5S_ZeaxKyjgvGCyiToH0eothRKeFKVLDJOvW_TXabufOKrmdReAMLgf-EFlNg7MNjfyM_nOb3fygsLiHCT8qo2WQtshWQDqsyOyUd4nkhKbMzJl36IJw7Py5KBEytfTGBh23cdY4QnIpxyASmQvd4EKPMELEJjK6OQByHMKJhAH6KZmk_pQ6-Q4PIZtWcXaoZNoDti77rCRVeBQvO6t0b3GEgm=w404-h81-no);
+        background-size: contain;
+        background-repeat: no-repeat;
+        width:  420px;
+        height: 80px;
+        margin-bottom: 80px;
+        position: relative;
+        left: 150px;
+    }
+    .form_content {
+        padding: 30px 60px;
+        background: white;
+    }
+    .new_user {
+        background: white;
+        height: 530px;
+    }
+    .field_nickname_gender {
+        background: white;
+        margin-bottom: 18px;
+        height: 76px;
+        .field_nickname {
+            width: 50%;
+            height: 25%;
+            text-align: left;
+            display: inline;
+            float: left;
+            .label_nickname {
+                padding-bottom: 10px;
+                font-weight: 900;
+            }
+            #user_nickname {
+                margin-top: 10px;
+                padding: 10px;
+                width: 85%;
+                color: #a1a7ac;
+                background: #f8f9f9;
+                border-radius: 5px;
+                border: none #ccc //radiusで生成されるformの影を消す処理;
+            }
+        }
+    }
+    .field_gender {
+        width: 50%;
+        height: 76px;
+        background: white;
+        padding-top: 0px;
+        margin-top: 0px;
+        float: right;
+    }
+
+    .gender_type_engine {
+        font-weight: 900;
+        display: inline;
+        padding: 10px;
+    }
+    .gender_type_label_male {
+        font-weight: 900;
+        position: relative;
+        top: 7px;
+        left: 20px;
+        float: left;
+        width: 60px;
+        padding: 13px;
+        color: gray;
+        font-size: 16px;
+        text-align: center;
+        line-height: 1;
+        border-radius: 20px;
+        border: 1px solid #54595d;
+        //radiusで生成されるformの影を消す処理;
+    }
+    .gender_type_label_female {
+        font-weight: 900;
+        position: relative;
+        left: 40px;
+        top: 7px;
+        padding: 13px;
+        display: block;
+        float: left;
+        width: 60px;
+        margin: 0;
+        color: gray;
+        font-size: 16px;
+        text-align: center;
+        line-height: 1;
+        border-radius: 20px;
+        border: 1px solid #54595d;
+        //radiusで生成されるformの影を消す処理;
+    }
+    .radio-inline {
+        display: inline;
+        // display: none;
+    }
+
+    .button_male {
+         display: none;
+    }
+
+    .button_male:not(.not_use_default):checked+label {
+                    color: #00abb3;
+                    border: 1px solid #009F8C;
+                    background-color: white;
+
+                    font-weight: 100;
+    }
+    .button_female {
+         display: none;
+    }
+
+    .button_female:not(.not_use_default):checked+label {
+                    color: #00abb3;
+                    border: 1px solid #009F8C;
+                    background-color: white;
+                    font-weight: 100;
+                }
+
+
+    .select_box{
+      margin-bottom: 18px;
+      }
+    }
+
+    label{
+            font-weight: 900;
+            padding-bottom: 10px;
+
+    }
+
+select {
+        -webkit-appearance: none;
+        background-color: white;
+        border-radius: 20px;
+        border: 1px solid #ccc;
+        height: 29px;
+        width: 150px;
+        box-shadow: 0 2px 0 #c9c9c9;
+        text-align-last: left;
+        padding-left: 20px;
+        font-size: 12px;
+        color: #788086;
+        display:block;
+        margin-top: 10px;
+
+    }
+
+
+.select_residence{
+    float: left;
+    padding-right:58px;
+}
+
+.select_age{
+
+}
+
+#user_age_id{
+    @include allow_icon;
+    width: 254px;
+}
+
+#user_residence_id {
+    @include allow_icon;
+    width: 254px;
+
+    }
+
+
+    .field_email {
+        margin-bottom: 18px;
+        background: white;
+        .label_email {
+            font-weight: 900;
+            padding-bottom: 10px;
+        }
+        #user_email {
+            border: none;
+            color: #a1a7ac;
+            font-size: 15px;
+            margin-top: 10px;
+            padding: 10px;
+            width: 95%;
+            background: #f8f9f9;
+            border-radius: 5px;
+            //radiusで生成されるformの影を消す処理;
+        }
+    }
+    ::-webkit-input-placeholder {
+        color: #ccc;
+    }
+    .field_password {
+        background: white;
+        margin-bottom: 18px;
+
+        #user_password {
+            margin-top: 10px;
+            padding: 10px;
+            width: 95%;
+            background: #f8f9f9;
+            border-radius: 5px;
+            border: none //radiusで生成されるformの影を消す処理;
+        }
+    }
+    .field_password_confirmation {
+        background: white;
+        margin-bottom: 18px;
+        .label_password_confirmation {
+            padding-bottom: 10px;
+            font-weight: 900;
+        }
+        #user_password_confirmation {
+            margin-top: 10px;
+            padding: 10px;
+            width: 95%;
+            background: #f8f9f9;
+            border-radius: 5px;
+            border: none //radiusで生成されるformの影を消す処理;
+        }
+    }
+    .field_checkbox {
+        background: white;
+        margin-bottom: 18px;
+        height: 76px;
+        // .checkbox_icon {
+        //     background-image: url(https://lh3.googleusercontent.com/vPSxtWlypr61BtYjZTR2MGoVErtdWJHdcCxSUaMD7R_tSRQ8BmQC8IJGAHLTBm6homUDulcYmzzD3fpq9Zf5ervOGZQF4l0aM35ooTlM475oWmpO4JvrnZXwoVtaysShJLDBg8Chprb34ZzyRe8GSHtzEJEqvd0f_xxKBlq2sk2-1JCrDt_dSU5L-v_1GJxrJJQ0h5wzM-f6viWnQKwPxgpvIVa9iQT0BGtalcIq_Ncpff6CXd_jhpjYkT5kcosUvb2Hfe25kNF3Lcp5b6iPm5fUtaIPZ35LIvCJnd_kbZtkICtxK9ZVruw1ZHvtaUXdsYEvY4WZ2Bse9lNm3pcTJwrkCh8HBDWfArLsQFT1rg_w0aGxDXmL2XfdWmVdsmpVV4UbywL86ITgZFbwVUh7Wr9Y_O9fCj2IFabzps-vk76D4zcJ46W767xH8J_6hoGooJhMnFuK35XvHMSEy-YMcsZduXwP4J_jLbQPbibGOafIvDUO9G71q_JCpOWeS7M7r3Ud_sFTGeduqn7Ig7XHixLwXPi116MF011fNCpjkyUSMVvEgkPQI6ZeYbToFauo6EHTmAfKG1EDt3MVnS-5E6YWMmGlANfTyXuWvg4ukoNx3jMx47xYN768hzmzwdinpfKUcLe2G-ys4cUZ2nHE2-t6FfqYqaWP=s52-no);
+        //     height: 33px;
+        //     width: 33px;
+        //     background-size: contain;
+        //     background-repeat: no-repeat;
+        //     float: left;
+        //     position: relative;
+        //     left: 135px;
+        //     top: 20px;
+        // }
+        .checkbox_text {
+            position: relative;
+            width:  290px;
+            left: 170px;
+            font-size: 14px;
+        }
+         .checkbox_label {
+            display: none;
+            border: 1px gray solid;
+            padding: 5px;
+            cursor: pointer;
+            float: left;
+            text-align: center;
+            position: relative;
+            left: 120px;
+            bottom: 37px;
+        }
+
+        .checkbox_button:not(.not_use_default):checked+label {
+                    color: #00abb3;
+                    border: 1px solid #009F8C;
+                    background-color: white;
+                    font-weight: 100;
+                }
+
+
+
+    input#user_checkbox_example{
+        width: 50px;
+        font-size:50px;
+        position: relative;
+         bottom:30px;
+         left:140px;
+        color: red
+            }
+
+ input[type=checkbox] {
+
+   }
+
+    }
+    .actions {
+        text-align: center;
+        margin: 30px;
+        input {
+            border: none;
+            background: #00abb3;;
+            border-radius: 20px;
+            width: 344px;
+            height: 38px;
+            color: white;
+            box-shadow: 0 4px 0 #009F8C;
+        }
+    }
+
+// .checkbox label:before {
+//     content:        '';
+//     width:          32px;           /* ボックスの横幅 */
+//     height:         32px;           /* ボックスの縦幅 */
+//     display:        inline-block;
+//     position:       absolute;
+//     left:           0;
+//     background-color:   #fff;
+//     box-shadow:     inset 1px 2px 3px 0px #000;
+//     border-radius:      6px 6px 6px 6px;
+// }
+
+
+// .checkbox_icon:not(.not_use_default):checked+label  {
+//      color: #00abb3;
+//     background-image: url(https://lh3.googleusercontent.com/fn6nss5uSYRS4MccfiTE5FBOm3ZdQOK3OejvRCfm9Ppy_A-Oj8TD0BLRsMhZo2LzfRgvCxsJj-0oDr607pWVrquii5YOckuSFJUFYJ86q-eLbYnSeFnnhkh1bfAECsMdiqO3alK_mIRyA0W2PJtqDD_QSozdO_NeHOjI7H74QAAqH9gwU5CUBx0Jg4rhkvNEFHM6Ya3OsCPVdErINDmjm9StRyc4yqej-TRQ9PywgmVzzEbkZ7WePU_vDUC6XoZqLno7z1PVjcD27eB6-9FxMovz-535ZQKzn_eodMdzMWup7AC8gPi2-rbMLrOCwvokQMgc58iDGBBNPwMfHeeBvPfQ62diVQf9oLQNkPdpBae9aC2GR9EXWTFGBN11QFqQhGaP2yN9RZupzRkA799J6yaZEQ9zBRGEuffFLRjxBmn_-2yO-euRQ8Xz0W4WXky-defd1VgOWNe1xD11RMqQdcwn5ErJazMY2-xBZQoECsm4Vk-WgmZal08OASWRgjEZ_m1fDM5vhNeyh_FtZFEP0Yqn5z1t2z8JTSUDDwcqJG1_4gV_Lqlcwq0R8RLZSYsPWwwPM9dYeJT-mSh0BlM7caXwpP6e5kLkDoxy1rxU8NWgzbnhcFbaX-4QDAXz3KlqTpmaUJbpWd51teynyGhqLnvRVHJKkoHu=s52-no);
+//     height: 33px;
+//     width: 33px;
+//     background-size: contain;
+//     background-repeat: no-repeat;
+//     float: left;
+//     position: relative;
+//     left: 135px;
+//     top: 20px;
+// }
+
+.main_footer {
+    width: 700px;
+}

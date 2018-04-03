@@ -1,0 +1,18 @@
+.main_contents
+  .main_contents_style
+    .main.box_message_view
+      %div
+        %div
+          .box_message_inner_left
+            .box_matching_summary
+              %p.matching_summary_text
+                %em
+                  %span 2
+                  人
+                の女性とマッチングしています。
+            %ol.box_matching_list.box_inner_scroll.ps-container.ps-theme-default
+              - @groups.zip(current_user.matchers).each do |group, match_user|
+                = render partial: "messages/shared/match_user",locals:{group: group, match_user: match_user}
+            .box_button_withdrawal
+              =link_to "退会者を表示しない","", class: "button_c button_white_a"
+          = render partial: "messages/shared/box_message_inner_right"

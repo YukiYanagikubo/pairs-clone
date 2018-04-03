@@ -1,0 +1,33 @@
+body {
+  line-height: 1.4;
+  height: 100%;
+  word-break: break-all;
+  color: #54595d;
+  background: #fff;
+
+  .clearfix:after{
+    content: "";
+    clear: both;
+    display: block;
+  }
+
+  .body {
+    .wrapper {
+      height: 100%;
+      width: 928px;
+      margin: 0 auto;
+      display: flex;
+    }
+  }
+  .showProfile {
+    display: none;
+    position: absolute;
+    z-index: 1000;
+    top: 30px;
+    left: 500px;
+    // 追加
+    width: 780px;
+    padding: 0 28px;
+    box-sizing: border-box;
+  }
+}

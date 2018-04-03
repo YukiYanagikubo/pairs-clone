@@ -1,0 +1,602 @@
+/*『見たいプロフィール』スクロール*/
+.box_inner_scroll {
+  position: relative;
+  overflow: scroll;
+}
+
+
+/*『box_user_action_a』箇所、ページ送り等*/
+.box_user_action_a .action_pager_pre,
+.box_user_action_a .action_favorite {
+  float: left;
+}
+.box_user_action_a .action_pager_next,
+.box_user_action_a .action_hide,
+.box_user_action_a .action_block {
+  float: right;
+}
+.box_user_action_a .action_pager_pre a,
+.box_user_action_a .action_favorite a,
+.box_user_action_a .action_hide a,
+.box_user_action_a .action_block a,
+.box_user_action_a .action_pager_next a {
+  line-height: 1.0;
+  display: table-cell;
+  width: 60px;
+  height: 60px;
+  text-align: center;
+  vertical-align: middle;
+  border-radius: 30px;
+}
+.box_user_action_a .action_pager_pre a span,
+.box_user_action_a .action_favorite a span,
+.box_user_action_a .action_hide a span,
+.box_user_action_a .action_block a span,
+.box_user_action_a .action_pager_next a span {
+  display: block;
+}
+.box_user_action_a .action_pager_pre a,
+.box_user_action_a .action_favorite a,
+.box_user_action_a .action_hide a,
+.box_user_action_a .action_block a,
+.box_user_action_a .action_pager_next a {
+  @include box_user_action_a();
+}
+.box_user_action_a .action_favorite.is_favorited a {
+  &:before {
+    background-position: -33px -356px;
+  }
+}
+.box_user_action_a .action_favorite a {
+  &:before {
+    background-position: 0px -356px;
+  }
+}
+.box_user_action_a .action_hide a {
+  &:before {
+    width: 12px;
+    height: 12px;
+    background-position: -246px -400px;
+  }
+}
+.box_user_action_a .action_pager_pre a {
+  &:before {
+    background-position: -96px -356px;
+  }
+}
+.box_user_action_a .action_pager_next a {
+  &:before {
+    background-position: -166px -356px;
+  }
+}
+
+
+/*『あなたとの相性』*/
+.user_chemistry_b {
+  font-size: 1.3rem;
+  font-size: 13px;
+  color: #f48d97;
+  display: inline-block;
+}
+
+.bg_overlay{
+  display: none;
+  position: fixed;
+  z-index: 500;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255,255,255,.7);
+}
+
+/*バツボタン*/
+.modal_close {
+  position: absolute;
+  top: -26px;
+  // right: -26px;：位置調整のために下記に変更
+  right: 2px;
+  cursor: pointer;
+  img{
+    height: 53px;
+    width: 53px;
+  }
+}
+
+/*コンテンツ内部*/
+.box_personal_view {
+  margin-bottom: 15px;
+  padding: 15px;
+  background-color: #f3f3f3;
+  .box_personal_inner01 {
+    @include clearfix();
+    margin-bottom: 16px;
+    .personal_inner_left {
+      width: 230px;
+      float: left;
+      .user_status_list {
+        font-size: 1.3rem;
+        font-weight: 13px;
+        margin-bottom: 10px;
+        .user_status_item {
+          &:last-child {
+            margin-bottom: 0;
+          }
+          line-height: 1.0;
+          margin-bottom: 6px;
+          padding: 12px;
+          background-color: #fff;
+          .user_login {
+            display: inline-block;
+            margin-right: 5px;
+            margin-left: 5px;
+            color: #54595d;
+            @include is_24hours();
+            @include is_3days();
+            @include is_online();
+          }
+          &.user_chemistry {
+            .user_chemistry_b {
+              @include user_chemistry_b();
+              font-size: 1.3rem;
+              font-size: 13px;
+              color: #f48d97;
+              display: inline-block;
+              &.is_chemistry_heart100_a {
+                &:before {
+                  background-position: -23px -75px;
+                }
+              }
+              &.is_chemistry_heart75_a {
+                &:before {
+                  background-position: -47px -75px;
+                }
+              }
+              &.is_chemistry_heart50_a {
+                &:before {
+                  background-position: -71px -75px;
+                }
+              }
+              &.is_chemistry_heart25_a {
+                &:before {
+                  background-position: -95px -75px;
+                }
+              }
+              &.is_chemistry_heart0_a {
+                &:before {
+                  background-position: -119px -75px;
+                }
+              }
+            }
+            strong {
+              font-size: 1.6rem;
+              font-weight: 16px;
+              padding-left: 5px;
+              font-weight: bold;/*なしだと太字にならない為*/
+            }
+          }
+        }
+        .user_like_count {
+          .user_like_count_b {
+            @include user_like_count_b();
+            font-size: 1.3rem;
+            font-size: 13px;
+            display: inline-block;
+            white-space: nowrap; /*自動的な改行を行わせない*/
+            color: #f48d97;
+            strong {
+              font-size: 1.6rem;
+              font-size: 16px;
+              padding-right: 2px;
+            }
+          }
+          span {
+            font-size: 1.2rem;
+            font-size: 12px;
+            color: #cbced0;
+          }
+        }
+      }
+      .box_user_custom_display {
+        background-color: #fff;
+        position: relative;
+        border-bottom: 10px solid #fff;
+        .box_custom_display_title {
+          @include clearfix();
+          position: relative;
+          z-index: 100;
+          padding: 12px;
+          border-bottom: 1px solid #cdced0;
+          background-color: #fff;
+          .button_setting {
+            position: absolute;
+            top: 7px;
+            right: 10px;
+          }
+        }
+        .custom_display_list {
+          @include clearfix();
+          font-size: 1.3rem;
+          font-size: 13px;
+          height: 364px;/*固定値*/
+          padding: 0 12px;
+          .custom_display_title {
+            float: left;
+            clear: both;
+            width: 102px;
+            margin-top: 8px;
+            margin-right: 5px;
+            color: #788086;
+          }
+          .custom_display_value {
+            float: left;
+            overflow: hidden;
+            width: 99px;
+            min-height: 18px;
+            margin-top: 8px;
+            color: #00abb3;
+          }
+        }
+        .box_custom_display_form {}
+      }
+    }
+    .personal_innger_right {
+      width: 450px;
+      float: right;
+      .box_user_display_photo {
+        padding: 10px;
+        background-color: #fff;
+        .user_summary_info {
+          @include is_new_arrival_b();
+          position: relative;
+          margin-bottom: 10px;
+          .alert_violation {
+            position: absolute;
+            top: 11px;
+            left: 11px;
+          }
+          .user_display_photo_list {
+            width: 430px;
+            height: 390px;
+            text-align: center;
+            .user_display_photo_item {
+              display: none;
+              text-align: center;
+              &.is_current {
+                display: inline;
+              }
+              img {
+                height: 390px;
+                max-width: 100%;
+                max-height: 100%;
+              }
+            }
+          }
+          .summary_info_inner {
+            position: absolute;
+            z-index: 3;
+            bottom: 0;
+            width: 100%;
+            height: 110px;
+            color: #fff;
+            background: linear-gradient(to bottom,transparent 10%,rgba(0,0,0,.38) 76%,rgba(0,0,0,.5) 100%);
+            .user_info_wrapper {
+              position: absolute;
+              bottom: 10px;
+              left: 14px;
+              display: block;
+              width: 410px;
+              .user_info {
+                font-size: 2rem;
+                font-size: 20px;
+                bottom: 34px;
+                left: 14px;
+                span {
+                  padding-right: 5px;
+                }
+              }
+              .user_tweet {
+                font-size: 1.6rem;
+                font-size: 16px;
+                line-height: 100%;
+                margin: 4px 0;
+              }
+            }
+          }
+        }
+        .box_user_photo {
+          @include clearfix();
+          margin-bottom: 10px;
+          .four_photos {
+            width: 428px!important;
+          }
+          .box_user_photo_request {
+            float: left;
+            width: 98px;
+            margin-right: 12px;
+            .button_photo_request_a {
+              @include button_photo_request_a();
+              font-size: 1.2rem;
+              font-size: 12px;
+              display: table-cell;
+              height: 98px;
+              text-align: center;
+              vertical-align: middle;
+              color: #fff;
+              border-radius: 4px;
+              background-color: #f8b1b8;
+              box-shadow: 0 -3px 0 #f48d97 inset;
+              span {
+                display: inline-block;
+                min-width: 80px;
+              }
+            }
+          }
+          .box_user_photo_inner {
+            float: left;
+            overflow: hidden;
+            width: 318px;
+            .user_photo_list {
+              width: 330px;
+              margin-right: -12px;
+              .photo_item  {
+                position: relative;
+                float: left;
+                margin-right: 12px;
+                cursor: pointer;
+                &.is_current {
+                  @include photo_item_is_current();
+                }
+                .image-round {
+                  width: 98px;
+                  height: 98px;
+                }
+              }
+            }
+          }
+        }
+        .box_user_photo_pager {
+          @include clearfix();
+          .pager_pre {
+            float: left;
+            padding: 6px 10px;
+          }
+          .pager_next {
+            float: right;
+            padding: 6px 10px;
+          }
+          .pager_nums {
+            font-size: 1.6rem;
+            font-size: 16px;
+            text-align: center;
+            .pager_num {
+              display: inline-block;
+              padding: 2px 6px;
+              &.is_current {
+                cursor: default;
+                pointer-events: none;
+                color: #00b8c0;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .box_user_action_a {
+    margin-bottom: 15px;
+    .action_like a {
+      margin: 0 175px 0 155px;
+    }
+    .action_pager_pre {
+      margin-right: 9px;
+    }
+    .action_pager_next {
+      font-size: 1.4rem;
+      font-size: 14px;
+      margin-left: 9px;
+      a {
+        font-weight: 700;
+        width: 90px;
+        color: #00abb3;
+      }
+    }
+    .box_user_action_list {
+      @include clearfix();
+      .action_favorite {
+        letter-spacing: -.5px;
+      }
+    }
+  }
+  .box_like_remaining {
+    font-size: 1.3rem;
+    font-size: 13px;
+    text-align: center;
+    color: #788086;
+    em {
+      font-weight: 700;
+      color: #f48d97;
+    }
+  }
+  .box_message_area {
+    margin-bottom: 15px;
+    padding: 16px 12px 14px;
+    background-color: #fff;
+    .message_area_title {
+      margin-bottom: 20px;
+    }
+    .message_area_text {
+      font-size: 1.4rem;
+    }
+  }
+  .box_question_answer {
+    margin-bottom: 15px;
+    padding: 16px 12px 14px;
+    background-color: #fff;
+    .question_answer_title {
+      margin-bottom: 20px;
+    }
+  }
+  .box_personal_inner02 {
+    @include clearfix();
+    .personal_inner_left {
+      width: 288px;
+      float: left;
+      .box_user_detail {
+        background-color: #fff;
+        margin-bottom: 15px;
+        padding-bottom: 15px;
+        .detail_sub_title {
+          font-size: 1.4rem;
+          font-size: 14px;
+          padding: 15px;
+          color: #bec3c9;
+        }
+        .detail_item_list {
+          @include clearfix();
+          font-size: 1.3rem;
+          font-size: 13px;
+          padding: 0 15px;
+        }
+        .detail_item_title {
+          float: left;
+          clear: both;
+          width: 108px;
+          margin: 0 14px 8px 0;
+          color: #788086;
+        }
+        .detail_item_value {
+          overflow: hidden;
+          margin-bottom: 8px;
+          color: #00abb3;
+        }
+      }
+      .button_breach {
+        font-weight: 400;
+        @include button_breach();
+      }
+    }
+    .personal_innger_right {
+      width: 392px;
+      float: right;
+      .box_join_community {
+        @include box_join_community;
+        .join_community_title_a {
+          @include join_community_title_a;
+        }
+        .join_community_list {
+          @include clearfix();
+          border-bottom: 1px solid #e1e3e5;
+          .join_community_item {
+            @include join_community_item;
+          }
+        }
+        .box_community_pager {
+          @include box_community_pager;
+          .pager_pre {
+            @include button_white_a_disabled;
+          }
+        }
+        .empty_item {
+          @include empty_item;
+        }
+      }
+      .box_introduction {
+        padding: 20px 15px;
+        background-color: #fff;
+        .introduction_title {
+          margin-bottom: 20px;
+        }
+        .introduction_text {
+          font-size: 1.4rem;
+          font-weight: 14px;
+          line-height: 1.8;
+          min-height: 100px;
+          word-wrap: break-word;    /*単語の途中で改行するかどうかを考慮するプロパティ*/
+          overflow-wrap: break-word;/*上記に関連*/
+        }
+        .empty_item {
+          @include empty_item;
+        }
+      }
+    }
+  }
+}
+
+
+/*コンテンツ下部(いいね!ボタンエリア)*/
+.not_display_photo_request {
+  &.user_photo {
+    padding: 0 0 0 100px;
+  }
+  .image-circle {
+    width: 80px;
+  }
+}
+.image-circle {
+  border-radius: 50%;
+}
+.box_user_action_b {
+  margin-bottom: 15px;
+  padding: 20px 40px 10px;
+  background-color: #f3f3f3;
+  @include clearfix();
+  .user_photo {
+    float: left;
+    margin-top: -10px;
+    margin-left: -20px;
+  }
+  .button_photo_request {
+    @include button_photo_request;
+    font-size: 1.1rem;
+    font-size: 11px;
+    line-height: 1.5;
+    position: relative;
+    float: right;
+    padding: 16px 10px 12px 50px;
+    border-radius: 30px;
+    &.is_requested {
+      @include button_photo_requested;
+      background-color: #c9c9c9;
+      box-shadow: none;
+      .request_text {
+        color: #54595d;
+      }
+    }
+  }
+  .action_like {
+    margin: 0 150px 0 70px;
+    .button_like {
+      margin: 0 -50px 0 110px;
+    }
+  }
+}
+
+
+/*コンテンツ最下部(ページ送りエリア)*/
+.box_personal_pager {
+  @include clearfix();
+  .pager_pre {
+    float: left;
+    display: block;
+    padding: 6px 14px;
+    &:before {
+      @include box_my_photo_pager_pre;
+      //『_pagenation.scss』でもあたる為
+    }
+  }
+  .pager_next {
+    float: right;
+    display: block;
+    padding: 6px 14px;
+    &:after {
+      @include box_my_photo_pager_next;
+      //『_pagenation.scss』でもあたる為
+    }
+  }
+  .personal_pager_text {
+    padding-top: 8px;
+    text-align: center;
+  }
+}
+

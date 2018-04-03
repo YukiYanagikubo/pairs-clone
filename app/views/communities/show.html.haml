@@ -1,0 +1,115 @@
+.ui-view_class
+  .main.box_community_view.contents_padding
+    .common_page_header
+      = render partial: "common_page_header"
+    .data-community-search-area
+      .box_community_header.common_inline_box
+        = render partial: "box_community_header"
+    .data-community-detail
+      .box_community_detail_header
+        %ul.breadcrumb_list
+          %li
+            = t("enums.community.category.#{@community.category}")
+
+        / コミュニティ情報
+        .community_info
+          .box_community_image
+            .community_image.image-round
+              = image_tag @community.image.url
+          .community_info_inner
+            %p.community_title.title_b
+              #{@community.community_name}
+            %p.community_member_count<>
+              全参加メンバー
+              %em
+                %span.member_total #{(@users_opposite.count + @users.count)}
+                人
+              %span 異性メンバー
+              %em
+                %span.member_total #{(@users.count)}
+                人
+            .community_entry
+              .entry_text
+                %strong<>
+                  コミュニティに参加すると、共通の趣味
+                  %br<>
+                  ユーザーからいいね！をもらいやすい！
+                %p ※参加したことは異性にしか表示されません。
+              .div
+                / if文での切り分けが不完全
+                / - if @community.members.rejects {|item| item ==current_user
+                - if @community.members.find_by(user_id: current_user.id).present?
+
+                  %a.button_entry.button_a.button_pink_a#unsubscribe
+                    このコミュニティを退会する
+                - else
+                  %a.button_entry.button_a.button_blue_a#entry
+                    このコミュニティに参加する
+
+      - if @users.present?
+        /異性の参加メンバーがいる場合に表示
+        .data-community-view-users
+          .box_community_member_header.mb0
+            %p.member_header_title
+              %span 異性メンバー
+              %em.member_count
+                %span.member_total
+                =@users.count
+                人
+              %span.member_note ※異性のみ表示されます
+            %p.pager_info
+              %span.pager_count
+              =@users.count
+              人中
+              %span.pager_start 1
+              〜
+              %span.pager_end 16
+              人を表示
+
+          /ページネート
+          .box_community_pager.box_pager
+            = paginate(@users, theme: "patern_b")
+
+          /メンバー表示域
+          .box_list_view_user
+            %ul.list_view_users
+              - @users.each do |user|
+                = render partial: "pairs/shared/list_view_user_item", locals: { user: user }
+
+          /ページネート
+          .box_community_pager.box_pager
+            = paginate(@users, theme: "patern_b")
+
+      - else
+        / 異性の参加メンバーがいない場合に表示
+        .no_member_list
+          %p.text_no_partner_in_community
+            %span このコミュニテイに異性のメンバーはまだいません。
+
+
+    / コミュニティ参加ポップアップ
+    .data-community-join-modal
+      .box_modal_window.hide.modal_community#modal_comunity_join
+        .box_modal_window_inner
+          %a.modal-close.modal_close#close_premium_modal
+            %img{src: "https://lh3.googleusercontent.com/JZ5QgP9n4HLC-gnXIcJAsLL2zh7NV0OxNWjjOWOoxbD5gU8a1VBfjDBNzifCYTU9cwBfJByoPM6QPg0BMLsgcA2biofLRmrpfI3trDe8vXreEbsQQ4q9HR_n7iPL3E16d3a4k0W4saje0qJMC6j2vyVepU1EWQj2BEiQcB8iXviUAhzI3Rw4cPIAzZUKv4FJf8d2gBODxBt7nUyWkdR6DlUuAo5X8WxW-7c7PRb9Z0_VzojmdeKrOGmtTYE4LGflbY4dkwRUt7owI0oYY-NWZGRiyMBANMfnfKJZrM7NrA8R3gvX6gNxQ9lb-2H4kdZBxnNJJiIZCbA3U6FkJ7L7qCoRPcSY7A31anQLjuZp2F6zQEbKRZevBtrU6KfCGEMf-k6a7dNbTfx1LiwUa1WbXcWmrqXt1upE1hSlolc4bc5xDXHh22L9OydnIHQ7M8LB-Pqk-9nDdHAM4MpYk16mGNSgFaV7wPAdPAHqTcF3szUqQ-r-wAqSmcb_8RmKplujpNHYcRI1-42F9gCF4ibvYV3ir1fGRZIRkYQsqtbbXReqsQi_mfqmJ5djsW1f60oR9kuTiMMjvMChx8b0a1O19Iin7jEfomS9fvQUKdQuscsYlMTcNddsNpFkrO1GiBLkR_hqVzUHmtQPZC2_Omnx8veBWnRVDywk=s53-no"}/
+          %p.modal_title
+            このコミュニティに参加しますか？
+          .modal_button_area.text_center
+            %a.button_a.button_gray_a.modal-close
+              いいえ
+            =link_to "はい", join_community_path, class: "button_a button_blue_b modal-ok"
+
+    / コミュニティ退会ポップアップ
+    .data-community-leave-modal
+      .box_modal_window.hide.modal_community#modal_comunity_leave
+        .box_modal_window_inner
+          %a.modal-close.modal_close#close_premium_modal
+            %img{src: "https://lh3.googleusercontent.com/JZ5QgP9n4HLC-gnXIcJAsLL2zh7NV0OxNWjjOWOoxbD5gU8a1VBfjDBNzifCYTU9cwBfJByoPM6QPg0BMLsgcA2biofLRmrpfI3trDe8vXreEbsQQ4q9HR_n7iPL3E16d3a4k0W4saje0qJMC6j2vyVepU1EWQj2BEiQcB8iXviUAhzI3Rw4cPIAzZUKv4FJf8d2gBODxBt7nUyWkdR6DlUuAo5X8WxW-7c7PRb9Z0_VzojmdeKrOGmtTYE4LGflbY4dkwRUt7owI0oYY-NWZGRiyMBANMfnfKJZrM7NrA8R3gvX6gNxQ9lb-2H4kdZBxnNJJiIZCbA3U6FkJ7L7qCoRPcSY7A31anQLjuZp2F6zQEbKRZevBtrU6KfCGEMf-k6a7dNbTfx1LiwUa1WbXcWmrqXt1upE1hSlolc4bc5xDXHh22L9OydnIHQ7M8LB-Pqk-9nDdHAM4MpYk16mGNSgFaV7wPAdPAHqTcF3szUqQ-r-wAqSmcb_8RmKplujpNHYcRI1-42F9gCF4ibvYV3ir1fGRZIRkYQsqtbbXReqsQi_mfqmJ5djsW1f60oR9kuTiMMjvMChx8b0a1O19Iin7jEfomS9fvQUKdQuscsYlMTcNddsNpFkrO1GiBLkR_hqVzUHmtQPZC2_Omnx8veBWnRVDywk=s53-no"}/
+          %p.modal_title
+            このコミュニティを退会しますか？
+          .modal_button_area.text_center
+            %a.button_a.button_gray_a.modal-close
+              いいえ
+            =link_to "はい", leave_community_path, class: "button_a button_blue_b modal-ok"
+

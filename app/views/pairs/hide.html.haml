@@ -1,0 +1,66 @@
+.ui-view_class_style
+  .main.box_setting_view.contents_padding
+    .data-user-list
+      .common_page_header
+        %a{ href: "/privacysetting#box_hide_block", class: "page_back button_f button_white_a"}
+          戻る
+        %span.page_tile
+          非表示にしたユーザーリスト
+      .common_page_box
+        %p.common_title
+          あなたがPairs上で非表示にしたユーザーの一覧です。
+        .common_box_inner
+          /どちらか片方：１
+          / .common_text.text_center#not_found_box
+          /   まだPairs上で非表示にしたユーザーはいません。
+          / どちらか片方：２『足あと設定』ページと構成同じで、preとnextクラスが非表示になっているだけ。
+          / 『非表示ページ』との違いは、『非表示を解除』ボタンの有無だけ。
+          %ul.box_block_user_list#partner_list_box
+            %li.user_item<>
+              %img{class: "user_photo", src:"https://lh3.googleusercontent.com/OFx6xjhl0VlC7VSSt52JE8xP0qpx84h2qWbCJC1c0_rA8PeqNpVIMEsxS7twNnVjAyEqChq9QKhD6tWGFU_70XL94nnilkYRIgk8kQRcA3QetWTOGFxNu6d-EadgyCucOAgscjP3xpUoa6XCTnZZaMm3ncsLa9Mhqlni90pJFOyN-C8CyXzqsxAIVJ-gfN2CTaxaX9o6pEyrAz7XT9xFVGh6Hdzxg42H4Pdnms0ouDGBAj5L6XBTeTgpes9vmm7KtI83xEOvZnI5PTk6CZFcQDjKkjFhtgn0YJsKVlqkbX88VApdeo1Tx-H1T7_nlwARRR5hFq1gNRuJ--0-l4Cl4HPL9B3-7FXexVOG_yUgTgGms3g_Dj51-HAPjdrM_umWq4z9rChoPkewg9Ps0aXtaLlSbMaxO-S__518TDoY82MdF6MNdzbInDNqJ32LeZK1o4DRAEaK8e_NziZTq2mNtFygK3u_1c-auMz_DTTPsksSxu6HxfbcaAI_l215RPZamvhTIpSFSnYsF9X1xYh520cZop5dxw1qhwCCOzhpdHC1XnQHktzhkz1xmA9jnqjfOzOiflLqdkkhXL-O1fkJAaxMEq9M83FXm6CzcbCHC7TuDHSeRoUqypUVfGMvzqGQ9sXJLKo6aSxEwX71fHanoWI0ezRJeQg=w377-h669-no"}
+              %p.user_info.hide_item
+                %strong
+                  %span.age
+                    41歳
+                  %span.pref
+                    東京
+                %span.other
+                  170cm
+                %span.other
+                  学生
+              %a{class: "button_cancel button_a button_white_a", id:"cancel_dislike_button"}
+                非表示を解除
+          #pagination_box
+            %p.common_text.text_center.pager_info
+              %span.pager_count#max_count
+                13
+                人中
+              %span.pager_start
+                1
+                〜
+              %span.pager_end
+                10
+                人を表示
+            .box_community_pager.box_pager.mb30
+              %a.pager_pre.pager_item.button_c.button_white_a.ng-hide
+                マエへ
+              %a.pager_next.pager_item.button_c.button_white_a.ng-hide
+                ツギヘ
+              %ol.pager_nums
+                %li.pager_num.is_current
+                  %a
+                    壱
+                %li.pager_num.is_current
+                  %a
+                    弐
+
+  / 『非表示解除時』ポップアップ
+  .box_modal_window.modal_fixed.modal_animation.hide_complete.box_modal_like_with_text
+    .box_modal_window_inner.original_class
+      %a.modal_close
+        %img{src: "https://lh3.googleusercontent.com/JZ5QgP9n4HLC-gnXIcJAsLL2zh7NV0OxNWjjOWOoxbD5gU8a1VBfjDBNzifCYTU9cwBfJByoPM6QPg0BMLsgcA2biofLRmrpfI3trDe8vXreEbsQQ4q9HR_n7iPL3E16d3a4k0W4saje0qJMC6j2vyVepU1EWQj2BEiQcB8iXviUAhzI3Rw4cPIAzZUKv4FJf8d2gBODxBt7nUyWkdR6DlUuAo5X8WxW-7c7PRb9Z0_VzojmdeKrOGmtTYE4LGflbY4dkwRUt7owI0oYY-NWZGRiyMBANMfnfKJZrM7NrA8R3gvX6gNxQ9lb-2H4kdZBxnNJJiIZCbA3U6FkJ7L7qCoRPcSY7A31anQLjuZp2F6zQEbKRZevBtrU6KfCGEMf-k6a7dNbTfx1LiwUa1WbXcWmrqXt1upE1hSlolc4bc5xDXHh22L9OydnIHQ7M8LB-Pqk-9nDdHAM4MpYk16mGNSgFaV7wPAdPAHqTcF3szUqQ-r-wAqSmcb_8RmKplujpNHYcRI1-42F9gCF4ibvYV3ir1fGRZIRkYQsqtbbXReqsQi_mfqmJ5djsW1f60oR9kuTiMMjvMChx8b0a1O19Iin7jEfomS9fvQUKdQuscsYlMTcNddsNpFkrO1GiBLkR_hqVzUHmtQPZC2_Omnx8veBWnRVDywk=s53-no"}/
+      .modal_text_a.fnt16.message
+        非表示を解除しました
+      .modal_button_area.text_center.mt30
+        %button.button_a.button_white_a.w30p.modal-ok
+          閉じる

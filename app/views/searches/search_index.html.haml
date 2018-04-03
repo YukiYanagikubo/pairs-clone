@@ -1,0 +1,81 @@
+.search
+  .search_form
+    .search_title
+      %h1 あなたの希望条件
+      = search_form_for(@q, url:search_result_path) do |f|
+        = f.button "検索条件をリセットする", type: :reset, class: "reset_button"
+        %table
+          %tbody
+            %tr
+              %th
+                = f.label :age_id_eq, '年齢'
+              %td
+                = f.collection_select :age_id_gteq, @age, :id, :age, include_blank: 'こだわらない'
+                &#8194;&#126;&#8194;
+                = f.collection_select :age_id_lteq, @age, :id, :age, include_blank: 'こだわらない'
+            %tr
+              %th
+                = f.label :height_id_eq, '身長'
+              %td
+                = f.collection_select :height_id_gteq, @height, :id, :height, include_blank: 'こだわらない'
+                &#8194;&#126;&#8194;
+                = f.collection_select :height_id_lteq, @height, :id, :height, include_blank: 'こだわらない'
+            %tr
+              %th
+                = f.label :income_id_eq, '収入'
+              %td
+                = f.collection_select :income_id_gteq, @income, :id, :income, include_blank: 'こだわらない'
+                &#8194;&#126;&#8194;
+                = f.collection_select :income_id_lteq, @income, :id, :income, include_blank: 'こだわらない'
+            %tr
+              %th
+                = f.label :residence_id_eq, '居住地'
+              %td
+                = f.collection_select :residence_id_eq, @residence,  :id, :prefecture, include_blank: 'こだわらない'
+            %tr
+              %th
+                = f.label :occupancy_id_eq, '職業'
+              %td
+                = f.collection_select :occupancy_id_eq, @occupancy,  :id, :occupancy, include_blank: 'こだわらない'
+            %tr
+              %th
+                = f.label :smoke_id_eq, 'タバコ'
+              %td
+                = f.collection_select :smoke_id_eq, @smoke,  :id, :frequency, include_blank: 'こだわらない'
+            %tr
+              %th
+                = f.label :alcohol_id_in, 'お酒'
+                %p 複数可
+              %td
+                -# = f.button "リセット", type: :button, class: "reset_button"
+                = f.collection_check_boxes :alcohol_id_in, @alcohol, :id, :frequency
+            %tr
+              %th
+                = f.label :school_id_in, '学歴'
+                %p 複数可
+              %td
+                -# = f.button "リセット", type: :button, class: "reset_button"
+                = f.collection_check_boxes :school_id_in, @school, :id, :school
+            %tr
+              %th
+                = f.label :body_id_in, '体型'
+                %p 複数可
+              %td
+                -# = f.button "リセット", type: :button, class: "reset_button"
+                = f.collection_check_boxes :body_id_in, @body, :id, :body
+            %tr
+              %th
+                = f.label :holiday_id_in, '休日'
+                %p 複数可
+              %td
+                -# = f.button "リセット", type: :button, class: "reset_button"
+                = f.collection_check_boxes :holiday_id_in, @holiday, :id, :holiday
+            %tr
+              %th
+                = f.label :living_with_id_in, '同居人'
+                %p 複数可
+              %td
+                -# = f.button "リセット", type: :button, class: "reset_button"
+                = f.collection_check_boxes :living_with_id_in, @living_with, :id, :living_with
+        .search_footer
+          = f.submit "この条件で検索する"

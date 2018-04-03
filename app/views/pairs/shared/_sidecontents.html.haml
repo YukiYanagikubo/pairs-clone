@@ -1,0 +1,129 @@
+.sidecontents
+  .sidemenu
+    .my_profile_summary
+
+      %p.profile_photo
+        = link_to user_path(current_user) do
+          - if @sideUser.UserImages.find_by(status: 1).present?
+            = image_tag "#{@sideUser.UserImages.find_by(status: 1).content}", width: "60", height: "60"
+          - else
+            = image_tag "https://lh3.googleusercontent.com/jmxL41Xoh0hwYidEE0Mt_mO6hKBrPYVwQpNOFSDHHaFYY30WxFuqehwH6e1AGG8LNA1cnmO-Xu1r7IAKxEkxMwzAg6yiJSfWHpV16volf3DK78EXqEEs_Nc2zQJBEU0b86PRkcq_7DW8mLbaKNgj1QGVsME8Pqu-qOlpWJ3o0TZIlshWLaA2HypQgZRP1ETY8XGUr01jB7iMoasAP1xUzJyxUFl5i-miinWCzu5MgkmZuUS6KCyfy_Fdozn5xvI3J_sGRA9yJ_yg3NcM-b4mf6LOuZ_89eW7RbxVOalsUQ5Z6iMMZWagh3uNh3pW0CrldkOKUB1_3AbBVxTJZOcGolBcGit1TWxmDa6XUgzjSSipZURmQ7XkdjkYOIW9NSOJuQNkDMPskpOfnC-jELZWwfqrc1BxZB4qSXQyVQV-qeZ2L8_D6Pq0VvRCf77QkiX7S2f74bQ-BHEjCaaNX_3xhx0nk1Ihjfr09JuuxILeXsgSa--RQTupf0CHicd8SkiHQbsvw8IwvC9CEySbZLBjmsCUqXMc3jOGxbpKNy6x-ygrQ46ELi-3ml6dNCfNOVBmJdOTsZzPKpZB5W_M6AF2PyamLxfCfG2wj4KHEO1rDSHGkDZrc16-lzvzK4YNmSOwK5Ynp-BIC0JoTZ--TvZsSiFbqd_VBfA=s98-no", width: "60", height: "60"
+
+      %p.profile_name
+        = link_to "#{current_user.nickname}",user_path(current_user)
+
+      %p.profile_status.is_free_member
+        = link_to "#{current_user.residence.prefecture}",membership_status_path
+
+    .my_profile_input_rate
+      %p.input_rate_label
+        プロフィール入力率
+        %span.input_rate_percent_value %%
+
+      .box_input_rate_grahp
+        .input_rate_grahp_value.is_percent_100
+
+    / .ml10.mb15
+    /   %a
+    /     %img
+
+    .box_my_status
+      %ul.my_statuse_list
+
+        %li.my_status_item.leftover_like
+          %p.status_label 残りいいね数
+          %p#total_like_numbers.stats_value 9億
+          = link_to "追加する","/membership/aboutpoint#exchange_point",class: "button_c button_orange_a link_more"
+
+        %li.my_status_item.leftover_point
+          %p.status_label ポイント残高
+          %p#total_point_numbers.stats_value 9億
+          = link_to "追加する","/membership/aboutpoint#purchase_point",class: "button_c button_orange_a link_more"
+
+
+    .box_my_private_mode
+      =link_to membership_aboutprivate_path do
+        .box_pm
+          .box_pm_state
+            .pm_state_image
+              =image_tag "https://lh3.googleusercontent.com/pJY4DSkddljXVXI8RWOe_kHc20D44LRNUU23vCyM9xPMlmXPCuFVNqu0Cq5um5bikq1eouMBOv0axyk9dFk96SPKCxkS3-KLBQFnSagmWE7qkk84avvvlqmGoa_YLl0waaoZrRqZcMxhd6mImrg8m5YGTkOTz_gba_OCF25GuILaJhrW8pSvTjJxGc09GScDFvs7kkMOJRnFcrJviY-ZoAa4ka0jWGLCCD7snppKWsS6XYnDBE6hJN9XCKkdZbTK4Rlt88GwORoYnNWEo381SWZiStWSztGsd33qQbQ8gIAw5VRWpBekIuzVFB8rMBBoiN3G80Jl3Pf9fyorUW_LoIxAABMrErRzLSKbDFZnR_GC59TzKH7Gj5sFLdJFbvjOHcbgNcpdIxZolVuQsiH4axlxH4WtuInYImpTtrJUtJ1TdtmonCFhEwkXWOlp5B_7neJAEmISJi9m5Xou_MBzDBwLUGWnjqJhySy_DGLBHmkIkgz7_x9IO897uDgeapG6YXlO8NtAVlc4fS-V4TZZmbgwuFkaH5Mled5aJMZ8ZtWZt-yjASxz8OmLHFcdfVzEaF4bB1VXNz0RuYWAKw755xqSQjnB_kXsuWCGmKTOiLtlRzGS3ahxSXhPLfcBIEjUkxmcY6T4eg9YCqludMfn4xb_CNe_ug8k=s64-no", width: "32", height: "32"
+            %p.pm_state_text プライベートモードがOFFになっています
+          %p.link_pm_setting プライベートモードとは？
+
+    %nav.box_gnavi
+      .box_gnavis01
+        %p.gnavi_title さがす
+        %ul
+          %li.gnavi_item
+            =link_to root_path,class: "sidemenu_link" do
+              %span お相手を探す
+
+      .box_gnavis02
+        %p.gnavi_title いいね
+        %ul
+          %li.gnavi_item
+            =link_to "相手からのいいね",like_from_partner_path,class: "sidemenu_link"
+          %li.gnavi_item
+            =link_to "自分からのいいね",like_from_me_path,class: "sidemenu_link"
+          %li.gnavi_item
+            =link_to "お気に入り",like_favorite_path,class: "sidemenu_link"
+
+      .box_gnavis03
+        %p.gnavi_title マッチング
+        %ul
+          %li.gnavi_item
+            =link_to "メッセージ",group_messages_path(1),class: "sidemenu_link"
+
+      .box_gnavis04
+        %p.gnavi_title コミュニティ
+        %ul
+          %li.gnavi_item
+            =link_to "コミュニティを探す", communities_path,class: "sidemenu_link"
+
+      .box_gnavis04
+        %p.gnavi_title 年齢確認
+        %ul
+          %li.gnavi_item
+            =link_to "年齢確認",membership_aboutageproof_path ,class: "sidemenu_link"
+
+      .box_gnavis04
+        %p.gnavi_title 有料サービス
+        %ul
+          %li.gnavi_item
+            =link_to "有料会員とは？",membership_aboutpaid_path ,class: "sidemenu_link"
+          %li.gnavi_item
+            =link_to "プレミアムオプション",membership_aboutpremium_path ,class: "sidemenu_link"
+          %li.gnavi_item
+            =link_to "レディースオプション",membership_aboutladys_path ,class: "sidemenu_link"
+          %li.gnavi_item
+            =link_to "Pairsポイント",membership_aboutpoint_path ,class: "sidemenu_link"
+
+      .box_gnavis04
+        .gnavi_title 足あと
+        %ul
+          %li.gnavi_item
+
+            =link_to "足あと", visitorlist_path,class: "sidemenu_link"
+      .box_gnavis04
+        %p.gnavi_title 各種設定
+        %ul#sidemenu_settings
+          %li.gnavi_item
+            =link_to "通知/いいね上限","/privacysetting#box_notify",class: "sidemenu_link"
+          %li.gnavi_item
+            =link_to "Facebook友達更新","/privacysetting#box_fb_friend",class: "sidemenu_link"
+          %li.gnavi_item
+            =link_to "非表示・ブロック","/privacysetting#box_hide_block",class: "sidemenu_link"
+          %li.gnavi_item
+            =link_to "オフラインモード設定","/privacysetting#box_offline",class: "sidemenu_link"
+
+      / .box_gnavis04
+      /   %p.gnavi_title 困ったときは
+      /   %ul#sidemenu_settings
+      /     %li.gnavi_item
+      /       =link_to "弁護士相談費用サポート","",class: "sidemenu_link"
+    %nav.box_other_navi
+      %ul
+        %li.other_navi_item.other_navi_item01
+          =link_to "はじめての方へ","",class: "sidemenu_link"
+        %li.other_navi_item.other_navi_item03
+          =link_to "ヘルプ","",class: "sidemenu_link"

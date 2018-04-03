@@ -1,0 +1,5 @@
+.main.contents_padding
+  = render partial: "pairs/shared/advertising"
+  = render partial: "pairs/shared/box_search_menu"
+  - @users.each do |user|
+    = render partial: "pairs/shared/search_one", locals: { user: user }

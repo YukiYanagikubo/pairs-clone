@@ -1,0 +1,113 @@
+.box_community_category
+  %p.community_category_list_title
+    カテゴリから探す
+    %ul.data-community-categories
+      %ul.community_category_list
+        %li.category_item
+          = form_tag(search_communities_path, method: "get", class: "category_item_music") do
+            = hidden_field_tag :category, "music"
+            = submit_tag "音楽", class: "more"
+        %li.category_item
+          = form_tag(search_communities_path, method: "get", class: "category_item_movie") do
+            = hidden_field_tag :category, "movie"
+            = submit_tag "映画", class: "more"
+        %li.category_item
+          = form_tag(search_communities_path, method: "get", class: "category_item_entertainment") do
+            = hidden_field_tag :category, "entertainment"
+            = submit_tag "芸能人・テレビ", class: "more"
+        %li.category_item
+          = form_tag(search_communities_path, method: "get", class: "category_item_game") do
+            = hidden_field_tag :category, "game"
+            = submit_tag "ゲーム", class: "more"
+        %li.category_item
+          = form_tag(search_communities_path, method: "get", class: "category_item_book") do
+            = hidden_field_tag :category, "book"
+            = submit_tag "本・マンガ", class: "more"
+        %li.category_item
+          = form_tag(search_communities_path, method: "get", class: "category_item_art") do
+            = hidden_field_tag :category, "art"
+            = submit_tag "アート", class: "more"
+        %li.category_item
+          = form_tag(search_communities_path, method: "get", class: "category_item_sport") do
+            = hidden_field_tag :category, "sport"
+            = submit_tag "スポーツ", class: "more"
+        %li.category_item
+          = form_tag(search_communities_path, method: "get", class: "category_item_moter") do
+            = hidden_field_tag :category, "moter"
+            = submit_tag "車・バイク", class: "more"
+        %li.category_item
+          = form_tag(search_communities_path, method: "get", class: "category_item_trip") do
+            = hidden_field_tag :category, "trip"
+            = submit_tag "旅行", class: "more"
+        %li.category_item
+          = form_tag(search_communities_path, method: "get", class: "category_item_diy") do
+            = hidden_field_tag :category, "diy"
+            = submit_tag "ホーム・DIY", class: "more"
+        %li.category_item
+          = form_tag(search_communities_path, method: "get", class: "category_item_animal") do
+            = hidden_field_tag :category, "animal"
+            = submit_tag "動物・ペット", class: "more"
+        %li.category_item
+          = form_tag(search_communities_path, method: "get", class: "category_item_pc") do
+            = hidden_field_tag :category, "pc"
+            = submit_tag "PC/インターネット", class: "more"
+        %li.category_item
+          = form_tag(search_communities_path, method: "get", class: "category_item_fashion") do
+            = hidden_field_tag :category, "fashion"
+            = submit_tag "ファッション", class: "more"
+        %li.category_item
+          = form_tag(search_communities_path, method: "get", class: "category_item_cook") do
+            = hidden_field_tag :category, "cook"
+            = submit_tag "グルメ・お酒", class: "more"
+        %li.category_item
+          = form_tag(search_communities_path, method: "get", class: "category_item_fortune") do
+            = hidden_field_tag :category, "fortune"
+            = submit_tag "占い", class: "more"
+        %li.category_item
+          = form_tag(search_communities_path, method: "get", class: "category_item_hobby") do
+            = hidden_field_tag :category, "hobby"
+            = submit_tag "趣味全般", class: "more"
+        %li.category_item
+          = form_tag(search_communities_path, method: "get", class: "category_item_marry") do
+            = hidden_field_tag :category, "marry"
+            = submit_tag "恋愛・結婚", class: "more"
+        %li.category_item
+          = form_tag(search_communities_path, method: "get", class: "category_item_spiritual") do
+            = hidden_field_tag :category, "spiritual"
+            = submit_tag "心と身体", class: "more"
+        %li.category_item
+          = form_tag(search_communities_path, method: "get", class: "category_item_life") do
+            = hidden_field_tag :category, "life"
+            = submit_tag "生活", class: "more"
+        %li.category_item
+          = form_tag(search_communities_path, method: "get", class: "category_item_health") do
+            = hidden_field_tag :category, "health"
+            = submit_tag "美容・健康", class: "more"
+        %li.category_item
+          = form_tag(search_communities_path, method: "get", class: "category_item_housekeep") do
+            = hidden_field_tag :category, "housekeep"
+            = submit_tag "家事・育児", class: "more"
+        %li.category_item
+          = form_tag(search_communities_path, method: "get", class: "category_item_social") do
+            = hidden_field_tag :category, "social"
+            = submit_tag "地域", class: "more"
+        %li.category_item
+          = form_tag(search_communities_path, method: "get", class: "category_item_school") do
+            = hidden_field_tag :category, "school"
+            = submit_tag "学校", class: "more"
+        %li.category_item
+          = form_tag(search_communities_path, method: "get", class: "category_item_organization") do
+            = hidden_field_tag :category, "organization"
+            = submit_tag "会社・団体", class: "more"
+        %li.category_item
+          = form_tag(search_communities_path, method: "get", class: "category_item_occupation") do
+            = hidden_field_tag :category, "occupation"
+            = submit_tag "職業・資格", class: "more"
+        %li.category_item
+          = form_tag(search_communities_path, method: "get", class: "category_item_qualification") do
+            = hidden_field_tag :category, "qualification"
+            = submit_tag "研究・学問", class: "more"
+        %li.category_item
+          = form_tag(search_communities_path, method: "get", class: "category_item_business") do
+            = hidden_field_tag :category, "business"
+            = submit_tag "ビジネス・経済", class: "more"

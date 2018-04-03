@@ -1,0 +1,88 @@
+.main_footer{
+  width: 720px;
+  margin: 40px auto 0;
+  padding-bottom: 50px;
+  text-align: center;
+  .pc-web-footer-banner{ //大きさを適当に指定
+    height:70px;
+    width: 705px;
+    margin-left: 15px;
+    margin-bottom: 30px;
+    background-color: #f3f3f3;
+  }
+  .footer_navi{
+    margin-bottom: 10px;
+    color: #00abb3;
+    ul {
+      line-height: 1.0;
+    }
+    .footer_navi_item{
+      display: inline-block;
+      margin: 0 5px 5px;
+      a {
+        text-decoration: none;
+        font-size: 12px;
+      }
+    }
+  }
+  .footer_label{
+    width: 135px;
+    margin: 20px auto;
+    .footer_label_horizontal_box{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      a{
+        text-decoration: none;
+        outline: none;
+        .mr60{
+          margin-right: 60px;
+          img{
+            vertical-align: bottom;
+            height: 52px;
+            width: 162px;
+          }
+        }
+      }
+      .footer_label_ssl{
+        float: left;
+        border: 0;
+        width: 135px;
+      }
+      table{
+        margin: 2px;
+        padding: 2px;
+        border-collapse: collapse;
+        border-spacing: 0;
+        td{
+          align: center;
+          valign: top;
+          width: 115px;
+          img{
+            border: 0;
+            height: 55px;
+            width: 115px;
+          }
+          .ssl_link{
+            display:block;
+            color:#000000;
+            text-decoration:none;
+            font: bold 12px 'ＭＳ ゴシック',sans-serif;
+            letter-spacing:.5px;
+            text-align:center;
+            margin:0px;
+            padding:0px;
+          }
+        }
+      }
+    }
+  }
+  .footer_approved{
+    margin-bottom: 10px;
+    color: #788086;
+    font-size: 12px;
+  }
+  .footer_copyright{
+    font-size: 11px;
+  }
+}

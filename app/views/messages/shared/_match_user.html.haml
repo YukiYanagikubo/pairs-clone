@@ -1,0 +1,19 @@
+%li{class: "matching_item is_current","data-id": group.after_user_id}
+  = link_to group_messages_path(group.group_id) do
+    - if match_user.UserImages.find_by(status: 1).present?
+      = image_tag "#{match_user.UserImages.find_by(status: 1).content}", class: "user_photo image-circle"
+    - else
+      = image_tag "https://lh3.googleusercontent.com/jmxL41Xoh0hwYidEE0Mt_mO6hKBrPYVwQpNOFSDHHaFYY30WxFuqehwH6e1AGG8LNA1cnmO-Xu1r7IAKxEkxMwzAg6yiJSfWHpV16volf3DK78EXqEEs_Nc2zQJBEU0b86PRkcq_7DW8mLbaKNgj1QGVsME8Pqu-qOlpWJ3o0TZIlshWLaA2HypQgZRP1ETY8XGUr01jB7iMoasAP1xUzJyxUFl5i-miinWCzu5MgkmZuUS6KCyfy_Fdozn5xvI3J_sGRA9yJ_yg3NcM-b4mf6LOuZ_89eW7RbxVOalsUQ5Z6iMMZWagh3uNh3pW0CrldkOKUB1_3AbBVxTJZOcGolBcGit1TWxmDa6XUgzjSSipZURmQ7XkdjkYOIW9NSOJuQNkDMPskpOfnC-jELZWwfqrc1BxZB4qSXQyVQV-qeZ2L8_D6Pq0VvRCf77QkiX7S2f74bQ-BHEjCaaNX_3xhx0nk1Ihjfr09JuuxILeXsgSa--RQTupf0CHicd8SkiHQbsvw8IwvC9CEySbZLBjmsCUqXMc3jOGxbpKNy6x-ygrQ46ELi-3ml6dNCfNOVBmJdOTsZzPKpZB5W_M6AF2PyamLxfCfG2wj4KHEO1rDSHGkDZrc16-lzvzK4YNmSOwK5Ynp-BIC0JoTZ--TvZsSiFbqd_VBfA=s98-no", class: "user_photo image-circle"
+    .info_inner
+      .user_info01
+        %span{limit_length: "5"}
+          = match_user.nickname
+        %span
+          = match_user.age.age
+        %span{limit_length: "8"}
+          = match_user.residence.prefecture
+      .user_info02
+        %p.message
+          - if (match_user.messages.present?)
+            = match_user.messages.last.content
+      .login_time 3/18 13:24

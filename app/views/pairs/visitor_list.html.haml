@@ -1,0 +1,15 @@
+.ui-view_class_style
+  .main.box_visitor_view.contents_padding
+    .data-visitor-list
+      .common_page_header
+        %a{href: "/users/#{current_user.id}", class: "page_back button_f button_white_a"}
+          マイページへ
+        %span.page_tile
+          足あと
+        %a{href: "visitorsetting", class: "button_right button_f button_white_a float_right"}
+          足あと設定
+      = render partial: "pairs/shared/advertising"
+      -if (@foot.length > 0)
+        = render partial: "pairs/shared/visitor_list"
+      -else
+        = render partial: "pairs/shared/visitor_list_zero"

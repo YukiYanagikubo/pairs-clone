@@ -1,0 +1,14 @@
+%ul.community_list
+  - communitiess.each do |community|
+    %li.community_item.joined
+      %a{href: "/community/#{community.id}", class: "community_link"}
+        .box_community_item_img
+          = image_tag community.image.url, class:"community_item_img image-round"
+        %p.community_item_title
+          = community.community_name
+        %p.community_item_count>
+          = t("enums.community.category.#{community.category}")
+          / ）
+          / %span<>
+          /   本来は人数を表示するエリア9999
+          / 人）

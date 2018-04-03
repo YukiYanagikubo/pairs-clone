@@ -1,0 +1,54 @@
+.contents
+  = render partial: "pairs/shared/header"
+  .main_content
+    .logo
+    .form_content
+      = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+        = devise_error_messages!
+        .field_nickname_gender
+          .field_nickname
+            = f.label :"ニックネーム", class: 'label_nickname'
+            %em
+            %br/
+            = f.text_field :nickname, placeholder: "ニックネーム(最大6文字)", autofocus: true, maxlength: "6"
+          .field_gender
+            %span.gender_type_engine 性別
+            %br/
+            .radio-inline
+              = f.radio_button :gender, :male, class: "button_male"
+              = f.label :gender_male,"男性", class: "gender_type_label_male"
+            .radio-inline
+              = f.radio_button :gender, :female, class: "button_female"
+              = f.label :gender_female, "女性" , class: "gender_type_label_female"
+        .select_box
+          .select_residence
+            = f.label :residence_id, "都道府県"
+            %br/
+            = f.collection_select :residence_id, Residence.all, :id, :prefecture, :prompt => "選択してください"
+          .select_age
+            = f.label :age_id, "年齢"
+            %br/
+            = f.collection_select :age_id, Age.all, :id, :age, :prompt => "選択してください"
+        .field_email
+          = f.label :メールアドレス,  class: 'label_email'
+          %br/
+          = f.email_field :email, placeholder: "メールアドレス", autofocus: true, autocomplete: "email"
+        .field_password
+          = f.label :"パスワード", class: 'label_password'
+          - if @minimum_password_length
+            %em
+          %br/
+          = f.password_field :password, placeholder:"パスワード(最小6文字)", autocomplete: "off"
+        .field_password_confirmation
+          = f.label :"パスワード(確認)", class: 'label_password_confirmation'
+          %br/
+          = f.password_field :password_confirmation, placeholder:"パスワード(最小6文字)", autocomplete: "off"
+        .field_checkbox
+          .checkbox_text 私は18歳以上で独身です。Pairsの利用規約、プライバシーポリシーにも同意します。
+          = f.label :checkbox_example, "a",  class: 'checkbox_label'
+          = f.check_box :checkbox_example, class: 'checkbox_button', :as => :boolean, checked:false, :required => true
+        .actions
+          = f.submit "Pairsをはじめる", class: 'form_text'
+          -# = render "devise/shared/links"
+    .main_footer
+      = render partial: "pairs/shared/footer_login"

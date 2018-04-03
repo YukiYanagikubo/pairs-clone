@@ -1,0 +1,30 @@
+.box_grid_header.clearfix
+  .box_grid_header01
+    %p.header_diplay_label 表示人数:
+    .header_display_select
+      = form_tag root_path, method: :get do
+        = select_tag(:selected_value, options_for_select([["1人", "1"], ["2人", "2"], ["4人", "4"], ["6人", "6"], ["8人", "8"]], class: "customSelect ng-pristine ng-valid hasCustomSelect ng-not-empty ng-touched select_style"), prompt: "#{@selected}人")
+  .box_grid_header02
+    %button.button_b.button_white_a.button_show_pickup
+      今日のピックアップ
+  .box_grid_header03
+    %span.total_like_number_desc 「いいね！」をあと
+    %em
+      %span.total_like_number_header> 30
+      人
+    押しましょう！
+.box_user_selected.ng-hide
+  .user_selected_list テスト
+.box_list_view_user
+  %ul.list_view_users
+    - @users.each do |user|
+      = render partial: "pairs/shared/list_view_user_item", locals: { user: user }
+.box_result_pager
+  = paginate(@users)
+.box_like_remaining
+  %p
+    あと
+    %em
+      %span#total_like_numbers_footer 30
+      人
+    に「いいね！」ができます

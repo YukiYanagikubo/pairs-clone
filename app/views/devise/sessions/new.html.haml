@@ -1,0 +1,42 @@
+%div
+  %section.main_visual.main_visual_c
+    .main_visual_wrap
+      .main_visual_left
+        .main_visual_title
+          %p
+            %img{alt: "", src: "https://lh3.googleusercontent.com/OtMvhNQYsRM_iUtUSU1sNU05CAe0pAj1wvyE5JYkL2s05KGYu2O15mMC15ScTdtXowl3OnRMg5ZTFNPDqa_7-B0R2PEGBZGvWR0O7X6MYnCjDG5fNvUm2bWR5TZtL_EJHF0pLQpgMsKTPMWDNVK6D61fRRCA9tn44rL85VSSYuDXjXs3pkLsgZWvpBbLlMYBnzEZnoMJW1gmg5xTfkOmHRv2f94lfgA1TfDjMoDPgk6Q_VTLVIFKqPuj2zJSani5hKCb0QOKN3mkhFjoxxOr0mvoanI6dbnBm2AtwZ1oc2EwjM-6DxaEqFuNk8dORTewUmU54yYUdTl1atJVOwIao2hIfOjZEXoJYr82G_g4Y9e3IFt8McS4SrHyK-Iszo4y6NgAinDIxmVaRTqTLuH9os5iZUQyiKAc6EBOl3aRq_gucdlTp62Z1jg4iHlFDxL-ENwVwzjVwfpMOySrgXlth1a2iTk-zzz3BhDcRDCYtc1eyvnLpSYVmzYfNmUmcOjQwyYDs2mrTMStJHId0hdnP2RTxpKAxVjA-nEVk-eBTC2aVlUaAXK0bQpe2IygC3HsCiab9w9AAoIPXjfYcUyu2b0k_VBU56koMLy-SGeMIo9ZUcT3OL9_RWjf3lWgEwNUybmx1W3ghrHn-EAtULFj09ThR05f5ooX=w468-h44-no"}/
+          %h1
+            %img{alt: "", src: "https://lh3.googleusercontent.com/naR7flPTIobHWKdoj8hPFrsfyXfUU0ohTREqFOOc8fsvH-FeIS0hCjUnb8FL-_OZac1jgW-ulQIEzwGB31V_Js9d-9F8XvMqq_lYAvvcnN_3uldr0uAZTRcC0HIP4QyNPUc8EVa-5ifqWuCKPUbuNYGWxZvEXjWQdPd15ivcX0RKJNbG77Cy_NOCWNoJYNUop61pQ7YVRsF-oVW3FzjA4usrJSIlJecJyBL1i0hjQHSGpeaYCojaFJrVdYWFrnTYIQl-NeYhzYTuMxlUiY-Deadm_2wAQk6LLHri5YWzoMZWKWAilRN8lGqdzi4V8pIXOo20JxWzjYf3bvWXxNwJPozE24d5PFR_dDsTp8y4z2PbWf7SNkLsJS6E15pHU9d9M1ePfRtB2qNkelguVWjsWExyPcCld5BxODoGbQw6xwpED15dFgFNqSKj99sN3R2yQbaF4jBiKRPjlk-PieCWxkbo9Nsa-lUWDygPmPZz6bJx9MxtNwU6I2_O-WHGLMfct9sxqaTwYrnuQpFHZtx5RG-Ai5ILL0p5xln9htGkblauojKOqklMAbRtDrPyUItd0lDRU9VJtd23UtTERnljq70iICpU5HuB14jRCFUy9RnjWBEl4FrkFwf0sD45vUjCnbPkLtJDnenC5zFPam5IToR27dtfH0H3=w560-h51-no"}/
+        .register_area
+          %img.three_points_c{alt: "実名はでません。友達には知られない。タイムラインに流れない。", src: "https://lh3.googleusercontent.com/Yw9DNBTbf8luToAA4M8vg-itmsumg005edVHNaEZ7hyhKoVF24F228gfBo_M1_RrJyLdmdr8qI8YN2i5ZVOU4X5WiA-pDTF3MRGSluAfOTq21g_TCEiFumlR9gIDpA4k7tb6ruS5J3bSDjvxoxkPz6JSD7I3eGoIGf1dLBAifaDt_o_cvYqhzEQNt9xboX5Dfs-KkePzF1PMgPCFhuDDogP8EiC3PNA_5540R84tTzvHJVlzVksF3KT8OYbjEHH4GdpwEZEM6DuhqRlXNikEQ3Li3x_6z1SrNnki29j0LGuqsKCdujBh47lU27azeJXvTnnZVjlU9LIGoNEUEl5ZkIZgEV7Cg514nfM_DGeoOzaYFOVoqpDDcUSL3W0EjfzuhU_urCsUfw4ygBu7wv5gDK-n1YkhypztZZZnPEwBPgKU7v2jz78TRPuESl63DJzNSUs6Wbnr0EIsVedilsAMMkURHZHaIJJ0LwNXpXdYJvlSnDv7YvENunTuPQkOoEWbDtUnZlf1oMaVUmhuxCnFxoJlvFKx41cBz9EPqB1IohZ-6yWzEeajG8W0HtfRSH0DUEVsAjJbS9YOncvqlc2njhiiJsCydZumMPb_3fd9lRew0okhmKLXBWFoebCLy4Vun0AD6NHCMRElwCXKQxxlrAlfPid9tmLj=w530-h112-no"}/
+          = form_for(resource, as: resource_name, html: {class: "input_box"}, url: session_path(resource_name)) do |f|
+            .field.my_town
+              = f.label :email, "メールアドレス"
+              %br/
+              = f.email_field :email, autofocus: true, autocomplete: "email", class: "residence_status"
+            .field.my_town
+              = f.label :password, "パスワード"
+              %br/
+              = f.password_field :password, autocomplete: "off"
+            / ログインパスワードではなく、ログイン状態を保持する機能
+            - if devise_mapping.rememberable?
+              .field.my_town
+                = f.check_box :remember_me
+                = f.label :remember_me, "Pairsに記憶させる", class: "remember_me"
+            .actions
+              = f.submit "Pairsへログイン", class: "login_button"
+          %p.attention_text
+            18歳未満の方はご登録いただけません。
+            Pairsの
+            %a{href: "https://pairs.lv/#/static/termsofservice", target: "_blank", "ui-sref" => "statics/termsofservice"}> 利用規約
+            、
+            %a{href: "https://pairs.lv/#/static/privacy", target: "_blank", "ui-sref" => "statics/privacy"}> プライバシーポリシー
+            を読む
+          %p.attention_text
+            - if devise_mapping.registerable? && controller_name != 'registrations'
+              = link_to "Pairsに新規登録", new_registration_path(resource_name)
+              %br/
+          %p.attention_text
+            - if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations'
+              = link_to "ログインにお困りのお客様へ", new_password_path(resource_name)
+              %br/

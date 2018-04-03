@@ -1,0 +1,36 @@
+.common_page_box
+  %p.common_title<
+    過去ー週間の足あと：
+    %em.fnt_pink02>
+      %span.visitor_count<>
+        = "#{@foot.length} 人"
+  .common_box_inner.pt0
+    .box_visitor_list
+      %table.visitor_lists.sample
+        %tbody
+          - @foot.each do |foot|
+            = render partial: "pairs/shared/visitor_list_one", locals:{ foot: foot}
+    .box_visitor_pager
+      %p.pager_info.common_text.text_center
+        %span.pager_count
+          = "#{@foot.length} 人中"
+        %span.pager_start
+          1
+          〜
+        %span.pager_end
+          -if(@foot.length<10)
+            = "#{@foot.length} 人を表示"
+          -else
+            10人を表示
+      .box_result_pager
+        = paginate(@foot)
+    .box_more_visitor.ng-hide
+      %p.three_dots
+        %img{src: "https://lh3.googleusercontent.com/1VAg-IfyLEe_un2b-EVOODXGNSnfbGY_03N3XldfBdy6UdK4_Ak8guQaY7rexgqeNlf5xLNIR0bovEqWDH1RktnddApBxkjW0OtppYolC1IRSP8m_ko-H4nggGXdc3B9Jyc1CHG2huLcRAaPB0FWrVQS-vLYCIoYd3FGSeHw9M4M6Cc9Hm-TEMNoc9VgAyIHtOOo34G-rF2rquVIQuBceRGlEkfYEIePpSV_aVKx5LrRd6har5WGK2l8Tu0g301DPygWBWU6JTbBMjKlNrEdGhpRImfTi67-K2udpsZiBsMWL7jBfAf4PQ3iIgM3niLUDFWcmMtpmVIaDsvv7rX6eo-PSQ-MoVbKfzxhbth-tBoFplDucuNHOK_7cbiTDztAFE2Nu35t6i4II71TvYQLfIexZUQcKccThgtTlptSFkM11PnwIz1Ur-n5XPU9UZUgxOzI6Ch-KVM2Y041RZUZhRuNtYPUUP-cn4nq8faFEBtRTy5qQkaEIoMMS5OE65KGgiemafXvN4F-ov4oXyBdOHtqYaV8pokxrS__5qgsts3Is9UxSbf5gpVBHaOpAUUKxSG-gDN86LOAHlN-P-b_DO-WOvAbuQ14hyhwtD3v2CMh92p6br-gq1CGpM6fIAsBYr3Vff6ZSdyFYTlH4KCTY5hObVdE771T=w4-h20-no"}
+      %p.more_visitor_text
+        年齢確認をすると、足あとを6人以上見ることができます。
+      .common_button_area.mb20
+        %p.button_item.w40p
+          %a{href: "", class: "button_e button_pink_b"}
+            年齢を確認する
+    / 足あと0の場合（『box_visitor_list』内が空となり、上記のここまで、存在しない。

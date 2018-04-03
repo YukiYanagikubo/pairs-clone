@@ -1,0 +1,17 @@
+.box_search_menu
+  .button_search_setting
+    = link_to "検索条件設定中", searches_path, id: "openSearchConditionBtn", class: "button_b button_white_a is_set_search_condition"
+    %span.is_set_search_condition
+  %nav.box_change_view_tabs
+    %ul.change_view_tabs
+      %li.tab_item.tab_item01.is_current
+        = link_to "", root_path, id: "tab_item001"
+      %li.tab_item.tab_item02
+        = link_to "", searchone_path, id: "tab_item002"
+  %p.search_result_count
+    = "#{@users.length}人中 1 〜"
+    - @selected = @selected.to_i
+    -if(@users.length < @selected)
+      = "#{@users.length}人を表示"
+    -else
+      = "#{@selected} 人を表示"

@@ -1,0 +1,432 @@
+.box_personal_view
+  .box_personal_inner01
+    .personal_inner_left
+      %ul.user_status_list
+        %li.user_status_item
+          最終ログイン
+          %span.user_login.is_online
+            onlineを充て中
+        %li.user_status_item.user_chemistry
+          %p.user_chemistry_b.is_chemistry_heart50_a
+            あなたとの相性
+            %strong 59%
+        %li.user_status_item.user_like_count
+          %p.user_like_count_b
+            %strong
+            %strong いいね！
+            %span 直近30日間
+      .box_user_custom_display
+        .box_custom_display_title
+          %p.custom_display_title.title_a
+            見たいプロフィール
+          %a#button_setting.button_setting.button_c.button_blue_a 設定
+        %dl.custom_display_list.box_inner_scroll.ps-container.ps-theme-default
+          %dt.custom_display_title 年齢
+          %dd.custom_display_value 全角文字七字迄
+          %dt.custom_display_title 居住地
+          %dd.custom_display_value 一列で収まる
+          %dt.custom_display_title Facebook友達数
+          %dd.custom_display_value それ以上は改行
+          %dt.custom_display_title 好きなこと・趣味
+          %dd.custom_display_value 幾つかのddは
+          %dt.custom_display_title 身長
+          %dd.custom_display_value もう１個階層深
+          %dt.custom_display_title 結婚に対する意思
+          %dd.custom_display_value 良い人がいればしたい
+          %dt.custom_display_title 隊形
+          %dd.custom_display_value 設定ボタンから
+          %dt.custom_display_title 触手
+          %dd.custom_display_value 見たい項目数
+          %dt.custom_display_title 年周
+          %dd.custom_display_value 増やせる
+          %dt.custom_display_title 旧日
+          %dd.custom_display_value このエリアの
+          %dt.custom_display_title 葉巻
+          %dd.custom_display_value 高さは数値指定
+          %dt.custom_display_title 楽歴
+          %dd.custom_display_value １４個超えると
+          %dt.custom_display_title 刻石
+          %dd.custom_display_value スクロールで
+          %dt.custom_display_title 火事・意気地
+          %dd.custom_display_value 見るため、作成
+        / 下記、『設定ボタン』からポップアップする画面：始まり
+        .box_custom_display_form
+          .custom_display_form_inner
+            %p.custom_display_form_title
+              見たいプロフィール 表示/非表示 設定
+            %ul.custom_display_form_list
+              %li.form_item.nomargin
+                %input#partner_profile_setting_age.ng-valid.ng-empty.ng-dirty.ng-valid-parse.ng-touched{name: "s5", type: "checkbox"}/
+                %label{for: "partner_profile_setting_age"}年齢
+              %li.form_item.nomargin.is_checked
+                %input#partner_profile_setting_residence_state.ng-valid.ng-dirty.ng-valid-parse.ng-touched.ng-not-empty{name: "s5", type: "checkbox"}/
+                %label{for: "partner_profile_setting_residence_state"}居住地
+              %li.form_item.nomargin
+                %input#partner_profile_setting_nationality.ng-valid.ng-empty.ng-pristine.ng-untouched{name: "s5", type: "checkbox"}/
+                %label{for: "partner_profile_setting_nationality"}国籍
+              %li.form_item.nomargin.is_checked
+                %input#partner_profile_setting_residence_state.ng-pristine.ng-untouched.ng-valid.ng-not-empty{:checked => "checked", :name => "s5", :type => "checkbox"}/
+                %label{:for => "partner_profile_setting_residence_state"}居住地
+              %li.form_item.nomargin
+                %input#partner_profile_setting_age.ng-valid.ng-empty.ng-dirty.ng-valid-parse.ng-touched{:name => "s5", :type => "checkbox"}/
+                %label{:for => "partner_profile_setting_age"}年齢
+              %li.form_item.nomargin.is_checked
+                %input#partner_profile_setting_residence_state.ng-pristine.ng-untouched.ng-valid.ng-not-empty{:checked => "checked", :name => "s5", :type => "checkbox"}/
+                %label{:for => "partner_profile_setting_residence_state"}居住地
+              %li.form_item.nomargin
+                %input#partner_profile_setting_age.ng-valid.ng-empty.ng-dirty.ng-valid-parse.ng-touched{:name => "s5", :type => "checkbox"}/
+                %label{:for => "partner_profile_setting_age"}年齢
+              %li.form_item.nomargin.is_checked
+                %input#partner_profile_setting_residence_state.ng-pristine.ng-untouched.ng-valid.ng-not-empty{:checked => "checked", :name => "s5", :type => "checkbox"}/
+                %label{:for => "partner_profile_setting_residence_state"}居住地
+              %li.form_item.nomargin
+                %input#partner_profile_setting_age.ng-valid.ng-empty.ng-dirty.ng-valid-parse.ng-touched{:name => "s5", :type => "checkbox"}/
+                %label{:for => "partner_profile_setting_age"}年齢
+              %li.form_item.nomargin.is_checked
+                %input#partner_profile_setting_residence_state.ng-pristine.ng-untouched.ng-valid.ng-not-empty{:checked => "checked", :name => "s5", :type => "checkbox"}/
+                %label{:for => "partner_profile_setting_residence_state"}居住地
+              %li.form_item.nomargin
+                %input#partner_profile_setting_age.ng-valid.ng-empty.ng-dirty.ng-valid-parse.ng-touched{:name => "s5", :type => "checkbox"}/
+                %label{:for => "partner_profile_setting_age"}年齢
+              %li.form_item.nomargin.is_checked
+                %input#partner_profile_setting_residence_state.ng-pristine.ng-untouched.ng-valid.ng-not-empty{:checked => "checked", :name => "s5", :type => "checkbox"}/
+                %label{:for => "partner_profile_setting_residence_state"}居住地
+              %li.form_item.nomargin
+                %input#partner_profile_setting_age.ng-valid.ng-empty.ng-dirty.ng-valid-parse.ng-touched{:name => "s5", :type => "checkbox"}/
+                %label{:for => "partner_profile_setting_age"}年齢
+              %li.form_item.nomargin.is_checked
+                %input#partner_profile_setting_residence_state.ng-pristine.ng-untouched.ng-valid.ng-not-empty{:checked => "checked", :name => "s5", :type => "checkbox"}/
+                %label{:for => "partner_profile_setting_residence_state"}居住地
+              %li.form_item.nomargin
+                %input#partner_profile_setting_age.ng-valid.ng-empty.ng-dirty.ng-valid-parse.ng-touched{:name => "s5", :type => "checkbox"}/
+                %label{:for => "partner_profile_setting_age"}年齢
+              %li.form_item.nomargin.is_checked
+                %input#partner_profile_setting_residence_state.ng-pristine.ng-untouched.ng-valid.ng-not-empty{:checked => "checked", :name => "s5", :type => "checkbox"}/
+                %label{:for => "partner_profile_setting_residence_state"}居住地
+              %li.form_item.nomargin
+                %input#partner_profile_setting_age.ng-valid.ng-empty.ng-dirty.ng-valid-parse.ng-touched{:name => "s5", :type => "checkbox"}/
+                %label{:for => "partner_profile_setting_age"}年齢
+              %li.form_item.nomargin.is_checked
+                %input#partner_profile_setting_residence_state.ng-pristine.ng-untouched.ng-valid.ng-not-empty{:checked => "checked", :name => "s5", :type => "checkbox"}/
+                %label{:for => "partner_profile_setting_residence_state"}居住地
+              %li.form_item.nomargin
+                %input#partner_profile_setting_age.ng-valid.ng-empty.ng-dirty.ng-valid-parse.ng-touched{:name => "s5", :type => "checkbox"}/
+                %label{:for => "partner_profile_setting_age"}年齢
+              %li.form_item.nomargin.is_checked
+                %input#partner_profile_setting_residence_state.ng-pristine.ng-untouched.ng-valid.ng-not-empty{:checked => "checked", :name => "s5", :type => "checkbox"}/
+                %label{:for => "partner_profile_setting_residence_state"}居住地
+              %li.form_item.nomargin
+                %input#partner_profile_setting_age.ng-valid.ng-empty.ng-dirty.ng-valid-parse.ng-touched{:name => "s5", :type => "checkbox"}/
+                %label{:for => "partner_profile_setting_age"}年齢
+              %li.form_item.nomargin.is_checked
+                %input#partner_profile_setting_residence_state.ng-pristine.ng-untouched.ng-valid.ng-not-empty{:checked => "checked", :name => "s5", :type => "checkbox"}/
+                %label{:for => "partner_profile_setting_residence_state"}居住地
+              %li.form_item.nomargin
+                %input#partner_profile_setting_age.ng-valid.ng-empty.ng-dirty.ng-valid-parse.ng-touched{:name => "s5", :type => "checkbox"}/
+                %label{:for => "partner_profile_setting_age"}年齢
+              %li.form_item.nomargin.is_checked
+                %input#partner_profile_setting_residence_state.ng-pristine.ng-untouched.ng-valid.ng-not-empty{:checked => "checked", :name => "s5", :type => "checkbox"}/
+                %label{:for => "partner_profile_setting_residence_state"}居住地
+              %li.form_item.nomargin
+                %input#partner_profile_setting_age.ng-valid.ng-empty.ng-dirty.ng-valid-parse.ng-touched{:name => "s5", :type => "checkbox"}/
+                %label{:for => "partner_profile_setting_age"}年齢
+              %li.form_item.nomargin.is_checked
+                %input#partner_profile_setting_residence_state.ng-pristine.ng-untouched.ng-valid.ng-not-empty{:checked => "checked", :name => "s5", :type => "checkbox"}/
+                %label{:for => "partner_profile_setting_residence_state"}居住地
+              %li.form_item.nomargin
+                %input#partner_profile_setting_age.ng-valid.ng-empty.ng-dirty.ng-valid-parse.ng-touched{:name => "s5", :type => "checkbox"}/
+                %label{:for => "partner_profile_setting_age"}年齢
+            .text_center
+              %button.button_cancel.button_a.button_white_a
+                キャンセル
+              %button.button_commit.button_a.button_blue_a
+                保存する
+                / 上記、『設定ボタン』からポップアップする画面：終わり
+    .personal_innger_right
+      .box_user_display_photo
+        .user_summary_info
+          .alert_violation
+            %img{src: "https://lh3.googleusercontent.com/92XbBUA6tE7v22Db0nDjegRvfGfY0gmNIoVTxbaq7aN6xSbutism34CJ_mi5byuHkoFyLhrntVFF9_XVtk5le4kXSjSELz5Uc4-GvZ6CS2oFle2PKpLnnueHExEcbQ7rkzrdN8IBfh9t_GoS8noj2pAqarV11NYBgY3gFgrAHNceVEvsgTzyglTTLuH3gF9cfenXJPWk2lOvgFQr3CPZve_p97Ahw_o-IuGCfK_qjPndQ3awoFPjnubQ7e0bNAo_zfH9z_aC-ac21mLk9sa0F_vUPv3ZjFYE9bro6RTJcdJ77YsU7dm4dMVniLh_TS269pO0rrdrLfITu7XrvCLNKlXS-lDlMC85eQB5q3fT_UyLCoR1rWHLqpK79WmLgpKXyeex4fBeg8H1sX6cf4mQen3NZh2haeZOqPBD1Z6u-py2F6kXybz5yaSQjWtVXJnIKVNahzMmrjWCdFpREqYlcZa-6FyDdQKhCuyUl2Umcvort8OuXiNQ1RollASO0mY4XwpPWhZjzp3GT34b21RImAGU2OOceXHRcClPn4-DBDi28g1CV0vDz6xL_xuBsI9mAhiPQcKw13Q0hMGyzYUkgwp9Sz0Umq60sUJCTQAQxCkOe_EKuVfAgGmsBXHJ8dI3yLtPvwy_jB80FegD0rGohz_KpUXx8y3n=w408-h54-no"}/
+          %ul.user_display_photo_list
+            %li.user_display_photo_item.is_current
+              - if user.UserImages.find_by(status: 1).present?
+                = image_tag "#{user.UserImages.find_by(status: 1).content}", class: "list_view_user_photo image-circle"
+              - else
+                = image_tag "https://lh3.googleusercontent.com/jmxL41Xoh0hwYidEE0Mt_mO6hKBrPYVwQpNOFSDHHaFYY30WxFuqehwH6e1AGG8LNA1cnmO-Xu1r7IAKxEkxMwzAg6yiJSfWHpV16volf3DK78EXqEEs_Nc2zQJBEU0b86PRkcq_7DW8mLbaKNgj1QGVsME8Pqu-qOlpWJ3o0TZIlshWLaA2HypQgZRP1ETY8XGUr01jB7iMoasAP1xUzJyxUFl5i-miinWCzu5MgkmZuUS6KCyfy_Fdozn5xvI3J_sGRA9yJ_yg3NcM-b4mf6LOuZ_89eW7RbxVOalsUQ5Z6iMMZWagh3uNh3pW0CrldkOKUB1_3AbBVxTJZOcGolBcGit1TWxmDa6XUgzjSSipZURmQ7XkdjkYOIW9NSOJuQNkDMPskpOfnC-jELZWwfqrc1BxZB4qSXQyVQV-qeZ2L8_D6Pq0VvRCf77QkiX7S2f74bQ-BHEjCaaNX_3xhx0nk1Ihjfr09JuuxILeXsgSa--RQTupf0CHicd8SkiHQbsvw8IwvC9CEySbZLBjmsCUqXMc3jOGxbpKNy6x-ygrQ46ELi-3ml6dNCfNOVBmJdOTsZzPKpZB5W_M6AF2PyamLxfCfG2wj4KHEO1rDSHGkDZrc16-lzvzK4YNmSOwK5Ynp-BIC0JoTZ--TvZsSiFbqd_VBfA=s98-no", class: "list_view_user_photo image-circle"
+          .summary_info_inner
+            .user_info_wrapper
+              %p.user_info
+                %span.user_name
+                  = user.nickname
+                %span.user_age 42歳
+                %span.user_area
+              %p.user_tweet
+                全角１７文字迄マイプロから入力可能
+        .box_user_photo
+          .box_user_photo_request
+            %div
+            %div
+              %a.button_photo_request.button_photo_request_a
+                %span
+                  写真リクエスト
+                  %br>/
+                  を送る
+          .box_user_photo_inner
+            %ul.user_photo_list.four_photos
+              %li.photo_item.is_current
+                %img.community_item_img.image-round{src: "https://lh3.googleusercontent.com/27s-fXqzSC32F8AlnJWxm6cIsXKZ3TcD9jt4XoW8de8AyRL2oxb8P-0yX0gg_mxlSp9resX0JrG55YIrI_heIbgUMXqfvcORAfMvGvqhLNGmlXpRTLUDHEfn8F-2yJHURLiOv2Dul4pfdNSNUgw6RMexoI4I3n_E7K4xtDkE4zEtNV22XtXcBpfKd_8I7b45PTEC1KKPnnP8N8pmPrApJ141DjgYYJN0ukaccMJ7KgNknxqAYxtB5pmwUMgGTfNZ1gOt29JbdAruu_KwqZyRGIRLOvl-rsL-uPPloIucVQjU19bg-wshXsRwHkbh0ahMkbnh15DezODKSCyrtB7U1qV0lDDtYiLRZ2XUIhu9rReOKCE3FxfnQIJfsDkVw4X_oB_ZKgOpnPFQPgLHOTGuWZ3X9FEuT8BN3VRR3IiI4ID-dRFcFWFwXeJjPnEFuGxsO6b-k4r8QNvqKtDJO7Gv--7-B-nyExuXYB9ABq8ViwcvTQ3MePNVMNYIlMnogO7242DEVLJuU7wt_hoxVm4ZSqrA1-1iXUdmDlOFZpaj0oFkSP3QTZh6igFiAhzx2UU2X-ou5XjAGjMJRrDWELT_k9BKD0MDgGnZujksVYEkJzQpTwdujvw15Kqa7gfrFEk8j31Ul3qJZ3q_YuOpKdISWTxwwq21Wgo=w800-h534-no"}/
+              %li.photo_item
+                %img.community_item_img.image-round{src: "https://lh3.googleusercontent.com/6IaADoHBAae3R5F6jrWgw7e6K7enn6rKH0rhSStM3KVvJHOvpl1vDkSSZ5144wIVjTXo0eY7Qpy85pRAtePwd0ATA1yo2Bk-FYDvFpSqB2tIbyGbFCxVDmKhoWxm3HcsaClvnYxhf8kAXwHRrV3zUpOn9R1s6nh04rnmo94Bcs3mIN9SF0feL8PXz1X6t6uMIJJpGD41HwHUbt_55TlHfOWIS1ERpLty3cvaoBRqAkh9HfOJVdpDSBgfUHmDA7UW6jk90bGucrRMPo2lR6o8neSErBL31eGdt57BSV6_zSmqbype0kE4Q-AK1nG0ImfCn6oEm-Rk-NfkMF8qHmWubYgbr625OK_p3TuzDcbeAYlA9Tv66XW2owlqrqOBid6PSuptP1EpNr1BKbymnWeO3WwAe9c8wPFCxnyS3HHhjfoGDmdYwQcZ7C9Y7CZmyNtdUeEQX9cbip57NodKToM7tr2I2VGatt9RdpYrC06wEsK8W5p081r7l5z0dOg2egpNLaT-mfO2nJ5gGuPIDRpiFkqC9l4e-_D0yMOIMsTaAjonBItHZElm6B4BcCk3Bd6v0GxkqsDWn_oPwIW_DTlUbexPKiHq8KEAbeauVMa8WJU2czlCdeQPTGNdfIDXT6o0mKXLrN3kZB1XQzu7fgQ8dZB5fT4Uoos=s220-no"}/
+              %li.photo_item.last_photo_item
+                %img.community_item_img.image-round{src: "https://lh3.googleusercontent.com/mlX12RNQYOhLpJD15kokCfLU8-UgmS-q_WDMpVM3cZiqvnQPQcemy-a8PRsrNjAIvBabHmKagfUsDswYs6z1znaDS1XBf1QZCGP6FfoVOboAnRsw0K4eLhJt3ZYwEh7YVNohCTSRXPVKJYr84m_JtHytVXaCjWC2QxSp8pt_klbpWv3KFeDzbkqoNjGj4uOr8ns8_f1GFiBj_uAgvwpS-aT1ItKIK_a5SXdIVd8PxZhzCxd-37hvOoHFrGlUOGKUuY1VqvZgEvz3d388naduIi9_hr1S4G3F94xa5SSjhzA-EJkfgL9KFa1YoVbNY9tK_C0bgEV1RLDNmWCmMfPLxRxiFsgWgpZYFu0_9B50Iy6F6sfMkU1JQeGk6aU91Xn7wKHAjGbZirhntD3rb_dTLOOrHxMc5dqu2B7YjPGaKaWosU7savNnnGcCzfZ-SY6snuXzCV3-OeiqBBOIYqxQ0RWqAfSvRoTaB4tFcmaDHi-_Agn_TkE2pg_Xf1kMPANa-FUsogv3Xm8Moe_uDVsEK-5Zyq6JZp-WS2oZ7icfqUG2OqFtH06ezeDMtMRkpW_6SPc14eCEwtR0m1g8kPgrNGLhs7Iqke1_LcCcFLHyG8CwcMLgMTkbd4thjP-lOSgnopWHYbzCzBjJQFOvVf4szBimzy_Dvow=s220-no"}/
+        .box_user_photo_pager
+          %a.pager_pre.button_c.button_white_a
+            前の
+            %span.photo_item_num 4
+            枚
+          %a.pager_next.button_c.button_white_a
+            次の
+            %span.photo_item_num 4
+            枚
+          %ol.pager_nums
+            %li.pager_num.is_current
+              %a
+                1
+            %li.pager_num
+              %a
+                2
+  .box_user_action_a
+    %ul.box_user_action_list
+      %li.user_action_item.action_pager_pre
+        / %a.button_white_a
+        /   %span 前へ
+        = link_to_prev_page @users, "前へ", class: "js_click_hide"
+      %li.user_action_item.action_favorite.padding_left.is_favorited
+        %a#add_favorite_partner.button_white_a
+          %span お気に入り
+      %li.user_action_item.action_pager_next
+        / %a.button_white_a
+        /   %span 次へ
+        = link_to_next_page @users, "次へ", class: "js_click_hide"
+      %li.user_action_item.action_hide.margin_right
+        %div
+          %a.button_white_a#appear_setting
+            %span 表示設定
+      %li.user_action_item.action_like
+        %div
+          %span
+            %a.button_like.button_like_default.button_pink_c.button_like_view.button_like_c.button_e
+              %span.like いいね！
+  .box_like_remaining.mb15
+    %p.fnt14
+      あと
+      %em
+        %span#total_like_numbers_personal 28
+        人
+      に『いいね！』ができます
+  .box_message_area
+    .message_area_title.title_d
+      あなたへ届いたメッセージ
+    %span.message_area_text
+  .box_question_answer
+    .question_answer_title.title_b
+      あなたの質問への回答
+  .box_personal_inner02
+    .personal_inner_left
+      .box_personal_detail.box_user_detail
+        %p.detail_sub_title
+          基本情報
+        %dl.detail_item_list
+          %dt.detail_item_title ニックネーム
+          %dd.detail_item_value 全角文字七字迄
+          %dt.detail_item_title 年齢
+          %dd.detail_item_value 一列で収まる
+          %dt.detail_item_title 血液型
+          %dd.detail_item_value 良い人がいればしたい
+          %dt.detail_item_title 兄弟姉妹
+          %dd.detail_item_value それ以上は改行
+          %dt.detail_item_title 国籍
+          %dd.detail_item_value 幾つかのddは
+          %dt.detail_item_title 話せる言語
+          %dd.detail_item_value もう１個階層深
+          %dt.detail_item_title 居住地
+          %dd.detail_item_value 設定ボタンから
+          %dt.detail_item_title 出身地
+          %dd.detail_item_value 見たい項目数
+        %p.detail_sub_title
+          学歴・職種・外見
+        %dl.detail_item_list
+          %dt.detail_item_title 職種
+          %dd.detail_item_value 全角文字七字迄
+          %dt.detail_item_title 学歴
+          %dd.detail_item_value 一列で収まる
+          %dt.detail_item_title 年収
+          %dd.detail_item_value 良い人がいればしたい
+          %dt.detail_item_title 身長
+          %dd.detail_item_value それ以上は改行
+          %dt.detail_item_title 体型
+          %dd.detail_item_value 幾つかのddは
+        %p.detail_sub_title
+          恋愛・結婚について
+        %dl.detail_item_list
+          %dt.detail_item_title 結婚歴
+          %dd.detail_item_value 全角文字七字迄
+          %dt.detail_item_title 子どもの有無
+          %dd.detail_item_value 一列で収まる
+          %dt.detail_item_title 結婚に対する意思
+          %dd.detail_item_value 良い人がいればしたい
+          %dt.detail_item_title 子どもが欲しいか
+          %dd.detail_item_value それ以上は改行
+          %dt.detail_item_title 家事・育児
+          %dd.detail_item_value 幾つかのddは
+          %dt.detail_item_title 出会うまでの希望
+          %dd.detail_item_value もう１個階層深
+          %dt.detail_item_title 初回デート費用
+          %dd.detail_item_value 設定ボタンから
+        .detail_sub_title
+          性格・趣味・生活
+        %dl.detail_item_list
+          %dt.detail_item_title 性格・タイプ
+          %dd.detail_item_value 全角文字七字迄
+          %dt.detail_item_title 社交性
+          %dd.detail_item_value 一列で収まる
+          %dt.detail_item_title 同居人
+          %dd.detail_item_value 良い人がいればしたい
+          %dt.detail_item_title 休日
+          %dd.detail_item_value それ以上は改行
+          %dt.detail_item_title お酒
+          %dd.detail_item_value 幾つかのddは
+          %dt.detail_item_title タバコ
+          %dd.detail_item_value もう１個階層深
+          %dt.detail_item_title 好きなこと・趣味
+          %dd.detail_item_value 設定ボタンから
+      %a.button_breach.button_a.button_white_a{href: "/violation"}
+        違反報告を送る
+    .personal_innger_right
+      .box_join_community
+        .join_community_title_a
+          %p.title_a
+            参加コミュニティ(
+            = user.communities.count
+            件)
+        -if user.communities.present?
+          %ul.join_community_list
+            - user.communities.each do |community|
+              %li.join_community_item
+                %a{href: "/community/#{community.id}", class: "community_link"}
+                  .box_community_item_img
+                    = image_tag community.image.url, class:"community_item_img image-round"
+                  %p.community_item_title
+                    = community.community_name
+                  %p.community_item_count
+                    = t("enums.community.category.#{community.category}")
+
+          .box_community_pager.box_pager
+            = paginate(user.communities.page(params[:page]).per(12), theme: "patern_b")
+
+        - else
+          .pl15.pt15.pb15.empty_item
+            #{user.nickname}さんが参加しているコミュニティはありません。
+      .box_introduction
+        %p.introduction_title.title_a
+          自己紹介文
+        %p.introduction_text
+          「Love Like Pop vol.18～CountDown Live あっという間の最終日～」
+          史上初のカウントダウンライブを地元大阪で開催（大阪城ホール）
+          オープニングでは初めての振袖姿で登場しました。ライブはななななんと全33曲熱唱、4時間半超え！来てくださった皆様、本当にありがとうございました！
+          「Love Like Pop vol.18～CountDown Live あっという間の最終日～」
+          史上初のカウントダウンライブを地元大阪で開催（大阪城ホール）
+          オープニングでは初めての振袖姿で登場しました。ライブはななななんと全33曲熱唱、4時間半超え！来てくださった皆様、本当にありがとうございました！
+        .empty_item.ng-hide
+          ○○さんは自己紹介文を記入していいません。
+.box_user_action_b
+  .user_photo.not_display_photo_request
+    %img.image-circle{src: "https://lh3.googleusercontent.com/ptNSnw8PpnuvjVQ2V46NfjFNMOp3wTuly3Acv4bDuxcz-0I3_rtk9jX5XshXg18Shu5gRWLZuBFiykDZ8B2HmyDmkUbzKUjw6vNC3sAPianI3uf0TfCdEpJhR9LR411wmum_TxqOjdlxrsVIf4XQAOCoT5EaJ-904ZbdXCn8TpmUgt0IyweYCGZ4weyJaWZEReIdk5btPIddL2_Wk62E2b-BdE35fRCf5YeLbRE6tJWT5yudZfZE7o070OUbetJmxmkJ-mydz1lwAVrqHm0UeeXDerLP2aE9ulpiwP-aD5DZHticdFN5Htoao-mTlrGnew-oMw2uE5mQOjpRAo4fN3lMno29XxcJzUeXH2gfqQqx5FPvi3lOSzSk8oG1TJdxf28I9bSc6QDO6pul_D0EmvuWkFbe-klTny-IPg5qYyfg4b_pkiXBEyM08EnbAcGc990kqsoI8SN1lOJLkNhEJdi_8BPx5f2wsJIq_AEKBR0tl0-JYichjITzc7Yh9Zx145foKSAJtTcF296x73BYj52ayUXcKyTjMzxVLgCqfMzmM3cf66q1ChxV7m9Ful0GrcLFRaB1vcopba0U1_skmrXqJe4VuGIF_6zC0aqPL3hpQg3RPTSS6-oRIfUKaEuNh9posNPphx3ZeViVm65ZGCDPQd5GqUE=s220-no"}/
+  .ng-hide
+    .ng-hide
+      %a.button_photo_request.button_pink_d.is_requested
+        %span.request_text
+          写真リクエスト
+          %br>/
+          送信済
+    .ng-hide
+      %a.button_photo_request.button_pink_d
+        %span
+          写真リクエスト
+          %br>/
+          を送る
+  .user_action_item.action_like
+    %span
+      %a.button_like.button_like_default.button_pink_c.button_like_view.button_like_c.button_e
+        %span.like いいね！
+.box_result_pager.js_click_hide
+  = paginate(@users)
+  %p.personal_pager_text.box_like_remaining
+    1,972,772人中 2人表示 :
+    あと
+    %em
+      %span#total_like_numbers_footer
+        28
+      人
+    に「いいね！」ができます
+
+
+/ 『表示設定』ボタンからの『非表示・ブロックの設定』ポップアップ
+.bg_overlay_more.modal_animation
+.box_modal_window.modal_fixed.modal_animation.hide_block_select.box_modal_like_with_text#top_modal
+  .box_modal_window_inner
+    %a.modal_close
+      %img{src: "https://lh3.googleusercontent.com/JZ5QgP9n4HLC-gnXIcJAsLL2zh7NV0OxNWjjOWOoxbD5gU8a1VBfjDBNzifCYTU9cwBfJByoPM6QPg0BMLsgcA2biofLRmrpfI3trDe8vXreEbsQQ4q9HR_n7iPL3E16d3a4k0W4saje0qJMC6j2vyVepU1EWQj2BEiQcB8iXviUAhzI3Rw4cPIAzZUKv4FJf8d2gBODxBt7nUyWkdR6DlUuAo5X8WxW-7c7PRb9Z0_VzojmdeKrOGmtTYE4LGflbY4dkwRUt7owI0oYY-NWZGRiyMBANMfnfKJZrM7NrA8R3gvX6gNxQ9lb-2H4kdZBxnNJJiIZCbA3U6FkJ7L7qCoRPcSY7A31anQLjuZp2F6zQEbKRZevBtrU6KfCGEMf-k6a7dNbTfx1LiwUa1WbXcWmrqXt1upE1hSlolc4bc5xDXHh22L9OydnIHQ7M8LB-Pqk-9nDdHAM4MpYk16mGNSgFaV7wPAdPAHqTcF3szUqQ-r-wAqSmcb_8RmKplujpNHYcRI1-42F9gCF4ibvYV3ir1fGRZIRkYQsqtbbXReqsQi_mfqmJ5djsW1f60oR9kuTiMMjvMChx8b0a1O19Iin7jEfomS9fvQUKdQuscsYlMTcNddsNpFkrO1GiBLkR_hqVzUHmtQPZC2_Omnx8veBWnRVDywk=s53-no"}/
+    %p.modal_sub_title_b
+      非表示・ブロックの設定
+    .modal_hideblock_text
+      %p
+        %span.nickname Yuki
+        さんを非表示またはブロックの設定ができます。
+      %p 設定したい内容を下記から選択してください。
+    .modal_note_border
+      %ul
+        %li
+          %input#hide_block_hide.hide_block_radio.ng-pristine.ng-untouched.ng-valid.ng-empty{name: "30", type: "radio", value: "hide"}/
+          %label{for: "hide_block_hide"} 非表示
+        %li
+          %input#hide_block_block.hide_block_radio.ng-pristine.ng-untouched.ng-valid.ng-empty{name: "30", type: "radio", value: "block"}/
+          %label{for: "hide_block_block"} ブロック
+      %div
+        .modal_hideblock_inner_text
+          ▼非表示
+          %br/
+          お客様の画面にお相手が表示されないようになります。
+          %br/
+          「特に問題があったわけではないが当面表示しておきたくないお相手」を検索結果やメッセージのリストなどに現れなくする機能です。
+
+        .modal_hideblock_inner_text_notice
+          ※非表示は、各種設定の「非表示ユーザーリスト」から設定解除できます。
+      %div
+        .modal_hideblock_inner_text
+          ▼ブロック
+          %br/
+          お互いに一切のコンタクトができなくなります。
+        .modal_hideblock_inner_text_notice
+          %span.text_red ※一度、お相手をブロックすると解除することができません。
+          %br/
+          ※お相手の「いいね」「お気に入り」「メッセージ」画面には、お客様が「退会済み」として表示されます。
+    .modal_button_area.text_center.mt30
+      %button.button_a.button_white_a.w30p キャンセル
+      %button.button_a.button_red_a.w30p#setting 設定する
+
+/ 『非表示完了時』ポップアップ
+.box_modal_window.modal_fixed.modal_animation.hide_complete.box_modal_like_with_text
+  .box_modal_window_inner.original_class
+    %a.modal_close
+      %img{src: "https://lh3.googleusercontent.com/JZ5QgP9n4HLC-gnXIcJAsLL2zh7NV0OxNWjjOWOoxbD5gU8a1VBfjDBNzifCYTU9cwBfJByoPM6QPg0BMLsgcA2biofLRmrpfI3trDe8vXreEbsQQ4q9HR_n7iPL3E16d3a4k0W4saje0qJMC6j2vyVepU1EWQj2BEiQcB8iXviUAhzI3Rw4cPIAzZUKv4FJf8d2gBODxBt7nUyWkdR6DlUuAo5X8WxW-7c7PRb9Z0_VzojmdeKrOGmtTYE4LGflbY4dkwRUt7owI0oYY-NWZGRiyMBANMfnfKJZrM7NrA8R3gvX6gNxQ9lb-2H4kdZBxnNJJiIZCbA3U6FkJ7L7qCoRPcSY7A31anQLjuZp2F6zQEbKRZevBtrU6KfCGEMf-k6a7dNbTfx1LiwUa1WbXcWmrqXt1upE1hSlolc4bc5xDXHh22L9OydnIHQ7M8LB-Pqk-9nDdHAM4MpYk16mGNSgFaV7wPAdPAHqTcF3szUqQ-r-wAqSmcb_8RmKplujpNHYcRI1-42F9gCF4ibvYV3ir1fGRZIRkYQsqtbbXReqsQi_mfqmJ5djsW1f60oR9kuTiMMjvMChx8b0a1O19Iin7jEfomS9fvQUKdQuscsYlMTcNddsNpFkrO1GiBLkR_hqVzUHmtQPZC2_Omnx8veBWnRVDywk=s53-no"}/
+    %p.modal_sub_title_b
+      %span.nickname Yuki
+      さんを非表示にしました。
+    .modal_text_b.modal_note_area_b.common_text
+      非表示にしたユーザーは各種設定の
+      %a{href: "/privacysetting#box_hide_block"} 非表示ユーザーリスト
+      から設定解除することができます。
+    .modal_button_area.text_center.mt30
+      %button.button_a.button_white_a.w30p
+        閉じる

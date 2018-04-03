@@ -1,0 +1,99 @@
+.ui-view_class
+  .main.box_community_view.contents_padding
+    = render partial: "pairs/shared/advertising"
+    .common_page_header.mb0
+      = render partial: "common_page_header"
+    .box_community_header.common_inline_box
+      = render partial: "box_community_header"
+    .box_wrapper_inner
+      .box_community_side
+        = render partial: "search_category"
+      .box_community_main
+        .box_my_community
+          .data-community-joined-communities
+            .my_community_title.title_b<>
+              あなたが参加しているコミュニティ(全
+              %span.community_total<> #{@communities_count.count}
+              件)
+            .community_list_box.bg-white
+              %ul.my_community_list
+                - @communities.each do |community|
+                  %li.my_community_item
+                    %a{href: "/community/#{community.id}", class: "community_link"}
+                      %p.box_community_item_img
+                        = image_tag community.image.url, class:"community_item_img image-round"
+                      %p.community_item_title
+                        = community.community_name
+                      %p.community_item_count
+                        / 本来は人数を表示するエリア
+                        = t("enums.community.category.#{community.category}")
+            .box_community_pager.box_pager.bg_white
+              = paginate(@communities, theme: "patern_b")
+        .box_everyone_community.popular_community#popular
+          .data-community-popular-communities
+            .everyone_community_title
+              /人気コミュニティ（本来実装されている箇所）
+              作成されているコミュニティ
+              = Community.count
+              件
+            .community_list_box
+              = render partial: "communities_list", locals: { communitiess: @communities_all}
+            .link_more_community
+              .div
+                =link_to "全てみる", search_communities_path, id: "load_button_populer"
+                / %a#load_button_populer
+                /   もっと見る
+                / %a#load_button_populer
+                /   全てみる
+        / 以降、算出ロジックが不明な為、一旦すべてコメントアウト
+        / .box_everyone_community.recommend_community#recommend
+        /   .data-community-recommend-communities
+        /     .everyone_community_title
+        /       / おすすめコミュニティ（本来実装されている箇所）
+        /       ※検索結果表示（仮表示）
+        /       = Community.count
+        /       件
+        /     .community_list_box
+        /       %ul.community_list
+        /         - @communities_result.each do |community|
+        /           %li.community_item.joined
+        /             %a{href: "", class: "community_link"}
+        /               .box_community_item_img
+        /                 = image_tag community.image.url, class:"community_item_img image-round"
+        /               %p.community_item_title
+        /                 = community.community_name
+        /               %p.community_item_count
+        /                 / 本来は人数を表示するエリア
+        /     .link_more_community
+        /       作る方針（予定）
+        /       .div
+        /         %a#load_button_populer
+        /           もっと見る
+        /         %a#load_button_populer
+        /           全てみる
+        / .box_everyone_community.newcomer_community#newcomer
+        /   .data-community-new-communities
+        /     .everyone_community_title
+        /       新着コミュニティ（作成予定）
+        / .box_everyone_community.fame_community#fame
+        /   .data-community-fame-communities
+        /     .everyone_community_title
+        /       殿堂入りコミュニティ（作成予定）
+
+  / インデックスの作成から表示されるポップアップ
+  .data-community-help-modal
+    .modal_community
+      .box_modal_window.modal_fixed.modal_animation#modal_community_about
+        .box_modal_window_inner
+          %a.modal_close.modal-close
+            %img{src: "https://lh3.googleusercontent.com/JZ5QgP9n4HLC-gnXIcJAsLL2zh7NV0OxNWjjOWOoxbD5gU8a1VBfjDBNzifCYTU9cwBfJByoPM6QPg0BMLsgcA2biofLRmrpfI3trDe8vXreEbsQQ4q9HR_n7iPL3E16d3a4k0W4saje0qJMC6j2vyVepU1EWQj2BEiQcB8iXviUAhzI3Rw4cPIAzZUKv4FJf8d2gBODxBt7nUyWkdR6DlUuAo5X8WxW-7c7PRb9Z0_VzojmdeKrOGmtTYE4LGflbY4dkwRUt7owI0oYY-NWZGRiyMBANMfnfKJZrM7NrA8R3gvX6gNxQ9lb-2H4kdZBxnNJJiIZCbA3U6FkJ7L7qCoRPcSY7A31anQLjuZp2F6zQEbKRZevBtrU6KfCGEMf-k6a7dNbTfx1LiwUa1WbXcWmrqXt1upE1hSlolc4bc5xDXHh22L9OydnIHQ7M8LB-Pqk-9nDdHAM4MpYk16mGNSgFaV7wPAdPAHqTcF3szUqQ-r-wAqSmcb_8RmKplujpNHYcRI1-42F9gCF4ibvYV3ir1fGRZIRkYQsqtbbXReqsQi_mfqmJ5djsW1f60oR9kuTiMMjvMChx8b0a1O19Iin7jEfomS9fvQUKdQuscsYlMTcNddsNpFkrO1GiBLkR_hqVzUHmtQPZC2_Omnx8veBWnRVDywk=s53-no"}/
+          %p.modal_title.ribbon_title.ribbon_blue
+            コミュニティとは？
+          %p.modal_text_a コミュニティに参加して、共通の趣味や好みのお相手とつながろう！
+          %p.modal_sub_title コミュニティに参加すると…
+          %img.mb10{src:"https://lh3.googleusercontent.com/5Wd__gY0BqguEt4c5KUPsftmAf1Jbc-yWCW9m2JxSAc6wR_FSUu4k_y4ukFhvQa_Smv4hFZEyClgUARdWCXeF1hA93XlFWQnWG0yiewqvxpgyeN9F1wwqSalJ26wlR3XroS4fLYj0uiZPyFsojANMTBwd7xfXfj2EA8bv_oDnsyqqXCqcdbYng5ZCX62p_NyJkuVGOvXvvFB3SDu-Q6FMQ00DmOhpWSJQhS5fGwZx4OfqQyFcvs4Iat9hG16xV-YLSyE7CnW-WyyEm61GgUsIHBig05UY-HbzKI0iS3YOle-hXlp2ThWl6X7Q5v99meQi1_rmFJWzvRdNoD7FP8Wlyf4wnPWT0NrVqD7lqxDmoDDtckRH_y0ZZX7-zCm5wNu5-IiuNEUQ8_XeEnfo5_MjrXlXjLQKfxQetzyYVpoEXQRKpxFs9EaopIWVMPTQLtPYjtXUrUZLRd1DBmTaVqQn5k_hKq4FLFHp3ORcksuTqepYf5kXtiXJv_XdWqHgDqN5tkdrc0F2yPRUvZKt1Mw9BGv05FygTKWfTqP_ZETSmCiUwHeb59XZKHLacVtWOBk-xSCw7l3n5qL7RFdGjh5rehdROA4zAwE1Bw5sYargO8zacqhACaBtoguPzQuW5Q6Zr4kKDSioj6ulVDXrWWAo3CMDXMFbBLZ=w529-h191-no"}
+          %p.modal_sub_title コミュニティを作成すると…
+          %img.mb10{src:"https://lh3.googleusercontent.com/O-_FpTUFN5SdGTQ325cW1vCQpJtmY8CTDVVmn0ngj72cQNzPCN6jzW9pY_6Q9AqBMNxjvr320FGaMPkoYYJFClbJrmYMj2bk30YA7gq5LbnX2FP-IbUt1D51dGauViwLubyJ2sc4XLSnCsk6hGp2BHkPCmtiD0bdpFrXpKCLjHNqNjWlqViNr7vJ8GVPJXjeQT8a3lQQq15PiMKOnXu0piA4v_gtASkN0tmYpDLRjWLQtqVMSh600Ard-8ZpWULu7kaJFq0GBunRYBGCwj59bqpQoMq5mMv_L2ovmACPqM0goihHAiv1TZNgSuE6hNzzDkKapex__6TBzBg8_okNMOEEGnQUXBC0pB273vcehDIgMr_6pAWytJbywgrkK6hP-w71HqunwPFHHm4FfQKSaz8Wre4RqkOgm2HIwg4aOGF7otkx_ZFrNKuNP0JC8-rmP1HiIDXVsFio8OKFw9iNWKWLni2jzR-HGHDHrAr1kQ-R8gT4D6uD3rl0g2GcqLyakz8O1pshiBDottqtwmBGwYgHPRyxI6uWbUNXm_VhLd22-AzqCYFwToXz4dVV_ZCLtF14e0bESPH5JJWxtMAI5poGgsQvg0IKqhY3WQg94V1cDTdsC-xHd29UTDUxBhx_5Op88lpVJMWZXOB_GfJ6NwHFy5GpijEP=w529-h191-no"}
+          .common_button_area.mt20
+            .button_item.w50p
+              = link_to "コミュニティを作成する", community_create_path, class:"button_a button_blue_a"
