@@ -14,6 +14,10 @@
           = match_user.residence.prefecture
       .user_info02
         %p.message
-          - if (match_user.messages.present?)
-            = match_user.messages.last.content
-      .login_time 3/18 13:24
+          - if (Group.find_by(id: group.group_id).messages.present?)
+            = Group.find_by(id: group.group_id).messages.last.content
+          - else
+            まだメッセージはありません。
+      - if (Group.find_by(id: group.group_id).messages.present?)
+        .login_time
+          = format_posted_time(Group.find_by(id: group.group_id).messages.last.created_at)

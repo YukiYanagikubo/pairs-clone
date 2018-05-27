@@ -33,14 +33,10 @@ class MessagesController < ApplicationController
 
   def group_create
     current_user.matchers.each do |match_user|
-      if MatchUser.find_by(before_user_id: current_user.id, after_user_id: match_user.id)
-        @groups = MatchUser.find_by(before_user_id: current_user.id, after_user_id: match_user.id)
-      elsif MatchUser.find_by(after_user_id: current_user.id, before_user_id: match_user.id)
-        @groups = MatchUser.find_by(after_user_id: current_user.id, before_user_id: match_user.id)
-      else
-        @group = Group.new
-        @group.save
-        @groups = MatchUser.create(before_user_id: current_user.id, after_user_id: match_user.id, group_id:@group.id)
+      unless MatchUser.find_by(before_user_id: current_user.id, after_user_id: match_user.id) || MatchUser.find_by(after_user_id: current_user.id, before_user_id: match_user.id)
+        @create_group = Group.new
+        @create_group.save
+        @groups = MatchUser.create(before_user_id: current_user.id, after_user_id: match_user.id, group_id:@create_group.id)
       end
     end
   end
